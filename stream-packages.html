@@ -11,12 +11,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Inter:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&family=TikTok+Sans:wdth,wght@75..125,300..900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Inter:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&family=TikTok+Sans:wdth,wght@75..125,300..900&family=Work+Sans:wght@400&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
+<body class="page-dark">
 
   <!-- ── NAVIGATION ── -->
   <header class="nav-wrapper">
@@ -34,10 +34,10 @@
     </nav>
   </header>
 
-  <main class="project-container">
+  <main class="project-container layout--full">
 
     <!-- ── SECTION 1: HERO + INTRO ── -->
-    <section class="project-hero" aria-label="Stream Packages & Alerts preview">
+    <section class="project-hero layout--wide" aria-label="Stream Packages & Alerts preview">
       <img src="images/stream-packages/bond_end.png" alt="007 First Light — Stream Ended overlay"
         class="project-hero__image" />
     </section>
@@ -63,24 +63,25 @@
     <!-- ── SECTION 2: 007 FIRST LIGHT — BRANDED SCENES ── -->
     <section class="theme-section theme-section--dark" aria-label="007 First Light theme">
 
-      <div class="theme-headline-wrapper">
+      <div class="project-hero theme-headline-wrapper layout--bleed">
         <img src="images/stream-packages/bond_headline.png" alt="007 First Light — Earn the Number"
-          class="theme-headline-img" />
+          class="project-hero__image" />
       </div>
 
       <div class="theme-content-block">
-        <h2 class="theme-content-block__label">Branded Scenes</h2>
+        <img src="images/stream-packages/Branded Scenes.png" alt="Branded Scenes"
+          class="theme-content-block__label-img" />
         <p class="theme-content-block__desc">A collection of animated broadcast graphics used as waiting and transition screens throughout the live stream experience. The package includes three scenes: Starting Soon, Be Right Back, Stream Ended.</p>
       </div>
 
-      <div class="scenes-stack">
+      <div class="scenes-stack layout--narrow">
         <img src="images/stream-packages/bond_soon.png" alt="James Bond — Starting Soon" class="scenes-stack__image" />
         <img src="images/stream-packages/bond_brb.png" alt="James Bond — Be Right Back" class="scenes-stack__image" />
         <img src="images/stream-packages/bond_end.png" alt="James Bond — Stream Ended" class="scenes-stack__image" />
       </div>
 
       <!-- Section 3: overlay preview -->
-      <div class="scene-fullwidth">
+      <div class="scene-fullwidth layout--wide">
         <img src="images/stream-packages/bond_talk.png" alt="James Bond — Talk / Overlay Scene" />
       </div>
 
@@ -92,7 +93,7 @@
           <p class="bond-alerts__desc">Alerts are dynamically populated with live data, displaying viewer names and event information such as follows, subscriptions, donations, and other community interactions.</p>
         </header>
 
-        <div class="bond-alerts__grid-wrap">
+        <div class="bond-alerts__grid-wrap layout--narrow">
           <img src="images/stream-packages/James Bond_Alerts 1.png" alt="James Bond theme alert previews"
             class="bond-alerts__grid-image" />
           <button type="button" class="bond-alerts__play" aria-label="Play alerts preview">
@@ -114,7 +115,7 @@
           <p class="astro-branded__desc">A collection of animated broadcast graphics used as waiting and transition screens throughout the live stream experience. The package includes three scenes: Starting Soon, Be Right Back, Stream Ended.</p>
         </header>
 
-        <div class="astro-scenes-stack">
+        <div class="astro-scenes-stack layout--narrow">
           <div class="astro-scene">
             <img src="images/stream-packages/astro_soon.png" alt="Astrology — Starting Soon"
               class="astro-scene__image" />
@@ -140,7 +141,7 @@
       </div>
 
       <!-- Overlay preview -->
-      <div class="astro-talk">
+      <div class="astro-talk layout--wide">
         <div class="astro-scene astro-scene--talk">
           <img src="images/stream-packages/astro_talk.png" alt="Astrology — Talk / Overlay Scene"
             class="astro-scene__image" />
@@ -157,15 +158,9 @@
           <p class="astro-alerts__desc">Animated on-stream graphics that provide real-time visual feedback when key stream events occur. Alerts are dynamically populated with live data, displaying viewer names and event information such as follows, subscriptions, donations, and other community interactions.</p>
         </header>
 
-        <div class="astro-alerts__grid-wrap">
-          <div class="astro-alerts__grid">
-            <div class="astro-alerts__cell"><img src="images/stream-packages/astro_alert_1.png" alt="Astrology alert — Kelly just followed" class="astro-alerts__item" /></div>
-            <div class="astro-alerts__cell"><img src="images/stream-packages/astro_alert_2.png" alt="Astrology alert — Kelly just subscribed" class="astro-alerts__item" /></div>
-            <div class="astro-alerts__cell"><img src="images/stream-packages/astro_alert_3.png" alt="Astrology alert — Kelly cheered 15 bits" class="astro-alerts__item" /></div>
-            <div class="astro-alerts__cell"><img src="images/stream-packages/astro_alert_4.png" alt="Astrology alert — Kelly purchased a hat" class="astro-alerts__item" /></div>
-            <div class="astro-alerts__cell"><img src="images/stream-packages/astro_alert_5.png" alt="Astrology alert — Kelly raided with 200 viewers" class="astro-alerts__item" /></div>
-            <div class="astro-alerts__cell"><img src="images/stream-packages/astro_alert_6.png" alt="Astrology alert — Kelly tipped $15" class="astro-alerts__item" /></div>
-          </div>
+        <div class="astro-alerts__grid-wrap layout--narrow">
+          <img src="images/stream-packages/cards.png" alt="Astrology theme alert previews"
+            class="astro-alerts__grid-image" />
           <button type="button" class="astro-alerts__play" aria-label="Play alerts preview">
             <img src="images/stream-packages/Play-btn.svg" alt="" />
           </button>
@@ -177,9 +172,9 @@
     <!-- ── THEME 3: HITMAN ── -->
     <section class="theme-section theme-section--hitman" aria-label="Hitman theme">
 
-      <div class="theme-headline-wrapper">
+      <div class="project-hero theme-headline-wrapper layout--bleed">
         <img src="images/stream-packages/hitman_headline.png" alt="Hitman — World of Assassination"
-          class="theme-headline-img" />
+          class="project-hero__image" />
       </div>
 
       <div class="hitman-branded">
@@ -214,7 +209,7 @@
         </div>
       </div>
 
-      <div class="hitman-talk">
+      <div class="hitman-talk layout--wide">
         <div class="hitman-scene hitman-scene--talk">
           <img src="images/stream-packages/hitman_talk.png" alt="Hitman — Talk / Overlay Scene"
             class="hitman-scene__image" />
@@ -230,7 +225,7 @@
           <p class="hitman-alerts__desc">Animated on-stream graphics that provide real-time visual feedback when key stream events occur. Alerts are dynamically populated with live data, displaying viewer names and event information such as follows, subscriptions, donations, and other community interactions.</p>
         </header>
 
-        <div class="hitman-alerts__grid-wrap">
+        <div class="hitman-alerts__grid-wrap layout--narrow">
           <img src="images/stream-packages/Hitman_Alerts 1.png" alt="Hitman theme alert previews"
             class="hitman-alerts__grid-image" />
           <button type="button" class="hitman-alerts__play" aria-label="Play alerts preview">
@@ -244,6 +239,8 @@
     <!-- ── THEME 4: HOLIDAY ALERT PACK ── -->
     <section class="theme-section theme-section--holiday" aria-label="Holiday Alert Pack">
 
+      <img src="images/stream-packages/holiday-bg.png" alt="" class="holiday-section-bg" aria-hidden="true" />
+
       <div class="holiday-pack">
         <header class="holiday-pack__header">
           <img src="images/stream-packages/Holiday_txt 1.png" alt="Holiday Alert Pack"
@@ -251,7 +248,7 @@
           <p class="holiday-pack__desc">Animated on-stream graphics that provide real-time visual feedback when key stream events occur. Alerts are dynamically populated with live data, displaying viewer names and event information such as follows, subscriptions, donations, and other community interactions.</p>
         </header>
 
-        <div class="holiday-pack__grid-wrap">
+        <div class="holiday-pack__grid-wrap layout--narrow">
           <img src="images/stream-packages/Holiday_Alerts 1.png" alt="Holiday theme alert previews"
             class="holiday-pack__grid-image" />
           <button type="button" class="holiday-pack__play" aria-label="Play alerts preview">
@@ -263,7 +260,7 @@
     </section>
 
     <!-- ── OTHER PROJECTS ── -->
-    <section class="other-projects" aria-label="Other projects">
+    <section class="other-projects layout--wide" aria-label="Other projects">
       <p class="other-projects__label">Other projects</p>
 
       <div class="other-projects__grid">

@@ -1,0 +1,26 @@
+---
+description: Dark background pages — black shell and white typography
+globs: "**/*.{html,css}"
+alwaysApply: false
+---
+
+# Dark pages (`page-dark`)
+
+Some project pages use a **black page background**. Mark them with:
+
+```html
+<body class="page-dark">
+```
+
+## Behavior
+
+- `html` + `body` background: **#000000** (including ultrawide side gutters)
+- Default text on the page shell: **white** (`--color-text-on-dark`)
+- Nav links, intro copy, and site footer invert to light-on-dark
+- Theme sections inside the page keep their own section styles
+
+## When to use
+
+Apply `page-dark` only to full pages designed on black (e.g. `stream-packages.html`). Do not add to light pages like `hello-fresh.html` unless explicitly requested.
+
+When the user says **"página con fondo negro"** or **"dark page"**, use `class="page-dark"` on `<body>`.

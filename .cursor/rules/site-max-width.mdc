@@ -1,14 +1,17 @@
 ---
-description: Site max-width 1920px with FCF9F9 outer gutters on ultrawide screens
+description: Centered 1920px shell with equal gutters on ultrawide
 globs: "**/*.{html,css}"
 alwaysApply: false
 ---
 
-# Site shell (1920px max)
+# Site shell (wide — 1920px max)
 
-All page content is capped at **1920px** (`--site-max-width`), centered on the viewport.
+Page content is capped at **1920px** (`--site-max-width`), centered with `margin-inline: auto`.
 
-- `html` background: **#FCF9F9** — visible in side gutters when viewport > 1920px
-- `body` + fixed `.nav-wrapper`: `max-width: 1920px`, centered
+- `html` background: **#FCF9F9** (or **#000** on `page-dark`) — visible as **equal side gutters** when viewport > 1920px
+- `body`: `width: min(100%, 1920px)`, centered
+- `.nav-wrapper`: `max-width: 1920px`, `left: 50%`, `translateX(-50%)`
 
-Full-width sections (`layout--full`) still span 100% of the **body** column (up to 1920px), not the full monitor beyond that.
+**full-width** (`layout--full`) = 100% of the shell, not `100vw`.
+
+**narrow** (`layout--narrow`) — see `layout-width.mdc`.
