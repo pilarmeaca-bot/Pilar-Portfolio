@@ -45,6 +45,7 @@ body {
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;
   overflow-x: clip;
+  padding-top: var(--nav-height);
 }
 
 img {
@@ -73,10 +74,18 @@ ul {
    NAVIGATION
    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .nav-wrapper {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   background: var(--color-bg);
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+
+.nav-wrapper--hidden {
+  transform: translateY(-100%);
 }
 
 .nav {
@@ -420,6 +429,16 @@ ul {
   line-height: 0.82;
   color: #000000;
   text-transform: lowercase;
+}
+
+.work-item__link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.work-item__link:hover {
+  opacity: 0.92;
 }
 
 /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
