@@ -1455,19 +1455,22 @@ button.nav__link {
    HELLOFRESH & COOKUNITY PAGES
    ========================================================== */
 html:has(body.page-hello-fresh),
-html:has(body.page-capn-crunch) {
+html:has(body.page-capn-crunch),
+html:has(body.page-fanta) {
   background-color: #ffffff;
 }
 
 .page-hello-fresh,
-.page-capn-crunch {
+.page-capn-crunch,
+.page-fanta {
   width: 100%;
   max-width: none;
   margin-inline: 0;
   background-color: #ffffff;
 }
 
-.page-hello-fresh .layout--bleed {
+.page-hello-fresh .layout--bleed,
+.page-fanta .layout--bleed {
   width: 100vw;
   max-width: none;
   margin-inline: calc(50% - 50vw);
@@ -1476,7 +1479,9 @@ html:has(body.page-capn-crunch) {
 }
 
 .page-hello-fresh .layout--bleed > img,
+.page-fanta .layout--bleed > img,
 .page-hello-fresh .layout--bleed .hellofresh-page-hero__img,
+.page-fanta .layout--bleed .hellofresh-page-hero__img,
 .page-hello-fresh .layout--bleed .project-hero__image,
 .page-hello-fresh .layout--bleed .cookunity-headline__img,
 .page-hello-fresh .layout--bleed .cookunity-banner__img {
@@ -1486,7 +1491,8 @@ html:has(body.page-capn-crunch) {
   display: block;
 }
 
-.page-hello-fresh .project-intro--hellofresh::before {
+.page-hello-fresh .project-intro--hellofresh::before,
+.page-fanta .project-intro--hellofresh::before {
   content: "";
   position: absolute;
   top: 0;
@@ -1500,7 +1506,8 @@ html:has(body.page-capn-crunch) {
   background-color: #ffffff;
 }
 
-.page-hello-fresh .project-intro--hellofresh {
+.page-hello-fresh .project-intro--hellofresh,
+.page-fanta .project-intro--hellofresh {
   position: relative;
   isolation: isolate;
   background-color: transparent;
@@ -1509,7 +1516,8 @@ html:has(body.page-capn-crunch) {
   padding-bottom: clamp(64px, 8vw, 100px);
 }
 
-.page-hello-fresh .project-intro--hellofresh .project-intro__grid {
+.page-hello-fresh .project-intro--hellofresh .project-intro__grid,
+.page-fanta .project-intro--hellofresh .project-intro__grid {
   gap: clamp(64px, 10vw, 160px);
 }
 
@@ -1517,24 +1525,32 @@ html:has(body.page-capn-crunch) {
 .page-hello-fresh .project-intro--hellofresh .project-intro__meta,
 .page-hello-fresh .project-intro--hellofresh .project-intro__meta-item,
 .page-hello-fresh .project-intro--hellofresh .project-intro__desc,
-.page-hello-fresh .project-intro--hellofresh .project-intro__subheadline {
+.page-hello-fresh .project-intro--hellofresh .project-intro__subheadline,
+.page-fanta .project-intro--hellofresh .project-intro__title,
+.page-fanta .project-intro--hellofresh .project-intro__meta,
+.page-fanta .project-intro--hellofresh .project-intro__meta-item,
+.page-fanta .project-intro--hellofresh .project-intro__desc,
+.page-fanta .project-intro--hellofresh .project-intro__subheadline {
   font-family: var(--font-tiktok);
 }
 
-.page-hello-fresh .project-intro--hellofresh .project-intro__title {
+.page-hello-fresh .project-intro--hellofresh .project-intro__title,
+.page-fanta .project-intro--hellofresh .project-intro__title {
   font-weight: 700;
   font-size: clamp(32px, 3vw, 48px);
   letter-spacing: -0.03em;
 }
 
-.page-hello-fresh .project-intro--hellofresh .project-intro__meta {
+.page-hello-fresh .project-intro--hellofresh .project-intro__meta,
+.page-fanta .project-intro--hellofresh .project-intro__meta {
   font-size: clamp(14px, 1.1vw, 16px);
   font-weight: 400;
   color: var(--color-text);
   gap: 0;
 }
 
-.page-hello-fresh .project-intro--hellofresh .project-intro__subheadline {
+.page-hello-fresh .project-intro--hellofresh .project-intro__subheadline,
+.page-fanta .project-intro--hellofresh .project-intro__subheadline {
   text-transform: none;
   letter-spacing: normal;
   font-size: clamp(15px, 1.111vw, 16px);
@@ -2383,6 +2399,340 @@ html:has(body.page-dark) {
   }
 
   .capn-branded-scenes__play img {
+    width: clamp(48px, 12vw, 72px);
+  }
+}
+
+/* ==========================================================
+   FANTA PAGE
+   ========================================================== */
+.fanta-takeover {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: clamp(16px, 2vw, 24px);
+  margin-bottom: 0;
+}
+
+.fanta-takeover__header {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+}
+
+.fanta-takeover__header-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.fanta-takeover__header-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: clamp(36px, 5vw, 56px) clamp(28px, 5vw, 48px);
+  box-sizing: border-box;
+}
+
+.fanta-takeover__title {
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: clamp(20px, 2.5vw, 28px);
+}
+
+.fanta-takeover__text {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: clamp(13px, 1.15vw, 16px);
+  font-weight: 400;
+  line-height: 1.5;
+  color: #ffffff;
+  max-width: 520px;
+  margin: 0;
+}
+
+.fanta-takeover__text + .fanta-takeover__text {
+  margin-top: 1rem;
+}
+
+.fanta-takeover__media {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+}
+
+.fanta-takeover__video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.fanta-takeover__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1;
+  transition: transform 0.25s var(--ease-out), opacity 0.2s;
+}
+
+.fanta-takeover__play:hover {
+  transform: translate(-50%, -50%) scale(1.06);
+  opacity: 0.92;
+}
+
+.fanta-takeover__play img {
+  width: clamp(56px, 9vw, 100px);
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .fanta-takeover__header-content {
+    padding: clamp(28px, 8vw, 40px) clamp(20px, 6vw, 32px);
+  }
+
+  .fanta-takeover__play img {
+    width: clamp(48px, 12vw, 72px);
+  }
+}
+
+.fanta-branded {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 0;
+}
+
+.fanta-branded__header {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+}
+
+.fanta-branded__header-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.fanta-branded__header-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: clamp(36px, 5vw, 56px) clamp(28px, 5vw, 48px);
+  box-sizing: border-box;
+}
+
+.fanta-branded__title {
+  width: clamp(220px, 32vw, 380px);
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: clamp(20px, 2.5vw, 28px);
+}
+
+.fanta-branded__text {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: clamp(13px, 1.15vw, 16px);
+  font-weight: 600;
+  line-height: 1.5;
+  color: #101840;
+  max-width: 520px;
+  margin: 0;
+}
+
+.fanta-branded__text + .fanta-branded__text {
+  margin-top: 1rem;
+}
+
+.fanta-branded__videos {
+  width: min(100vw, var(--site-max-width));
+  max-width: var(--site-max-width);
+  margin-inline: calc(50% - min(50vw, var(--site-max-width) / 2));
+  background-color: #0d1a3a;
+  background-image: url('images/fanta/branded_videos_bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: clamp(24px, 3vw, 40px) clamp(20px, 4vw, 48px) clamp(32px, 4vw, 56px);
+  box-sizing: border-box;
+}
+
+.fanta-branded__stack {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: min(100%, var(--layout-narrow-max));
+  max-width: var(--layout-narrow-max);
+  margin-inline: auto;
+}
+
+.fanta-branded__item {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+}
+
+.fanta-branded__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.fanta-branded__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1;
+  transition: transform 0.25s var(--ease-out), opacity 0.2s;
+}
+
+.fanta-branded__play:hover {
+  transform: translate(-50%, -50%) scale(1.06);
+  opacity: 0.92;
+}
+
+.fanta-branded__play img {
+  width: clamp(56px, 9vw, 100px);
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .fanta-branded__header-content {
+    padding: clamp(28px, 8vw, 40px) clamp(20px, 6vw, 32px);
+  }
+
+  .fanta-branded__play img {
+    width: clamp(48px, 12vw, 72px);
+  }
+}
+
+.fanta-alerts {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: clamp(64px, 8vw, 96px);
+}
+
+.fanta-alerts__header {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+}
+
+.fanta-alerts__header-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.fanta-alerts__header-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: clamp(36px, 5vw, 56px) clamp(28px, 5vw, 48px);
+  box-sizing: border-box;
+}
+
+.fanta-alerts__title {
+  width: clamp(280px, 42vw, 520px);
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: clamp(20px, 2.5vw, 28px);
+}
+
+.fanta-alerts__text {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: clamp(13px, 1.15vw, 16px);
+  font-weight: 600;
+  line-height: 1.5;
+  color: #101840;
+  max-width: 560px;
+  margin: 0;
+}
+
+.fanta-alerts__text + .fanta-alerts__text {
+  margin-top: 1rem;
+}
+
+.fanta-alerts__media {
+  width: 100%;
+}
+
+.fanta-alerts__stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+
+.fanta-alerts__item {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+}
+
+.fanta-alerts__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.fanta-alerts__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1;
+  transition: transform 0.25s var(--ease-out), opacity 0.2s;
+}
+
+.fanta-alerts__play:hover {
+  transform: translate(-50%, -50%) scale(1.06);
+  opacity: 0.92;
+}
+
+.fanta-alerts__play img {
+  width: clamp(56px, 9vw, 100px);
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .fanta-alerts__header-content {
+    padding: clamp(28px, 8vw, 40px) clamp(20px, 6vw, 32px);
+  }
+
+  .fanta-alerts__play img {
     width: clamp(48px, 12vw, 72px);
   }
 }
