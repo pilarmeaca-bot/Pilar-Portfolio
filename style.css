@@ -732,7 +732,19 @@ button.nav__link {
 }
 
 .theme-section--astro::before {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  right: auto;
+  width: 100vw;
+  transform: translateX(-50%);
   background-color: #000000;
+}
+
+.theme-section--astro.layout--full {
+  width: 100vw;
+  max-width: none;
+  margin-inline: calc(50% - 50vw);
 }
 
 .theme-section--astro {
@@ -740,16 +752,43 @@ button.nav__link {
 }
 
 /* -- Astrology branded scenes -- */
+.astro-branded.layout--full {
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+}
+
 .astro-branded__header {
+  position: relative;
+  isolation: isolate;
   text-align: center;
   margin-bottom: 48px;
   padding-inline: var(--content-margin);
   padding-block: 48px 56px;
+  background: transparent;
+}
+
+.astro-branded__header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  z-index: -1;
+  pointer-events: none;
   background-color: #0a1520;
   background-image: url('images/stream-packages/Astrology_bkg3.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+}
+
+.astro-branded__header.layout--full {
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
 }
 
 .astro-branded__title {
@@ -1842,6 +1881,7 @@ html:has(body.page-dark) {
 .page-dark {
   background-color: var(--color-bg-dark);
   color: var(--color-text-on-dark);
+  overflow-x: visible;
 }
 
 .page-dark .nav-wrapper {
