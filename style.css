@@ -2590,6 +2590,7 @@ html:has(body.page-dark) {
   position: relative;
   width: 100%;
   line-height: 0;
+  container-type: inline-size;
 }
 
 .fanta-branded__header-bg {
@@ -2599,15 +2600,16 @@ html:has(body.page-dark) {
 }
 
 .fanta-branded__header-content {
-  container-type: inline-size;
   position: absolute;
   inset: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
-  padding: clamp(36px, 5vw, 56px) clamp(28px, 5vw, 48px);
+  padding-top: 5%;
+  padding-bottom: clamp(36px, 5vw, 56px);
+  padding-inline: clamp(28px, 5vw, 48px);
   box-sizing: border-box;
 }
 
@@ -2616,6 +2618,7 @@ html:has(body.page-dark) {
   max-width: 100%;
   height: auto;
   display: block;
+  margin-top: 0;
   margin-bottom: clamp(20px, 2.5vw, 28px);
 }
 
@@ -2715,7 +2718,9 @@ html:has(body.page-dark) {
 
 @media (max-width: 600px) {
   .fanta-branded__header-content {
-    padding: clamp(28px, 8vw, 40px) clamp(20px, 6vw, 32px);
+    padding-top: 5%;
+    padding-bottom: clamp(28px, 8vw, 40px);
+    padding-inline: clamp(20px, 6vw, 32px);
   }
 
   .fanta-branded__text {
@@ -2742,6 +2747,7 @@ html:has(body.page-dark) {
   position: relative;
   width: 100%;
   line-height: 0;
+  container-type: inline-size;
 }
 
 .fanta-alerts__header-bg {
@@ -2756,27 +2762,30 @@ html:has(body.page-dark) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
-  padding: clamp(36px, 5vw, 56px) clamp(28px, 5vw, 48px);
+  padding-top: 5%;
+  padding-bottom: clamp(36px, 5vw, 56px);
+  padding-inline: clamp(28px, 5vw, 48px);
   box-sizing: border-box;
 }
 
 .fanta-alerts__title {
-  width: clamp(280px, 42vw, 520px);
+  width: 37.5cqw;
   max-width: 100%;
   height: auto;
   display: block;
+  margin-top: 0;
   margin-bottom: clamp(20px, 2.5vw, 28px);
 }
 
 .fanta-alerts__text {
   font-family: 'Nunito Sans', sans-serif;
-  font-size: clamp(13px, 1.15vw, 16px);
+  font-size: 1.6cqw;
   font-weight: 600;
   line-height: 1.5;
   color: #16206F;
-  max-width: 560px;
+  max-width: none;
   margin: 0;
 }
 
@@ -2833,7 +2842,13 @@ html:has(body.page-dark) {
 
 @media (max-width: 600px) {
   .fanta-alerts__header-content {
-    padding: clamp(28px, 8vw, 40px) clamp(20px, 6vw, 32px);
+    padding-top: 5%;
+    padding-bottom: clamp(28px, 8vw, 40px);
+    padding-inline: clamp(20px, 6vw, 32px);
+  }
+
+  .fanta-alerts__text {
+    max-width: 100%;
   }
 
   .fanta-alerts__play img {
