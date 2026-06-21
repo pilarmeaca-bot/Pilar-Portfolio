@@ -1573,16 +1573,55 @@ html:has(body.page-fanta) {
   padding-bottom: clamp(64px, 8vw, 100px);
 }
 
-.page-hello-fresh .project-intro--hellofresh .project-intro__grid,
-.page-fanta .project-intro--hellofresh .project-intro__grid {
+.page-fanta .project-intro--hellofresh {
+  padding-inline: 0;
+  container-type: inline-size;
+}
+
+.page-hello-fresh .project-intro--hellofresh .project-intro__grid {
   gap: clamp(64px, 10vw, 160px);
+}
+
+.page-fanta .project-intro--hellofresh .project-intro__grid {
+  width: 83.333333333%;
+  max-width: none;
+  margin-inline: auto;
+  padding-inline: 0;
+  box-sizing: border-box;
+  grid-template-columns: minmax(0, 722fr) minmax(0, 702fr);
+  column-gap: 13.277954933%;
 }
 
 .page-hello-fresh .project-intro--hellofresh .project-intro__title,
 .page-hello-fresh .project-intro--hellofresh .project-intro__meta,
 .page-hello-fresh .project-intro--hellofresh .project-intro__meta-item,
 .page-hello-fresh .project-intro--hellofresh .project-intro__desc,
-.page-hello-fresh .project-intro--hellofresh .project-intro__subheadline,
+.page-hello-fresh .project-intro--hellofresh .project-intro__subheadline {
+  font-family: var(--font-tiktok);
+}
+
+.page-hello-fresh .project-intro--hellofresh .project-intro__title {
+  font-weight: 700;
+  font-size: clamp(32px, 3vw, 48px);
+  letter-spacing: -0.03em;
+}
+
+.page-hello-fresh .project-intro--hellofresh .project-intro__meta {
+  font-size: clamp(14px, 1.1vw, 16px);
+  font-weight: 400;
+  color: var(--color-text);
+  gap: 0;
+}
+
+.page-hello-fresh .project-intro--hellofresh .project-intro__subheadline {
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: clamp(15px, 1.111vw, 16px);
+  font-weight: 700;
+  margin-bottom: 0;
+  opacity: 1;
+}
+
 .page-fanta .project-intro--hellofresh .project-intro__title,
 .page-fanta .project-intro--hellofresh .project-intro__meta,
 .page-fanta .project-intro--hellofresh .project-intro__meta-item,
@@ -1591,29 +1630,43 @@ html:has(body.page-fanta) {
   font-family: var(--font-tiktok);
 }
 
-.page-hello-fresh .project-intro--hellofresh .project-intro__title,
 .page-fanta .project-intro--hellofresh .project-intro__title {
-  font-weight: 700;
-  font-size: clamp(32px, 3vw, 48px);
-  letter-spacing: -0.03em;
+  color: #000;
+  font-size: 2.604166667cqw;
+  font-weight: 450;
+  font-variation-settings: normal;
+  letter-spacing: normal;
+  line-height: 1;
 }
 
-.page-hello-fresh .project-intro--hellofresh .project-intro__meta,
+.page-fanta .project-intro--hellofresh .project-intro__meta,
+.page-fanta .project-intro--hellofresh .project-intro__meta-item {
+  font-size: 1.145833333cqw;
+  font-weight: 350;
+  line-height: 1.4;
+  color: #505050;
+}
+
 .page-fanta .project-intro--hellofresh .project-intro__meta {
-  font-size: clamp(14px, 1.1vw, 16px);
-  font-weight: 400;
-  color: var(--color-text);
   gap: 0;
 }
 
-.page-hello-fresh .project-intro--hellofresh .project-intro__subheadline,
 .page-fanta .project-intro--hellofresh .project-intro__subheadline {
   text-transform: none;
   letter-spacing: normal;
-  font-size: clamp(15px, 1.111vw, 16px);
-  font-weight: 700;
+  color: #1E1E1E;
+  font-size: 1.302083333cqw;
+  font-weight: 550;
+  line-height: 1.35;
   margin-bottom: 0;
   opacity: 1;
+}
+
+.page-fanta .project-intro--hellofresh .project-intro__desc {
+  color: #1E1E1E;
+  font-size: 1.302083333cqw;
+  font-weight: 450;
+  line-height: 1.35;
 }
 
 .project-intro__subheadline {
