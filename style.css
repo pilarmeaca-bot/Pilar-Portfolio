@@ -1617,7 +1617,7 @@ button.nav__link {
 /* -- Responsive -- */
 @media (max-width: 1024px) {
   .project-hero-strip { grid-template-columns: repeat(2, 1fr); }
-  .theme-section { padding: 72px 0 60px; }
+  .theme-section { padding: 50px 0 60px; }
   .theme-section--dark,
   .theme-section--astro,
   .theme-section--hitman {
