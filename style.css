@@ -2230,7 +2230,7 @@ html:has(body.page-dark) {
 }
 
 .page-dark .project-intro--hellofresh .project-intro__desc-block {
-  margin-left: calc(200 * 100vw / 1920);
+  margin-left: 0;
   gap: calc(20 * 100vw / 1920);
 }
 
