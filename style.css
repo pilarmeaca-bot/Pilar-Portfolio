@@ -698,6 +698,12 @@ button.nav__link {
   background-color: #000000;
 }
 
+.theme-section--dark.layout--full {
+  width: 100vw;
+  max-width: none;
+  margin-inline: calc(50% - 50vw);
+}
+
 .theme-section--dark {
   padding-top: 0;
   padding-bottom: calc(170 * 100vw / 1920);
@@ -970,7 +976,19 @@ button.nav__link {
 }
 
 .theme-section--hitman::before {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  right: auto;
+  width: 100vw;
+  transform: translateX(-50%);
   background-color: #0a0a0a;
+}
+
+.theme-section--hitman.layout--full {
+  width: 100vw;
+  max-width: none;
+  margin-inline: calc(50% - 50vw);
 }
 
 .theme-section--hitman {
