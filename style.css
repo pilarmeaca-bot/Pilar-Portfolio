@@ -732,6 +732,13 @@ button.nav__link {
   margin-bottom: calc(89 * 100vw / 1920);
 }
 
+.theme-section--dark .theme-headline-wrapper .project-hero__image {
+  aspect-ratio: 1920 / 450;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
 .theme-section--dark .theme-content-block {
   margin-top: 0;
   margin-bottom: calc(89 * 100vw / 1920);
@@ -776,6 +783,13 @@ button.nav__link {
 
 .theme-section--astro .theme-headline-wrapper {
   margin-bottom: calc(68 * 100vw / 1920);
+}
+
+.theme-section--astro .theme-headline-wrapper .project-hero__image {
+  aspect-ratio: 1920 / 450;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
 }
 
 /* -- Astrology branded scenes -- */
