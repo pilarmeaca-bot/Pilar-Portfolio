@@ -2189,7 +2189,7 @@ html:has(body.page-dark) {
   isolation: isolate;
   background-color: transparent;
   font-family: var(--font-tiktok);
-  padding-top: calc(127 * 100vw / 1920);
+  padding-top: calc(50 * 100vw / 1920);
   padding-bottom: clamp(64px, 8vw, 100px);
   padding-inline: 0;
   container-type: inline-size;
@@ -2225,7 +2225,7 @@ html:has(body.page-dark) {
 
 .page-dark .project-intro--hellofresh .project-intro__meta,
 .page-dark .project-intro--hellofresh .project-intro__meta-item {
-  font-size: 1.145833333cqw;
+  font-size: calc(25 * 100vw / 1920);
   font-weight: 350;
   line-height: 1.4;
   color: var(--color-muted-on-dark);
@@ -2249,7 +2249,7 @@ html:has(body.page-dark) {
 
 .page-dark .project-intro--hellofresh .project-intro__desc {
   color: #E1E1E1;
-  font-size: 1.302083333cqw;
+  font-size: calc(25 * 100vw / 1920);
   font-weight: 450;
   line-height: 1.35;
   text-wrap: pretty;
@@ -2321,6 +2321,10 @@ html:has(body.page-dark) {
 
 .page-dark .bond-alerts__desc + .bond-alerts__desc {
   margin-top: 0;
+}
+
+.page-dark main p {
+  font-size: calc(25 * 100vw / 1920);
 }
 
 /* ==========================================================
