@@ -19,8 +19,8 @@
   --color-overlay: rgba(0, 0, 0, 0.30);
 
   --nav-height: 55px;
-  --vw-92: 92vw;
-  --nav-width: var(--vw-92);
+  --browser-92: min(92vw, 1766px);
+  --nav-width: var(--browser-92);
   --nav-top-offset: 20px;
   --nav-bottom-offset: 20px;
   --hero-max-h: 80vh;
@@ -68,8 +68,7 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: clip;
   padding-top: 0;
-  width: min(100%, var(--site-max-width));
-  margin-inline: auto;
+  width: 100%;
 }
 
 img {
@@ -649,7 +648,10 @@ button.nav__link {
   box-sizing: border-box;
 }
 
-/* Viewport width — N% of browser, always centered */
+/* Browser width — N% of viewport, always centered
+   browser-shell  → flex row, centers children in the browser
+   browser-92     → 92% of browser width */
+.browser-shell,
 .vw-shell {
   display: flex;
   justify-content: center;
@@ -659,22 +661,23 @@ button.nav__link {
   box-sizing: border-box;
 }
 
+.browser-92,
+.vw-block.vw-92 {
+  width: var(--browser-92);
+  max-width: var(--browser-92);
+  flex: 0 0 auto;
+  box-sizing: border-box;
+}
+
 .vw-block {
-  width: var(--vw-width);
-  max-width: var(--vw-width);
+  width: var(--vw-width, var(--browser-92));
+  max-width: var(--vw-width, var(--browser-92));
   flex: 0 0 auto;
   box-sizing: border-box;
 }
 
 .vw-92 {
-  --vw-width: var(--vw-92);
-}
-
-.browser-92 {
-  width: var(--vw-92);
-  max-width: var(--vw-92);
-  flex: 0 0 auto;
-  box-sizing: border-box;
+  --vw-width: var(--browser-92);
 }
 
 /* Layout width utilities
@@ -744,15 +747,18 @@ button.nav__link {
   display: block;
 }
 
+.project-hero.browser-shell .project-hero__image,
 .project-hero.vw-shell .project-hero__image,
-.project-hero.layout--medium .project-hero__image {
-  width: var(--vw-92);
-  max-width: var(--vw-92);
+.project-hero.layout--medium .project-hero__image,
+.project-hero__image.browser-92 {
+  width: var(--browser-92);
+  max-width: var(--browser-92);
   height: auto;
   display: block;
   flex: 0 0 auto;
 }
 
+.project-hero.browser-shell,
 .project-hero.vw-shell,
 .project-hero.layout--medium {
   display: flex;
@@ -766,9 +772,8 @@ button.nav__link {
 .nav.layout--medium,
 .nav.layout--wide,
 #main-nav {
-  width: var(--vw-92);
-  min-width: var(--vw-92);
-  max-width: var(--vw-92);
+  width: var(--nav-width);
+  max-width: var(--nav-width);
   margin-inline: auto;
   flex: 0 0 auto;
   box-sizing: border-box;
@@ -2108,6 +2113,7 @@ html:has(body.page-fanta) {
   gap: 10px;
 }
 
+.hellofresh-stack.browser-shell,
 .hellofresh-stack.vw-shell,
 .hellofresh-stack.layout--medium {
   display: flex;
@@ -2175,12 +2181,13 @@ html:has(body.page-fanta) {
   display: block;
 }
 
+.hellofresh-stack.browser-shell .hellofresh-media video,
 .hellofresh-stack.vw-shell .hellofresh-media video,
 .hellofresh-stack.layout--medium .hellofresh-media video,
 .hellofresh-media__image.browser-92,
 .hellofresh-media video.hellofresh-media__image.browser-92 {
-  width: var(--vw-92);
-  max-width: var(--vw-92);
+  width: var(--browser-92);
+  max-width: var(--browser-92);
   height: auto;
   display: block;
   object-fit: unset;
@@ -2761,9 +2768,13 @@ html:has(body.page-dark) {
 .capn-takeover {
   position: relative;
   isolation: isolate;
-  width: 100%;
   overflow: hidden;
   background-color: #1a4a8c;
+  /* browser-92: 92% del ancho del browser, centrado */
+  width: var(--browser-92);
+  max-width: var(--browser-92);
+  margin-inline: auto;
+  box-sizing: border-box;
 }
 
 .capn-takeover__bkg {
@@ -2771,7 +2782,7 @@ html:has(body.page-dark) {
   top: 0;
   bottom: 0;
   left: 50%;
-  width: 100vw;
+  width: var(--browser-92);
   height: 100%;
   transform: translateX(-50%);
   object-fit: cover;
@@ -3370,6 +3381,10 @@ html:has(body.page-dark) {
   gap: 0;
   margin-top: clamp(16px, 2vw, 24px);
   margin-bottom: 0;
+  width: var(--browser-92);
+  max-width: var(--browser-92);
+  margin-inline: auto;
+  box-sizing: border-box;
 }
 
 .fanta-takeover__header {
@@ -3388,7 +3403,12 @@ html:has(body.page-dark) {
 .fanta-takeover__header-content {
   container-type: inline-size;
   position: absolute;
-  inset: 0;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--browser-92);
+  max-width: var(--browser-92);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -3426,9 +3446,12 @@ html:has(body.page-dark) {
 
 .fanta-takeover__media {
   position: relative;
-  width: 100%;
+  width: var(--browser-92);
+  max-width: var(--browser-92);
+  margin-inline: auto;
   line-height: 0;
   margin-bottom: 1.7%;
+  box-sizing: border-box;
 }
 
 .fanta-takeover__video {
@@ -3485,6 +3508,10 @@ html:has(body.page-dark) {
   flex-direction: column;
   gap: 0;
   margin-bottom: 1.7%;
+  width: var(--browser-92);
+  max-width: var(--browser-92);
+  margin-inline: auto;
+  box-sizing: border-box;
 }
 
 .fanta-branded__header {
@@ -3502,7 +3529,12 @@ html:has(body.page-dark) {
 
 .fanta-branded__header-content {
   position: absolute;
-  inset: 0;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--browser-92);
+  max-width: var(--browser-92);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -3562,10 +3594,8 @@ html:has(body.page-dark) {
   background-position: center center;
 }
 
-.fanta-branded__videos.layout--wide {
+.fanta-branded__videos {
   width: 100%;
-  max-width: var(--site-max-width);
-  margin-inline: auto;
 }
 
 .fanta-branded__stack {
@@ -3643,6 +3673,10 @@ html:has(body.page-dark) {
   flex-direction: column;
   gap: 0;
   margin-bottom: clamp(64px, 8vw, 96px);
+  width: var(--browser-92);
+  max-width: var(--browser-92);
+  margin-inline: auto;
+  box-sizing: border-box;
 }
 
 .fanta-alerts__header {
@@ -3660,7 +3694,12 @@ html:has(body.page-dark) {
 
 .fanta-alerts__header-content {
   position: absolute;
-  inset: 0;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--browser-92);
+  max-width: var(--browser-92);
   display: flex;
   flex-direction: column;
   align-items: center;
