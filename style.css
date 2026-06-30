@@ -179,12 +179,14 @@ ul {
   width: 62px;
   height: var(--nav-height);
   line-height: 0;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   transition: background 0.25s ease-in-out;
 }
 
 .nav__logo--active {
-  background: #000;
+  background: rgba(0, 0, 0, 0.85);
 }
 
 .nav__logo-img {
@@ -236,7 +238,9 @@ ul {
   padding: 0;
   border: 0;
   border-radius: 0;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   text-decoration: none;
   cursor: pointer;
   box-sizing: border-box;
@@ -264,7 +268,7 @@ ul {
 }
 
 .nav__link--active {
-  background: #000;
+  background: rgba(0, 0, 0, 0.85);
   color: #FFF;
   font-family: var(--font-tiktok);
   font-size: 16.133px;
@@ -2427,7 +2431,7 @@ html:has(body.page-dark) {
 
 /* Navbar invertida: fondo negro, texto blanco */
 .page-dark .nav__logo {
-  background: #000;
+  background: rgba(0, 0, 0, 0.85);
 }
 
 .page-dark .nav__logo-img {
@@ -2435,7 +2439,7 @@ html:has(body.page-dark) {
 }
 
 .page-dark .nav__logo:hover {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.85);
 }
 
 .page-dark .nav__logo:hover .nav__logo-img {
@@ -2443,7 +2447,7 @@ html:has(body.page-dark) {
 }
 
 .page-dark .nav__logo--active {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.85);
 }
 
 .page-dark .nav__logo--active .nav__logo-img {
@@ -2451,7 +2455,7 @@ html:has(body.page-dark) {
 }
 
 .page-dark .nav__link {
-  background: #000;
+  background: rgba(0, 0, 0, 0.85);
   color: #fff;
   font-family: var(--font-tiktok);
   font-size: 16.133px;
@@ -2469,7 +2473,7 @@ html:has(body.page-dark) {
 }
 
 .page-dark .nav__link--active {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.85);
   color: #000;
   font-family: var(--font-tiktok);
   font-size: 16.133px;
