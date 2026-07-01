@@ -19,17 +19,21 @@
   --color-overlay: rgba(0, 0, 0, 0.30);
 
   --nav-height: 55px;
-  --browser-92: min(92vw, 1766px);
-  --browser-86: min(86vw, 1651px);
-  --browser-49: min(49vw, 941px);
-  --browser-83: min(83vw, 1594px);
-  --nav-width: var(--browser-92);
   --nav-top-offset: 20px;
   --nav-bottom-offset: 20px;
   --hero-max-h: 80vh;
   --design-width: 1440px;
   --site-max-width: 1920px;
+  --design-base: 1920;
+  /* Scales below 1920px viewport; freezes at the @1920 value above that width.
+     Usage: calc(VALUE / var(--design-base) * var(--viewport-1920)) */
   --viewport-1920: min(100vw, var(--site-max-width));
+  /* Browser width bands — % of capped viewport */
+  --browser-92: calc(1766 / 1920 * var(--viewport-1920));
+  --browser-86: calc(1651 / 1920 * var(--viewport-1920));
+  --browser-49: calc(941 / 1920 * var(--viewport-1920));
+  --browser-83: calc(1594 / 1920 * var(--viewport-1920));
+  --nav-width: var(--browser-92);
   --layout-narrow-max: 1400px;
   --layout-narrow-ratio: 0.729;
   --layout-medium-ratio: 0.94;
@@ -552,8 +556,8 @@ button.nav__link {
    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .work-grid {
   --work-grid-gap: 80px;
-  --work-grid-gap-tight: min(calc(56 / 1920 * 100vw), 56px);
-  --work-grid-gap-after-title: min(calc(18 / 1920 * 100vw), 18px);
+  --work-grid-gap-tight: calc(56 / 1920 * var(--viewport-1920));
+  --work-grid-gap-after-title: calc(18 / 1920 * var(--viewport-1920));
   --work-grid-nav-gap: calc(72 / 1920 * var(--viewport-1920));
   display: flex;
   flex-direction: column;
@@ -594,8 +598,8 @@ button.nav__link {
 .work-pair {
   width: var(--browser-92);
   max-width: var(--browser-92);
-  --pair-gap: min(calc(16 / 1920 * 100vw), 16px);
-  --pair-image-h: min(calc(673 / 1920 * 100vw), 673px);
+  --pair-gap: calc(16 / 1920 * var(--viewport-1920));
+  --pair-image-h: calc(673 / 1920 * var(--viewport-1920));
   display: grid;
   grid-template-columns: 1195fr 531fr;
   gap: var(--pair-gap);
@@ -603,7 +607,7 @@ button.nav__link {
 }
 
 .work-pair--reversed {
-  --pair-image-h: min(calc(559 / 1920 * 100vw), 559px);
+  --pair-image-h: calc(559 / 1920 * var(--viewport-1920));
   grid-template-columns: 602fr 1123fr;
 }
 
@@ -1057,7 +1061,7 @@ button.nav__link {
 .project-intro__title {
   width: 100%;
   font-family: var(--font-display);
-  font-size: clamp(28px, 2.5vw, 36px);
+  font-size: calc(36 / 1920 * var(--viewport-1920));
   font-weight: 600;
   font-variation-settings: "wdth" 95;
   letter-spacing: -0.04em;
@@ -1091,11 +1095,12 @@ button.nav__link {
 }
 
 .project-intro__desc {
-  font-family: var(--font-body);
-  font-size: clamp(15px, 1.111vw, 16px);
-  font-weight: 400;
-  line-height: 1.6;
-  color: var(--color-text);
+  color: #1E1E1E;
+  font-family: "TikTok Sans", sans-serif;
+  font-size: calc(25 / 1920 * var(--viewport-1920));
+  font-style: normal;
+  font-weight: 550;
+  line-height: 135%;
   margin: 0;
 }
 
@@ -1158,12 +1163,12 @@ button.nav__link {
 
 .theme-section--dark {
   padding-top: 0;
-  padding-bottom: calc(170 * 100vw / 1920);
+  padding-bottom: calc(170 / 1920 * var(--viewport-1920));
   color: #ffffff;
 }
 
 .theme-section--dark .theme-content-block__label {
-  font-size: clamp(16px, 1.667vw, 24px);
+  font-size: calc(24 / 1920 * var(--viewport-1920));
   font-weight: 600;
   letter-spacing: 0.1em;
   color: #c9a84b;
@@ -1173,7 +1178,7 @@ button.nav__link {
 
 .theme-section--dark .theme-content-block__label-img {
   display: block;
-  width: calc(526 * 100vw / 1920);
+  width: calc(526 / 1920 * var(--viewport-1920));
   max-width: 100%;
   height: auto;
   margin-inline: auto;
@@ -1181,7 +1186,7 @@ button.nav__link {
 }
 
 .theme-section--dark .theme-headline-wrapper {
-  margin-bottom: calc(89 * 100vw / 1920);
+  margin-bottom: calc(89 / 1920 * var(--viewport-1920));
 }
 
 .theme-section--dark .theme-headline-wrapper .project-hero__image {
@@ -1193,11 +1198,11 @@ button.nav__link {
 
 .theme-section--dark .theme-content-block {
   margin-top: 0;
-  margin-bottom: calc(89 * 100vw / 1920);
+  margin-bottom: calc(89 / 1920 * var(--viewport-1920));
 }
 
 .theme-section--dark .scenes-stack {
-  margin-bottom: calc(112 * 100vw / 1920);
+  margin-bottom: calc(112 / 1920 * var(--viewport-1920));
 }
 
 .theme-section--dark .theme-content-block__desc {
@@ -1234,7 +1239,7 @@ button.nav__link {
 }
 
 .theme-section--astro .theme-headline-wrapper {
-  margin-bottom: calc(68 * 100vw / 1920);
+  margin-bottom: calc(68 / 1920 * var(--viewport-1920));
 }
 
 .theme-section--astro .theme-headline-wrapper .project-hero__image {
@@ -1256,20 +1261,20 @@ button.nav__link {
   width: 100%;
   box-sizing: border-box;
   padding-inline: var(--content-margin);
-  margin-bottom: calc(68 * 100vw / 1920);
+  margin-bottom: calc(68 / 1920 * var(--viewport-1920));
 }
 
 .astro-branded__label {
   color: #FFF0D7;
   text-align: center;
-  -webkit-text-stroke-width: calc(0.77 * 100vw / 1920);
+  -webkit-text-stroke-width: calc(0.77 / 1920 * var(--viewport-1920));
   -webkit-text-stroke-color: #000;
   font-family: 'Raleway', sans-serif;
   font-size: calc(60 / 1920 * var(--viewport-1920));
   font-style: normal;
   font-weight: 400;
   line-height: 100%;
-  letter-spacing: calc(-0.6 * 100vw / 1920);
+  letter-spacing: calc(-0.6 / 1920 * var(--viewport-1920));
   text-transform: none;
   margin-bottom: 16px;
 }
@@ -1286,7 +1291,7 @@ button.nav__link {
   width: 100%;
   max-width: none;
   white-space: nowrap;
-  margin: 0 0 calc(20 * 100vw / 1920);
+  margin: 0 0 calc(20 / 1920 * var(--viewport-1920));
 }
 
 .astro-branded__desc:last-child {
@@ -1296,8 +1301,8 @@ button.nav__link {
 .astro-scenes-stack {
   display: flex;
   flex-direction: column;
-  gap: calc(20 * 100vw / 1920);
-  margin-bottom: calc(100 * 100vw / 1920);
+  gap: calc(20 / 1920 * var(--viewport-1920));
+  margin-bottom: calc(100 / 1920 * var(--viewport-1920));
 }
 
 .astro-scene {
@@ -1357,8 +1362,8 @@ button.nav__link {
 
 /* -- Astrology alerts -- */
 .astro-alerts {
-  margin-top: calc(100 * 100vw / 1920);
-  margin-bottom: calc(136 * 100vw / 1920);
+  margin-top: calc(100 / 1920 * var(--viewport-1920));
+  margin-bottom: calc(136 / 1920 * var(--viewport-1920));
   padding-bottom: 0;
   padding-inline: 0;
   width: 100%;
@@ -1370,20 +1375,20 @@ button.nav__link {
   width: 100%;
   box-sizing: border-box;
   padding-inline: var(--content-margin);
-  margin-bottom: calc(68 * 100vw / 1920);
+  margin-bottom: calc(68 / 1920 * var(--viewport-1920));
 }
 
 .astro-alerts__title {
   color: #FFF0D7;
   text-align: center;
-  -webkit-text-stroke-width: calc(0.77 * 100vw / 1920);
+  -webkit-text-stroke-width: calc(0.77 / 1920 * var(--viewport-1920));
   -webkit-text-stroke-color: #000;
   font-family: 'Raleway', sans-serif;
   font-size: calc(60 / 1920 * var(--viewport-1920));
   font-style: normal;
   font-weight: 400;
   line-height: 100%;
-  letter-spacing: calc(-0.6 * 100vw / 1920);
+  letter-spacing: calc(-0.6 / 1920 * var(--viewport-1920));
   text-transform: none;
   margin-bottom: 16px;
 }
@@ -1400,7 +1405,7 @@ button.nav__link {
   width: 100%;
   max-width: none;
   white-space: nowrap;
-  margin: 0 0 calc(20 * 100vw / 1920);
+  margin: 0 0 calc(20 / 1920 * var(--viewport-1920));
 }
 
 .astro-alerts__desc:last-child {
@@ -1462,7 +1467,7 @@ button.nav__link {
 }
 
 .theme-section--hitman {
-  padding: 0 0 calc(80 * 100vw / 1920);
+  padding: 0 0 calc(80 / 1920 * var(--viewport-1920));
   margin-top: 0;
   color: #ffffff;
 }
@@ -1474,7 +1479,7 @@ button.nav__link {
 }
 
 .theme-section--hitman .theme-headline-wrapper {
-  margin-bottom: calc(117 * 100vw / 1920);
+  margin-bottom: calc(117 / 1920 * var(--viewport-1920));
 }
 
 /* -- Hitman branded scenes -- */
@@ -1486,7 +1491,7 @@ button.nav__link {
   text-align: center;
   width: 100%;
   box-sizing: border-box;
-  margin-bottom: calc(86 * 100vw / 1920);
+  margin-bottom: calc(86 / 1920 * var(--viewport-1920));
 }
 
 .hitman-branded__label-img {
@@ -1506,7 +1511,7 @@ button.nav__link {
   width: 100%;
   max-width: none;
   white-space: nowrap;
-  margin: 0 0 calc(20 * 100vw / 1920);
+  margin: 0 0 calc(20 / 1920 * var(--viewport-1920));
   text-align: center;
 }
 
@@ -1520,7 +1525,7 @@ button.nav__link {
   gap: 6px;
   max-width: 1216px;
   margin-inline: auto;
-  margin-bottom: calc(80 * 100vw / 1920);
+  margin-bottom: calc(80 / 1920 * var(--viewport-1920));
 }
 
 .hitman-scene {
@@ -1596,7 +1601,7 @@ button.nav__link {
 
 /* -- Hitman alerts -- */
 .hitman-alerts {
-  margin-top: calc(80 * 100vw / 1920);
+  margin-top: calc(80 / 1920 * var(--viewport-1920));
   padding-inline: var(--content-margin);
   padding-bottom: 20px;
 }
@@ -1709,7 +1714,7 @@ button.nav__link {
 .holiday-pack {
   position: relative;
   z-index: 1;
-  padding-top: calc(112 * 100vw / 1920);
+  padding-top: calc(112 / 1920 * var(--viewport-1920));
 }
 
 .holiday-pack__header {
@@ -1719,17 +1724,17 @@ button.nav__link {
   width: 100%;
   box-sizing: border-box;
   text-align: center;
-  margin-bottom: calc(60 * 100vw / 1920);
+  margin-bottom: calc(60 / 1920 * var(--viewport-1920));
   padding-inline: var(--content-margin);
 }
 
 .holiday-pack__title {
   display: block;
-  width: min(473px, calc(473 * 100vw / 1920));
+  width: min(473px, calc(473 / 1920 * var(--viewport-1920)));
   max-width: 100%;
   height: auto;
   margin-inline: auto;
-  margin-bottom: calc(28 * 100vw / 1920);
+  margin-bottom: calc(28 / 1920 * var(--viewport-1920));
 }
 
 .holiday-pack__desc {
@@ -1804,7 +1809,7 @@ button.nav__link {
 
 .astro-heading {
   font-family: var(--font-display);
-  font-size: clamp(64px, 10vw, 144px);
+  font-size: calc(144 / 1920 * var(--viewport-1920));
   font-weight: 700;
   font-variation-settings: "wdth" 100;
   letter-spacing: -0.04em;
@@ -1847,7 +1852,7 @@ button.nav__link {
 .scenes-stack {
   display: flex;
   flex-direction: column;
-  gap: calc(20 * 100vw / 1920);
+  gap: calc(20 / 1920 * var(--viewport-1920));
   box-sizing: border-box;
   margin-bottom: 80px;
 }
@@ -1914,19 +1919,19 @@ button.nav__link {
 
 /* -- Bond Alerts section -- */
 .bond-alerts {
-  margin-top: calc(100 * 100vw / 1920);
+  margin-top: calc(100 / 1920 * var(--viewport-1920));
 }
 
 .bond-alerts__header {
   text-align: center;
   width: 100%;
   box-sizing: border-box;
-  margin-bottom: calc(54 * 100vw / 1920);
+  margin-bottom: calc(54 / 1920 * var(--viewport-1920));
   padding-inline: var(--content-margin);
 }
 
 .bond-alerts__title {
-  width: calc(229 * 100vw / 1920);
+  width: calc(229 / 1920 * var(--viewport-1920));
   max-width: 100%;
   height: auto;
   margin-inline: auto;
@@ -2014,7 +2019,7 @@ button.nav__link {
 
 .other-projects__label {
   font-family: var(--font-body);
-  font-size: clamp(14px, 1.111vw, 16px);
+  font-size: calc(16 / 1920 * var(--viewport-1920));
   font-weight: 400;
   text-align: left;
   color: rgba(255, 255, 255, 0.55);
@@ -2121,7 +2126,7 @@ button.nav__link {
   .scenes-row { grid-template-columns: 1fr; gap: 4px; }
   .astro-scene__play--talk { left: 40%; top: 55%; }
   .alerts-grid--3col { grid-template-columns: repeat(2, 1fr); }
-  .astro-heading { font-size: clamp(48px, 8vw, 96px); }
+  .astro-heading { font-size: calc(96 / 1920 * var(--viewport-1920)); }
 }
 
 @media (max-width: 520px) {
@@ -2216,7 +2221,7 @@ html:has(body.page-fanta) {
 }
 
 .page-fortnite .project-intro--hellofresh {
-  padding-top: calc(127 * 100vw / 1920);
+  padding-top: calc(127 / 1920 * var(--viewport-1920));
 }
 
 .page-hello-fresh .project-intro--hellofresh .project-intro__grid,
@@ -2260,11 +2265,13 @@ html:has(body.page-fanta) {
 .page-capn-crunch .project-intro--hellofresh .project-intro__title,
 .page-fortnite .project-intro--hellofresh .project-intro__title {
   color: #000;
-  font-size: 2.604166667cqw;
+  font-family: "TikTok Sans", sans-serif;
+  font-size: calc(50 / 1920 * var(--viewport-1920));
+  font-style: normal;
   font-weight: 450;
   font-variation-settings: normal;
   letter-spacing: normal;
-  line-height: 1;
+  line-height: 100%;
 }
 
 .page-hello-fresh .project-intro--hellofresh .project-intro__meta,
@@ -2275,10 +2282,12 @@ html:has(body.page-fanta) {
 .page-capn-crunch .project-intro--hellofresh .project-intro__meta-item,
 .page-fortnite .project-intro--hellofresh .project-intro__meta,
 .page-fortnite .project-intro--hellofresh .project-intro__meta-item {
-  font-size: 1.145833333cqw;
-  font-weight: 350;
-  line-height: 1.4;
   color: #505050;
+  font-family: "TikTok Sans", sans-serif;
+  font-size: calc(22 / 1920 * var(--viewport-1920));
+  font-style: normal;
+  font-weight: 350;
+  line-height: 140%;
 }
 
 .page-hello-fresh .project-intro--hellofresh .project-intro__meta,
@@ -2292,12 +2301,14 @@ html:has(body.page-fanta) {
 .page-fanta .project-intro--hellofresh .project-intro__subheadline,
 .page-capn-crunch .project-intro--hellofresh .project-intro__subheadline,
 .page-fortnite .project-intro--hellofresh .project-intro__subheadline {
-  text-transform: none;
-  letter-spacing: normal;
   color: #1E1E1E;
-  font-size: 1.302083333cqw;
+  font-family: "TikTok Sans", sans-serif;
+  font-size: calc(25 / 1920 * var(--viewport-1920));
+  font-style: normal;
   font-weight: 550;
-  line-height: 1.35;
+  line-height: 135%;
+  letter-spacing: normal;
+  text-transform: none;
   margin-bottom: 0;
   opacity: 1;
   text-wrap: balance;
@@ -2308,9 +2319,9 @@ html:has(body.page-fanta) {
 .page-capn-crunch .project-intro--hellofresh .project-intro__desc,
 .page-fortnite .project-intro--hellofresh .project-intro__desc {
   color: #1E1E1E;
-  font-size: 1.302083333cqw;
-  font-weight: 450;
-  line-height: 1.35;
+  font-size: calc(25 / 1920 * var(--viewport-1920));
+  font-weight: 550;
+  line-height: 135%;
   text-wrap: pretty;
 }
 
@@ -2636,7 +2647,7 @@ html:has(body.page-fanta) {
 
 .project-container .other-projects__label {
   font-family: var(--font-display);
-  font-size: clamp(14px, 1.111vw, 16px);
+  font-size: calc(16 / 1920 * var(--viewport-1920));
   font-weight: 400;
   text-transform: none;
   text-align: left;
@@ -2838,19 +2849,23 @@ html:has(body.page-dark) {
 
 .page-dark .project-intro--hellofresh .project-intro__title {
   color: #fff;
-  font-size: 2.604166667cqw;
+  font-family: "TikTok Sans", sans-serif;
+  font-size: calc(50 / 1920 * var(--viewport-1920));
+  font-style: normal;
   font-weight: 450;
   font-variation-settings: normal;
   letter-spacing: normal;
-  line-height: 1;
+  line-height: 100%;
 }
 
 .page-dark .project-intro--hellofresh .project-intro__meta,
 .page-dark .project-intro--hellofresh .project-intro__meta-item {
-  font-size: 1.145833333cqw;
-  font-weight: 350;
-  line-height: 1.4;
   color: var(--color-muted-on-dark);
+  font-family: "TikTok Sans", sans-serif;
+  font-size: calc(22 / 1920 * var(--viewport-1920));
+  font-style: normal;
+  font-weight: 350;
+  line-height: 140%;
 }
 
 .page-dark .project-intro--hellofresh .project-intro__meta {
@@ -2858,12 +2873,14 @@ html:has(body.page-dark) {
 }
 
 .page-dark .project-intro--hellofresh .project-intro__subheadline {
-  text-transform: none;
-  letter-spacing: normal;
   color: #E1E1E1;
-  font-size: 1.302083333cqw;
+  font-family: "TikTok Sans", sans-serif;
+  font-size: calc(25 / 1920 * var(--viewport-1920));
+  font-style: normal;
   font-weight: 550;
-  line-height: 1.35;
+  line-height: 135%;
+  letter-spacing: normal;
+  text-transform: none;
   margin-bottom: 0;
   opacity: 1;
   text-wrap: balance;
@@ -2871,9 +2888,9 @@ html:has(body.page-dark) {
 
 .page-dark .project-intro--hellofresh .project-intro__desc {
   color: #E1E1E1;
-  font-size: 1.302083333cqw;
-  font-weight: 450;
-  line-height: 1.35;
+  font-size: calc(25 / 1920 * var(--viewport-1920));
+  font-weight: 550;
+  line-height: 135%;
   text-wrap: pretty;
 }
 
@@ -2904,10 +2921,10 @@ html:has(body.page-dark) {
   font-style: normal;
   font-weight: 400;
   line-height: 140%;
-  letter-spacing: calc(0.26 * 100vw / 1920);
+  letter-spacing: calc(0.26 / 1920 * var(--viewport-1920));
   text-transform: none;
   max-width: none;
-  margin: 0 0 calc(20 * 100vw / 1920);
+  margin: 0 0 calc(20 / 1920 * var(--viewport-1920));
   opacity: 1;
   white-space: nowrap;
   text-wrap: normal;
@@ -3168,12 +3185,12 @@ html:has(body.page-dark) {
   text-align: center;
   line-height: normal;
   width: 100%;
-  max-width: calc(1000 * 100vw / 1920);
+  max-width: calc(1000 / 1920 * var(--viewport-1920));
   margin-inline: auto;
 }
 
 .capn-takeover__logo {
-  width: calc(278 * 100vw / 1920);
+  width: calc(278 / 1920 * var(--viewport-1920));
   max-width: 100%;
   height: auto;
   display: block;
@@ -3189,10 +3206,10 @@ html:has(body.page-dark) {
   font-style: normal;
   font-weight: 600;
   line-height: 140%;
-  letter-spacing: calc(0.26 * 100vw / 1920);
+  letter-spacing: calc(0.26 / 1920 * var(--viewport-1920));
   text-transform: none;
   max-width: 100%;
-  margin: 0 0 calc(36.4 * 100vw / 1920);
+  margin: 0 0 calc(36.4 / 1920 * var(--viewport-1920));
 }
 
 .capn-takeover__text:last-child {
@@ -3227,41 +3244,41 @@ html:has(body.page-dark) {
 }
 
 .page-fortnite .capn-takeover__logo {
-  width: calc(532 * 100vw / 1920);
+  width: calc(532 / 1920 * var(--viewport-1920));
   max-width: 100%;
   height: auto;
 }
 
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-takeover__header:last-of-type .capn-takeover__logo {
-  width: calc(234 * 100vw / 1920);
-  height: calc(53 * 100vw / 1920);
+  width: calc(234 / 1920 * var(--viewport-1920));
+  height: calc(53 / 1920 * var(--viewport-1920));
   max-width: 100%;
   object-fit: contain;
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-scenes__stack + .capn-takeover__header .capn-takeover__logo {
-  width: calc(340 * 100vw / 1920);
+  width: calc(340 / 1920 * var(--viewport-1920));
   max-width: 100%;
   height: auto;
-  margin-bottom: calc(32 * 100vw / 1920);
+  margin-bottom: calc(32 / 1920 * var(--viewport-1920));
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-takeover__media + .capn-takeover__header {
-  margin-top: calc(103 * 100vw / 1920);
-  padding-bottom: calc(293 * 100vw / 1920);
+  margin-top: calc(103 / 1920 * var(--viewport-1920));
+  padding-bottom: calc(293 / 1920 * var(--viewport-1920));
   padding-top: 0;
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-takeover__media + .capn-takeover__header .capn-takeover__logo {
-  width: calc(234 * 100vw / 1920);
-  height: calc(53 * 100vw / 1920);
+  width: calc(234 / 1920 * var(--viewport-1920));
+  height: calc(53 / 1920 * var(--viewport-1920));
   max-width: 100%;
   object-fit: contain;
-  margin-bottom: calc(32 * 100vw / 1920);
+  margin-bottom: calc(32 / 1920 * var(--viewport-1920));
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-takeover__media + .capn-takeover__header .capn-takeover__text {
-  margin-bottom: calc(18.2 * 100vw / 1920);
+  margin-bottom: calc(18.2 / 1920 * var(--viewport-1920));
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-takeover__media + .capn-takeover__header .capn-takeover__text:last-child {
@@ -3269,7 +3286,7 @@ html:has(body.page-dark) {
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-takeover__media + .capn-takeover__header .capn-takeover__copy {
-  margin-bottom: calc(64 * 100vw / 1920);
+  margin-bottom: calc(64 / 1920 * var(--viewport-1920));
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-takeover__media + .capn-takeover__header .capn-takeover__alert-video {
@@ -3277,13 +3294,13 @@ html:has(body.page-dark) {
 }
 
 .page-fortnite .capn-takeover__image {
-  width: calc(674 * 100vw / 1920);
+  width: calc(674 / 1920 * var(--viewport-1920));
   max-width: 100%;
   height: auto;
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-takeover__image {
-  width: calc(589 * 100vw / 1920);
+  width: calc(589 / 1920 * var(--viewport-1920));
   max-width: 100%;
   height: auto;
 }
@@ -3294,8 +3311,8 @@ html:has(body.page-dark) {
 }
 
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-takeover__stack {
-  margin-top: calc(79 * 100vw / 1920);
-  margin-bottom: calc(89 * 100vw / 1920);
+  margin-top: calc(79 / 1920 * var(--viewport-1920));
+  margin-bottom: calc(89 / 1920 * var(--viewport-1920));
 }
 
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-takeover__stack + .capn-takeover__header {
@@ -3304,21 +3321,21 @@ html:has(body.page-dark) {
 }
 
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-takeover__stack + .capn-takeover__header + .capn-scenes__stack {
-  margin-top: calc(79 * 100vw / 1920);
+  margin-top: calc(79 / 1920 * var(--viewport-1920));
   padding-top: 0;
 }
 
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-takeover__stack + .capn-takeover__header .capn-takeover__logo {
-  margin-bottom: calc(32 * 100vw / 1920);
+  margin-bottom: calc(32 / 1920 * var(--viewport-1920));
 }
 
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-takeover__stack + .capn-takeover__header .capn-takeover__text {
-  margin-bottom: calc(18.2 * 100vw / 1920);
+  margin-bottom: calc(18.2 / 1920 * var(--viewport-1920));
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-takeover__stack {
-  margin-top: calc(113 * 100vw / 1920);
-  margin-bottom: calc(66 * 100vw / 1920);
+  margin-top: calc(113 / 1920 * var(--viewport-1920));
+  margin-bottom: calc(66 / 1920 * var(--viewport-1920));
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-takeover__stack + .capn-takeover__header {
@@ -3327,16 +3344,16 @@ html:has(body.page-dark) {
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-takeover__stack + .capn-takeover__header + .capn-scenes__stack {
-  margin-top: calc(155 * 100vw / 1920);
+  margin-top: calc(155 / 1920 * var(--viewport-1920));
   padding-top: 0;
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-takeover__stack + .capn-takeover__header .capn-takeover__logo {
-  margin-bottom: calc(32 * 100vw / 1920);
+  margin-bottom: calc(32 / 1920 * var(--viewport-1920));
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-takeover__stack + .capn-takeover__header .capn-takeover__text {
-  margin-bottom: calc(18.2 * 100vw / 1920);
+  margin-bottom: calc(18.2 / 1920 * var(--viewport-1920));
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-takeover__stack + .capn-takeover__header .capn-takeover__text:last-child {
@@ -3354,21 +3371,21 @@ html:has(body.page-dark) {
 }
 
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-scenes__stack + .capn-takeover__header {
-  margin-top: calc(134 * 100vw / 1920);
+  margin-top: calc(134 / 1920 * var(--viewport-1920));
   padding-top: 0;
-  padding-bottom: calc(160 * 100vw / 1920);
+  padding-bottom: calc(160 / 1920 * var(--viewport-1920));
 }
 
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-scenes__stack + .capn-takeover__header .capn-takeover__logo {
-  margin-bottom: calc(32 * 100vw / 1920);
+  margin-bottom: calc(32 / 1920 * var(--viewport-1920));
 }
 
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-scenes__stack + .capn-takeover__header .capn-takeover__text {
-  margin-bottom: calc(18.2 * 100vw / 1920);
+  margin-bottom: calc(18.2 / 1920 * var(--viewport-1920));
 }
 
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-scenes__stack + .capn-takeover__header .capn-takeover__copy {
-  margin-bottom: calc(64 * 100vw / 1920);
+  margin-bottom: calc(64 / 1920 * var(--viewport-1920));
 }
 
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-scenes__stack + .capn-takeover__header .capn-takeover__alert-video {
@@ -3380,13 +3397,13 @@ html:has(body.page-dark) {
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-scenes__stack + .capn-takeover__header {
-  margin-top: calc(103 * 100vw / 1920);
-  margin-bottom: calc(89 * 100vw / 1920);
+  margin-top: calc(103 / 1920 * var(--viewport-1920));
+  margin-bottom: calc(89 / 1920 * var(--viewport-1920));
   padding-bottom: 0;
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-scenes__stack + .capn-takeover__header .capn-takeover__text {
-  margin-bottom: calc(18.2 * 100vw / 1920);
+  margin-bottom: calc(18.2 / 1920 * var(--viewport-1920));
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-scenes__stack + .capn-takeover__header .capn-takeover__text:last-child {
@@ -3396,7 +3413,7 @@ html:has(body.page-dark) {
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-takeover__media {
   display: flex;
   flex-direction: column;
-  gap: calc(20 * 100vw / 1920);
+  gap: calc(20 / 1920 * var(--viewport-1920));
   width: 100%;
   line-height: 0;
 }
@@ -3503,7 +3520,7 @@ html:has(body.page-dark) {
 }
 
 .capn-alerts__title {
-  width: calc(188 * 100vw / 1920);
+  width: calc(188 / 1920 * var(--viewport-1920));
   max-width: 100%;
   height: auto;
   display: block;
@@ -3519,10 +3536,10 @@ html:has(body.page-dark) {
   font-style: normal;
   font-weight: 600;
   line-height: 140%;
-  letter-spacing: calc(0.26 * 100vw / 1920);
+  letter-spacing: calc(0.26 / 1920 * var(--viewport-1920));
   text-transform: none;
   max-width: 100%;
-  margin: 0 0 calc(36.4 * 100vw / 1920);
+  margin: 0 0 calc(36.4 / 1920 * var(--viewport-1920));
 }
 
 .capn-alerts__text:last-child {
@@ -3537,13 +3554,13 @@ html:has(body.page-dark) {
 }
 
 .capn-alerts__icon--star {
-  width: calc(130 * 100vw / 1920);
+  width: calc(130 / 1920 * var(--viewport-1920));
   max-width: 100%;
   transform: translateY(-3rem);
 }
 
 .capn-alerts__icon--money {
-  width: calc(83 * 100vw / 1920);
+  width: calc(83 / 1920 * var(--viewport-1920));
   max-width: 100%;
 }
 
@@ -3620,13 +3637,13 @@ html:has(body.page-dark) {
   align-items: center;
   text-align: center;
   width: 100%;
-  max-width: calc(1000 * 100vw / 1920);
+  max-width: calc(1000 / 1920 * var(--viewport-1920));
   margin-inline: auto;
   margin-bottom: clamp(32px, 4vw, 48px);
 }
 
 .capn-branded-scenes__title {
-  width: calc(500 * 100vw / 1920);
+  width: calc(500 / 1920 * var(--viewport-1920));
   max-width: 100%;
   height: auto;
   display: block;
@@ -3642,10 +3659,10 @@ html:has(body.page-dark) {
   font-style: normal;
   font-weight: 600;
   line-height: 140%;
-  letter-spacing: calc(0.26 * 100vw / 1920);
+  letter-spacing: calc(0.26 / 1920 * var(--viewport-1920));
   text-transform: none;
   max-width: 100%;
-  margin: 0 0 calc(36.4 * 100vw / 1920);
+  margin: 0 0 calc(36.4 / 1920 * var(--viewport-1920));
 }
 
 .capn-branded-scenes__text:last-child {

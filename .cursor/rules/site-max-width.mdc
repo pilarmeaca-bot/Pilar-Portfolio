@@ -14,4 +14,13 @@ Page content is capped at **1920px** (`--site-max-width`), centered with `margin
 
 **full-width** (`layout--full`) = 100% of the shell, not `100vw`.
 
+**Typography & spacing @1920:** values scale down below 1920px viewport and **freeze** above 1920px (no growth on ultrawide).
+
+```css
+font-size: calc(29.11 / var(--design-base) * var(--viewport-1920));
+/* --viewport-1920 = min(100vw, 1920px) */
+```
+
+Do **not** use raw `100vw / 1920` or uncapped `vw` for @1920 design tokens.
+
 **narrow** (`layout--narrow`) — see `layout-width.mdc`.
