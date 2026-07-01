@@ -15,7 +15,7 @@
   }
 
   function syncSpacer() {
-    navSpacer.style.height = `${navWrapper.offsetHeight}px`;
+    navSpacer.style.height = `${navWrapper.offsetHeight + 20}px`;
   }
 
   navWrapper.classList.add('nav-wrapper--fixed');

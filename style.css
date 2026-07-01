@@ -20,6 +20,7 @@
 
   --nav-height: 55px;
   --browser-92: min(92vw, 1766px);
+  --browser-83: min(83vw, 1594px);
   --nav-width: var(--browser-92);
   --nav-top-offset: 20px;
   --nav-bottom-offset: 20px;
@@ -669,6 +670,13 @@ button.nav__link {
 .vw-block.vw-92 {
   width: var(--browser-92);
   max-width: var(--browser-92);
+  flex: 0 0 auto;
+  box-sizing: border-box;
+}
+
+.browser-83 {
+  width: var(--browser-83);
+  max-width: var(--browser-83);
   flex: 0 0 auto;
   box-sizing: border-box;
 }
@@ -2157,7 +2165,8 @@ html:has(body.page-fanta) {
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
 }
 
-.hellofresh-media:has(.browser-92) {
+.hellofresh-media:has(.browser-92),
+.hellofresh-media:has(.browser-83) {
   width: auto;
 }
 
@@ -2205,13 +2214,23 @@ html:has(body.page-fanta) {
   display: block;
 }
 
-.hellofresh-stack.browser-shell .hellofresh-media video,
-.hellofresh-stack.vw-shell .hellofresh-media video,
-.hellofresh-stack.layout--medium .hellofresh-media video,
+.hellofresh-stack.browser-shell .hellofresh-media video:not(.browser-83),
+.hellofresh-stack.vw-shell .hellofresh-media video:not(.browser-83),
+.hellofresh-stack.layout--medium .hellofresh-media video:not(.browser-83),
 .hellofresh-media__image.browser-92,
 .hellofresh-media video.hellofresh-media__image.browser-92 {
   width: var(--browser-92);
   max-width: var(--browser-92);
+  height: auto;
+  display: block;
+  object-fit: unset;
+  flex: 0 0 auto;
+}
+
+.hellofresh-media__image.browser-83,
+.hellofresh-media video.hellofresh-media__image.browser-83 {
+  width: var(--browser-83);
+  max-width: var(--browser-83);
   height: auto;
   display: block;
   object-fit: unset;
@@ -2281,7 +2300,7 @@ html:has(body.page-fanta) {
   transform: translateX(-50%);
   z-index: -1;
   pointer-events: none;
-  background-color: #faf8f5;
+  background-color: #F4F4F4;
 }
 
 .cookunity-meta {
@@ -3254,10 +3273,13 @@ html:has(body.page-dark) {
 }
 
 .capn-alerts-media {
-  width: 100%;
+  width: var(--browser-92);
+  max-width: var(--browser-92);
+  margin-inline: auto;
   line-height: 0;
   margin-top: 0;
   margin-bottom: 1.7%;
+  box-sizing: border-box;
 }
 
 .capn-alerts-media__image {
@@ -3283,9 +3305,12 @@ html:has(body.page-dark) {
 .capn-branded-scenes {
   position: relative;
   isolation: isolate;
-  width: 100%;
+  width: var(--browser-92);
+  max-width: var(--browser-92);
+  margin-inline: auto;
   overflow: hidden;
   margin-bottom: 1.7%;
+  box-sizing: border-box;
 }
 
 .capn-branded-scenes__bkg {
@@ -3293,7 +3318,8 @@ html:has(body.page-dark) {
   top: 0;
   bottom: 0;
   left: 50%;
-  width: 100vw;
+  width: var(--browser-92);
+  max-width: var(--browser-92);
   height: 100%;
   transform: translateX(-50%);
   object-fit: cover;
@@ -3306,6 +3332,9 @@ html:has(body.page-dark) {
   position: relative;
   z-index: 1;
   isolation: isolate;
+  width: var(--browser-92);
+  max-width: var(--browser-92);
+  margin-inline: auto;
   padding: clamp(64px, 8vw, 96px) clamp(20px, 4vw, 48px) clamp(32px, 4vw, 56px);
   box-sizing: border-box;
 }
