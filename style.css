@@ -73,6 +73,18 @@ body {
   width: 100%;
 }
 
+html:has(.page-home) {
+  background-color: var(--color-bg-white);
+}
+
+.page-home {
+  background-color: var(--color-bg-white);
+}
+
+.page-home .bio {
+  background-color: var(--color-bg-white);
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -304,6 +316,8 @@ button.nav__link {
 
 .hero__media {
   position: relative;
+  display: flex;
+  justify-content: center;
   width: 100%;
   height: 750px;
   overflow: hidden;
@@ -316,6 +330,12 @@ button.nav__link {
   object-position: center top;
   display: block;
   transition: transform 8s var(--ease-out);
+}
+
+.hero__image.browser-92 {
+  width: var(--browser-92);
+  max-width: var(--browser-92);
+  flex: 0 0 auto;
 }
 
 .hero:hover .hero__image {
@@ -490,14 +510,14 @@ button.nav__link {
 }
 
 .bio__text {
-  font-family: var(--font-display);
-  font-size: 54px;
+  font-family: "TikTok Sans", sans-serif;
+  font-size: calc(65 / 1920 * var(--viewport-1920));
+  font-style: normal;
   font-weight: 400;
-  font-variation-settings: "wdth" 95;
   line-height: 120%;
-  letter-spacing: -0.02em;
+  letter-spacing: calc(0.65 / 1920 * var(--viewport-1920));
   text-align: center;
-  color: var(--color-text);
+  color: #000;
 
   /* Fade-in on load */
   animation: fade-up 0.9s var(--ease-out) 0.2s both;
@@ -3976,5 +3996,91 @@ html:has(body.page-dark) {
 
   .fanta-alerts__play img {
     width: clamp(48px, 12vw, 72px);
+  }
+}
+
+/* ==========================================================
+   REEL MODAL
+   ========================================================== */
+body.reel-modal-open {
+  overflow: hidden;
+}
+
+.reel-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.35s var(--ease-out), visibility 0.35s;
+}
+
+.reel-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.reel-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.reel-modal__panel {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  transform: translateY(48px);
+  transition: transform 0.45s var(--ease-out);
+}
+
+.reel-modal.is-open .reel-modal__panel {
+  transform: translateY(0);
+}
+
+.reel-modal__video.browser-92 {
+  width: var(--browser-92);
+  max-width: var(--browser-92);
+  height: auto;
+  display: block;
+  background: #000;
+}
+
+.reel-modal__close {
+  position: absolute;
+  top: -48px;
+  right: 0;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 8px;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+
+.reel-modal__close:hover {
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .reel-modal {
+    padding: 16px;
+  }
+
+  .reel-modal__close {
+    top: -40px;
+    font-size: 28px;
   }
 }
