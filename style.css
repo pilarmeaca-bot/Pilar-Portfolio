@@ -4251,10 +4251,88 @@ body.reel-modal-open {
   transform: translateY(0);
 }
 
-.reel-modal__video.layout--narrow {
+.reel-modal__media {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.reel-modal__frame {
+  position: relative;
+  display: block;
+  line-height: 0;
+}
+
+.reel-modal__poster {
+  position: relative;
+  z-index: 1;
+  width: 100%;
   height: auto;
   display: block;
+  transition: opacity 0.35s var(--ease-out), visibility 0.35s;
+}
+
+.reel-modal__video {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
   background: #000;
+}
+
+.reel-modal__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--color-text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s var(--ease-out), opacity 0.3s var(--ease-out), background 0.2s, box-shadow 0.3s;
+  z-index: 2;
+}
+
+.reel-modal__play:hover {
+  transform: translate(-50%, -50%) scale(1.10);
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.30);
+}
+
+.reel-modal__play:active {
+  transform: translate(-50%, -50%) scale(0.96);
+}
+
+.reel-modal__play-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 3px;
+}
+
+.reel-modal__media.is-playing .reel-modal__play {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.reel-modal__media.is-playing .reel-modal__poster {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .reel-modal__close {
@@ -4279,6 +4357,16 @@ body.reel-modal-open {
 @media (max-width: 600px) {
   .reel-modal {
     padding: 16px;
+  }
+
+  .reel-modal__play {
+    width: 56px;
+    height: 56px;
+  }
+
+  .reel-modal__play-icon svg {
+    width: 18px;
+    height: 21px;
   }
 
   .reel-modal__close {

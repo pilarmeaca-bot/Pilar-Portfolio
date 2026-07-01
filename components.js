@@ -4,6 +4,39 @@
  * Fallback: inline templates when fetch is unavailable (e.g. file://)
  */
 (function () {
+  const OTHER_PROJECTS = [
+    {
+      href: 'capn-crunch.html',
+      image: 'images/other-projects/CapnCrunch_color.jpg',
+      title: "Cap'n Crunch Sponsorship",
+    },
+    {
+      href: 'stream-packages.html',
+      image: 'images/other-projects/StreamPackages_color.jpg',
+      title: 'Stream Packages & Alerts',
+    },
+    {
+      href: 'fanta.html',
+      image: 'images/other-projects/Fanta_color.jpg',
+      title: 'Fanta Sponsorship',
+    },
+    {
+      href: 'fortnite.html',
+      image: 'images/other-projects/Fortnite_color.jpg',
+      title: 'Fortnite Sponsorship',
+    },
+    {
+      href: 'hello-fresh.html',
+      image: 'images/other-projects/HelloFresh_color.jpg',
+      title: 'HelloFresh / Cookunity Sponsorship',
+    },
+    {
+      href: 'alerts-in-stream.html',
+      image: 'images/other-projects/Alerts_color.jpg',
+      title: 'In stream Alerts Sponsorship',
+    },
+  ];
+
   const FALLBACK_TEMPLATES = {
     'site-footer': `<footer class="site-footer">
   <div class="site-footer__top">
@@ -24,19 +57,43 @@
     'other-projects': `<section class="other-projects layout--wide" aria-label="Other projects">
   <p class="other-projects__label">Other projects</p>
 
-  <div class="other-projects__grid">
-    <a href="work.html" class="other-projects__card" aria-label="Victoria — view project">
-      <img src="images/other-projects/vicyori.png" alt="Victoria project" class="other-projects__card-img" />
-    </a>
-    <a href="work.html" class="other-projects__card" aria-label="Radio Disney — view project">
-      <img src="images/other-projects/disney.png" alt="Radio Disney project" class="other-projects__card-img" />
-    </a>
-    <a href="hello-fresh.html" class="other-projects__card" aria-label="CookUnity / HelloFresh Sponsorship — view project">
-      <img src="images/work/work_taco.png" alt="CookUnity / HelloFresh Sponsorship project" class="other-projects__card-img" />
-    </a>
-  </div>
-</section>`
+  <div class="other-projects__grid"></div>
+</section>`,
   };
+
+  function getCurrentPageFile() {
+    const path = window.location.pathname;
+    const file = path.substring(path.lastIndexOf('/') + 1);
+    return file || 'index.html';
+  }
+
+  function shuffle(array) {
+    const items = [...array];
+
+    for (let i = items.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [items[i], items[j]] = [items[j], items[i]];
+    }
+
+    return items;
+  }
+
+  function getRandomOtherProjects(currentHref, count = 3) {
+    const pool = OTHER_PROJECTS.filter((project) => project.href !== currentHref);
+    return shuffle(pool).slice(0, count);
+  }
+
+  function renderOtherProjects() {
+    const grid = document.querySelector('.other-projects__grid');
+    if (!grid) return;
+
+    const selected = getRandomOtherProjects(getCurrentPageFile(), 3);
+
+    grid.innerHTML = selected.map((project) => `
+    <a href="${project.href}" class="other-projects__card" aria-label="${project.title} — view project">
+      <img src="${project.image}" alt="${project.title} project" class="other-projects__card-img" />
+    </a>`).join('');
+  }
 
   async function loadTemplate(name) {
     try {
@@ -60,6 +117,7 @@
       if (html) slot.outerHTML = html;
     }));
 
+    renderOtherProjects();
     initOtherProjectsCursor();
 
     if (typeof window.initFooterTime === 'function') {

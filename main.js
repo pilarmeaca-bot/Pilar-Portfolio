@@ -37,6 +37,7 @@
 
 (function initReelModal() {
   const REEL_SRC = 'images/video/Reel.webm';
+  const REEL_POSTER = 'images/works/CapnCrunch.jpg';
   const reelTriggers = document.querySelectorAll('a.nav__link[href="/reel"]');
   if (!reelTriggers.length) return;
 
@@ -48,18 +49,38 @@
     <div class="reel-modal__backdrop" data-reel-close tabindex="-1"></div>
     <div class="reel-modal__panel" role="dialog" aria-modal="true" aria-label="Showreel" tabindex="-1">
       <button type="button" class="reel-modal__close" data-reel-close aria-label="Close showreel">×</button>
-      <video class="reel-modal__video layout--narrow" controls playsinline preload="metadata">
-        <source src="${REEL_SRC}" type="video/webm" />
-      </video>
+      <div class="reel-modal__media">
+        <div class="reel-modal__frame layout--narrow">
+          <img class="reel-modal__poster" src="${REEL_POSTER}" alt="" aria-hidden="true" />
+          <video class="reel-modal__video" playsinline preload="metadata">
+            <source src="${REEL_SRC}" type="video/webm" />
+          </video>
+          <button type="button" class="reel-modal__play" aria-label="Play showreel">
+            <span class="reel-modal__play-icon" aria-hidden="true">
+              <svg width="24" height="28" viewBox="0 0 24 28" fill="currentColor"><path d="M0 0v28l24-14z"/></svg>
+            </span>
+          </button>
+        </div>
+      </div>
     </div>
   `;
   document.body.appendChild(modal);
 
   const video = modal.querySelector('.reel-modal__video');
+  const media = modal.querySelector('.reel-modal__media');
+  const playButton = modal.querySelector('.reel-modal__play');
   const panel = modal.querySelector('.reel-modal__panel');
   let lastFocused = null;
 
+  function resetReel() {
+    video.pause();
+    video.currentTime = 0;
+    video.removeAttribute('controls');
+    media.classList.remove('is-playing');
+  }
+
   function openReel() {
+    resetReel();
     lastFocused = document.activeElement;
     modal.classList.add('is-open');
     modal.setAttribute('aria-hidden', 'false');
@@ -71,10 +92,18 @@
     modal.classList.remove('is-open');
     modal.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('reel-modal-open');
-    video.pause();
-    video.currentTime = 0;
+    resetReel();
     if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
   }
+
+  playButton.addEventListener('click', (event) => {
+    event.stopPropagation();
+    video.setAttribute('controls', '');
+    media.classList.add('is-playing');
+    video.play();
+  });
+
+  video.addEventListener('ended', resetReel);
 
   reelTriggers.forEach((link) => {
     link.addEventListener('click', (event) => {
@@ -85,7 +114,7 @@
 
   modal.addEventListener('click', (event) => {
     if (!modal.classList.contains('is-open')) return;
-    if (event.target.closest('.reel-modal__video')) return;
+    if (event.target.closest('.reel-modal__media')) return;
     closeReel();
   });
 
