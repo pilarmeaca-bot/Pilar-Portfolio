@@ -23,7 +23,14 @@
     <nav class="nav layout--medium" id="main-nav" aria-label="Main navigation">
       <div class="nav__island nav__island--left">
         <a href="index.html" class="nav__logo nav__logo--active" aria-label="Pilar Meaca home" aria-current="page">
-          <img src="images/shared/icon.svg" alt="" class="nav__logo-img" width="32" height="32" />
+        <span class="nav__logo-media" aria-hidden="true">
+          <video class="nav__logo-img nav__logo-img--white" autoplay muted loop playsinline preload="auto" width="32" height="32">
+            <source src="images/logo%20white.mp4" type="video/mp4" />
+          </video>
+          <video class="nav__logo-img nav__logo-img--black" autoplay muted loop playsinline preload="auto" width="32" height="32">
+            <source src="images/logo%20black.mp4" type="video/mp4" />
+          </video>
+        </span>
         </a>
         <ul class="nav__links nav__links--primary" role="list">
           <li><a href="work.html" class="nav__link"><span class="nav__link-text">Work</span></a></li>

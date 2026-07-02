@@ -37,7 +37,7 @@
 
 (function initReelModal() {
   const REEL_SRC = 'images/video/Reel.webm';
-  const REEL_POSTER = 'images/works/CapnCrunch.jpg';
+  const REEL_POSTER = 'images/thumbnail_reel.jpg';
   const reelTriggers = document.querySelectorAll('a.nav__link[href="/reel"]');
   if (!reelTriggers.length) return;
 
@@ -56,9 +56,7 @@
             <source src="${REEL_SRC}" type="video/webm" />
           </video>
           <button type="button" class="reel-modal__play" aria-label="Play showreel">
-            <span class="reel-modal__play-icon" aria-hidden="true">
-              <svg width="24" height="28" viewBox="0 0 24 28" fill="currentColor"><path d="M0 0v28l24-14z"/></svg>
-            </span>
+            <img src="images/play.svg" alt="" class="reel-modal__play-icon" />
           </button>
         </div>
       </div>
