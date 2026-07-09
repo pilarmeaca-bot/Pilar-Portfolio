@@ -54,7 +54,7 @@
     </span>
   </div>
 </footer>`,
-    'other-projects': `<section class="other-projects layout--wide" aria-label="Other projects">
+    'other-projects': `<section class="other-projects browser-92" aria-label="Other projects">
   <p class="other-projects__label">Other projects</p>
 
   <div class="other-projects__grid"></div>
@@ -118,42 +118,10 @@
     }));
 
     renderOtherProjects();
-    initOtherProjectsCursor();
 
     if (typeof window.initFooterTime === 'function') {
       window.initFooterTime();
     }
-  }
-
-  function initOtherProjectsCursor() {
-    const cards = document.querySelectorAll('.other-projects__card');
-    if (!cards.length) return;
-
-    let cursor = document.querySelector('.other-projects-cursor');
-    if (!cursor) {
-      cursor = document.createElement('div');
-      cursor.className = 'other-projects-cursor';
-      cursor.setAttribute('aria-hidden', 'true');
-      cursor.innerHTML = '<img src="images/shared/icon.svg" alt="" />';
-      document.body.appendChild(cursor);
-    }
-
-    if (cursor.dataset.bound === 'true') return;
-    cursor.dataset.bound = 'true';
-
-    window.addEventListener('mousemove', (event) => {
-      cursor.style.left = `${event.clientX}px`;
-      cursor.style.top = `${event.clientY}px`;
-    }, { passive: true });
-
-    cards.forEach((card) => {
-      card.addEventListener('mouseenter', () => {
-        cursor.classList.add('other-projects-cursor--visible');
-      });
-      card.addEventListener('mouseleave', () => {
-        cursor.classList.remove('other-projects-cursor--visible');
-      });
-    });
   }
 
   if (document.readyState === 'loading') {

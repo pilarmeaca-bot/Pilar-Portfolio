@@ -79,6 +79,67 @@ body {
   overflow-x: clip;
   padding-top: 0;
   width: 100%;
+  cursor: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html,
+  body,
+  a,
+  button,
+  input,
+  textarea,
+  select,
+  label,
+  [role="button"],
+  .other-projects__card {
+    cursor: none !important;
+  }
+}
+
+.site-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #000;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0;
+  transition:
+    opacity 0.15s var(--ease-out),
+    background-color 0.15s var(--ease-out),
+    transform calc(20 / 60 * 1s) var(--ease-out);
+}
+
+.site-cursor.is-visible {
+  opacity: 1;
+}
+
+.site-cursor.is-hidden {
+  opacity: 0;
+}
+
+.site-cursor.is-on-dark {
+  background-color: #fff;
+}
+
+.site-cursor.is-pressed {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+@media (hover: none), (pointer: coarse) {
+  .site-cursor {
+    display: none;
+  }
+
+  html,
+  body {
+    cursor: auto;
+  }
 }
 
 html:has(.page-home) {
@@ -254,6 +315,7 @@ ul {
 }
 
 .nav__link {
+  position: relative;
   font-family: var(--font-tiktok);
   font-size: 16.133px;
   font-style: normal;
@@ -274,27 +336,37 @@ ul {
   text-decoration: none;
   cursor: pointer;
   box-sizing: border-box;
+  overflow: hidden;
+  isolation: isolate;
+  transition: color calc(20 / 60 * 1s) var(--ease-out);
+}
+
+.nav__link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #000;
+  transform: scaleY(0);
+  transform-origin: bottom center;
+  transition: transform calc(20 / 60 * 1s) var(--ease-out);
+  z-index: 0;
+  pointer-events: none;
 }
 
 .nav__link-text {
+  position: relative;
+  z-index: 1;
   display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
+  align-items: center;
   line-height: normal;
 }
 
-.nav__link-text::after {
-  content: '';
-  width: 0;
-  height: 2.5px;
-  background: #000;
-  flex-shrink: 0;
-  transition: width 0.25s var(--ease-out);
+.nav__link:not(.nav__link--active):hover {
+  color: #fff;
 }
 
-.nav__link:not(.nav__link--active):hover .nav__link-text::after {
-  width: 18px;
+.nav__link:not(.nav__link--active):hover::before {
+  transform: scaleY(1);
 }
 
 .nav__link--active {
@@ -307,10 +379,8 @@ ul {
   line-height: normal;
 }
 
-.nav__link--active .nav__link-text::after {
-  width: 18px;
-  background: #fff;
-  transition: none;
+.nav__link--active::before {
+  display: none;
 }
 
 button.nav__link {
@@ -659,7 +729,41 @@ button.nav__link {
 }
 
 .work-grid .work-item__image-wrapper {
+  position: relative;
   overflow: hidden;
+}
+
+.work-grid .work-item__image-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  background: url('images/lupita.svg') center / contain no-repeat;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 0.55s var(--ease-in-out);
+}
+
+.work-grid .work-item__image-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.55s var(--ease-in-out);
+}
+
+.work-grid .work-item:hover .work-item__image-wrapper::before,
+.work-grid .work-item__link:hover .work-item__image-wrapper::before,
+.work-grid .work-item:hover .work-item__image-wrapper::after,
+.work-grid .work-item__link:hover .work-item__image-wrapper::after {
+  opacity: 1;
 }
 
 .work-grid .work-item__image {
@@ -982,7 +1086,6 @@ button.nav__link {
   .scene-fullwidth.layout--wide,
   .layout--medium,
   .layout--narrow,
-  .project-container .other-projects.layout--wide,
   img.layout--wide,
   img.layout--medium,
   img.layout--narrow,
@@ -2034,7 +2137,7 @@ button.nav__link {
 .other-projects__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0;
+  gap: 8px;
   width: 100%;
   background-color: #000000;
 }
@@ -2055,36 +2158,6 @@ button.nav__link {
 
 .other-projects__card:hover .other-projects__card-img {
   filter: grayscale(0%);
-}
-
-.other-projects-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: clamp(52px, 4.5vw, 72px);
-  height: clamp(52px, 4.5vw, 72px);
-  border-radius: 50%;
-  background-color: #ffffff;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-  z-index: 10000;
-  transform: translate(-50%, -50%) scale(0.85);
-  opacity: 0;
-  transition: opacity 0.2s var(--ease-out), transform 0.2s var(--ease-out);
-}
-
-.other-projects-cursor--visible {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-}
-
-.other-projects-cursor img {
-  width: 46%;
-  height: auto;
-  display: block;
 }
 
 /* -- Project Navigation Footer -- */
@@ -2637,16 +2710,18 @@ html:has(body.page-fanta) {
 /* ==========================================================
    OTHER PROJECTS — project detail pages
    ========================================================== */
-.project-container .other-projects.layout--wide {
-  width: 100%;
-  max-width: var(--site-max-width);
+.project-container .other-projects.browser-92 {
+  width: var(--browser-92);
+  max-width: var(--browser-92);
   margin-inline: auto;
+  padding-inline: 0;
   box-sizing: border-box;
 }
 
 .project-container .other-projects {
   background-color: var(--color-bg-white);
-  padding: 0;
+  padding-block: 0;
+  padding-bottom: calc(50 / 1920 * var(--viewport-1920));
 }
 
 .project-container .other-projects__label {
@@ -2664,7 +2739,7 @@ html:has(body.page-fanta) {
 .project-container .other-projects__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0;
+  gap: 8px;
   width: 100%;
   background-color: transparent;
 }
@@ -2673,7 +2748,6 @@ html:has(body.page-fanta) {
   display: block;
   overflow: hidden;
   border-radius: 0;
-  cursor: none;
 }
 
 .project-container .other-projects__card-img {
@@ -2687,6 +2761,14 @@ html:has(body.page-fanta) {
 
 .project-container .other-projects__card:hover .other-projects__card-img {
   filter: grayscale(0%);
+}
+
+.page-dark .project-container .other-projects {
+  background-color: var(--color-bg-dark);
+}
+
+.page-dark .project-container .other-projects__label {
+  color: #fff;
 }
 
 /* ==========================================================
@@ -2742,12 +2824,12 @@ html:has(body.page-dark) {
   line-height: normal;
 }
 
-.page-dark .nav__link-text::after {
+.page-dark .nav__link::before {
   background: #fff;
 }
 
-.page-dark .nav__link:not(.nav__link--active):hover .nav__link-text::after {
-  background: #fff;
+.page-dark .nav__link:not(.nav__link--active):hover {
+  color: #000;
 }
 
 .page-dark .nav__link--active {
@@ -2758,10 +2840,6 @@ html:has(body.page-dark) {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-}
-
-.page-dark .nav__link--active .nav__link-text::after {
-  background: #000;
 }
 
 .page-dark .project-intro__title,
@@ -2779,26 +2857,26 @@ html:has(body.page-dark) {
 }
 
 .page-dark .site-footer {
-  background-color: transparent;
+  background-color: var(--color-bg-dark);
 }
 
 .page-dark .site-footer__copy,
 .page-dark .site-footer__back {
-  color: var(--color-text-on-dark);
+  color: #fff;
 }
 
 .page-dark .site-footer__bottom {
-  border-top-color: #000;
+  border-top-color: #fff;
 }
 
 .page-dark .site-footer__link,
 .page-dark .site-footer__time {
-  color: var(--color-muted-on-dark);
+  color: #fff;
 }
 
 .page-dark .site-footer__time-icon {
   filter: invert(1);
-  opacity: 0.65;
+  opacity: 1;
 }
 
 /* Stream Packages — intro (Fortnite layout, inverted dark theme) */

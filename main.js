@@ -142,3 +142,123 @@ window.initFooterTime = function initFooterTime() {
   updateTime();
   setInterval(updateTime, 30000);
 };
+
+(function initSiteCursor() {
+  if (window.matchMedia('(hover: none), (pointer: coarse)').matches) return;
+  if (document.querySelector('.site-cursor')) return;
+
+  const cursor = document.createElement('div');
+  cursor.className = 'site-cursor';
+  cursor.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(cursor);
+
+  const sampleCanvas = document.createElement('canvas');
+  sampleCanvas.width = 1;
+  sampleCanvas.height = 1;
+  const sampleCtx = sampleCanvas.getContext('2d', { willReadFrequently: true });
+
+  let rafId = 0;
+  let pendingX = 0;
+  let pendingY = 0;
+
+  function parseRgba(color) {
+    if (!color || color === 'transparent') return null;
+    const match = color.match(/rgba?\(\s*([\d.]+)\s*,\s*([\d.]+)\s*,\s*([\d.]+)(?:\s*,\s*([\d.]+))?\s*\)/i);
+    if (!match) return null;
+    return {
+      r: Number(match[1]),
+      g: Number(match[2]),
+      b: Number(match[3]),
+      a: match[4] === undefined ? 1 : Number(match[4]),
+    };
+  }
+
+  function luminance({ r, g, b }) {
+    return (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
+  }
+
+  function sampleMediaLuminance(media, clientX, clientY) {
+    if (!sampleCtx) return null;
+    try {
+      const rect = media.getBoundingClientRect();
+      if (!rect.width || !rect.height) return null;
+
+      const naturalW = media.videoWidth || media.naturalWidth || media.width;
+      const naturalH = media.videoHeight || media.naturalHeight || media.height;
+      if (!naturalW || !naturalH) return null;
+
+      const x = Math.min(naturalW - 1, Math.max(0, ((clientX - rect.left) / rect.width) * naturalW));
+      const y = Math.min(naturalH - 1, Math.max(0, ((clientY - rect.top) / rect.height) * naturalH));
+
+      sampleCtx.clearRect(0, 0, 1, 1);
+      sampleCtx.drawImage(media, x, y, 1, 1, 0, 0, 1, 1);
+      const [r, g, b, a] = sampleCtx.getImageData(0, 0, 1, 1).data;
+      if (a < 20) return null;
+      return luminance({ r, g, b });
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function isDarkUnderPoint(clientX, clientY) {
+    const stack = document.elementsFromPoint(clientX, clientY);
+
+    for (const el of stack) {
+      if (!el || el === cursor || el.classList?.contains('site-cursor')) {
+        continue;
+      }
+
+      const tag = el.tagName;
+      if (tag === 'IMG' || tag === 'VIDEO' || tag === 'CANVAS') {
+        const mediaLum = sampleMediaLuminance(el, clientX, clientY);
+        if (mediaLum !== null) return mediaLum < 0.45;
+        continue;
+      }
+
+      const style = window.getComputedStyle(el);
+      const bg = parseRgba(style.backgroundColor);
+      if (!bg || bg.a < 0.15) continue;
+      return luminance(bg) < 0.45;
+    }
+
+    const bodyBg = parseRgba(window.getComputedStyle(document.body).backgroundColor)
+      || parseRgba(window.getComputedStyle(document.documentElement).backgroundColor);
+    return bodyBg ? luminance(bodyBg) < 0.45 : document.body.classList.contains('page-dark');
+  }
+
+  function updateCursorContrast() {
+    rafId = 0;
+    cursor.classList.toggle('is-on-dark', isDarkUnderPoint(pendingX, pendingY));
+  }
+
+  window.addEventListener('mousemove', (event) => {
+    pendingX = event.clientX;
+    pendingY = event.clientY;
+    cursor.style.left = `${pendingX}px`;
+    cursor.style.top = `${pendingY}px`;
+    cursor.classList.add('is-visible');
+
+    if (!rafId) rafId = requestAnimationFrame(updateCursorContrast);
+  }, { passive: true });
+
+  document.addEventListener('mouseleave', () => {
+    cursor.classList.remove('is-visible');
+    cursor.classList.remove('is-pressed');
+  });
+
+  document.addEventListener('mouseenter', () => {
+    cursor.classList.add('is-visible');
+  });
+
+  window.addEventListener('mousedown', () => {
+    cursor.classList.add('is-pressed');
+  });
+
+  window.addEventListener('mouseup', () => {
+    cursor.classList.remove('is-pressed');
+  });
+
+  window.addEventListener('blur', () => {
+    cursor.classList.remove('is-pressed');
+  });
+})();
