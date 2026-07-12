@@ -640,6 +640,10 @@ button.nav__link {
   padding-bottom: 120px;
 }
 
+.work-grid[hidden] {
+  display: none !important;
+}
+
 .work-grid > .work-grid__title + .work-item,
 .work-grid > .work-grid__title + .work-item[hidden] + .work-item {
   margin-top: calc(var(--work-grid-gap-after-title) - var(--work-grid-gap));
@@ -776,7 +780,42 @@ button.nav__link {
   transform: scale(1.06);
 }
 
-/* ImÃ¡genes con margen lateral (112px en 1440px) â€” fondo blanco visible a los costados */
+/* ==========================================================
+   WORK — ALL / COMING SOON
+   ========================================================== */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.work-coming-soon {
+  width: 100%;
+  min-height: calc(100vh - var(--nav-height) - var(--nav-top-offset) - var(--nav-bottom-offset) - 180px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.work-coming-soon[hidden] {
+  display: none;
+}
+
+.work-coming-soon__tile {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
 .work-item__image-wrapper:has(.work-item__image--inset) {
   padding-inline: var(--content-margin);
   box-sizing: border-box;
@@ -3080,6 +3119,10 @@ html:has(body.page-dark) {
   align-items: center;
   text-decoration: none;
   transition: opacity 0.2s;
+}
+
+.work-filter-all .site-footer__back {
+  display: none;
 }
 
 .site-footer__back-icon {
