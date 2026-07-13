@@ -659,7 +659,11 @@ button.nav__link {
 .work-grid__title {
   width: var(--browser-92);
   max-width: var(--browser-92);
-  height: 50px;
+  height: 100%;
+  padding-top: 0;
+  padding-bottom: 18px;
+  margin-top: 0;
+  margin-bottom: 0;
   color: #000;
   font-family: "TikTok Sans", sans-serif;
   font-size: calc(52 / 1920 * var(--viewport-1920));
