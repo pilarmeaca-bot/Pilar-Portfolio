@@ -1244,7 +1244,10 @@ button.nav__link {
 }
 
 .project-intro__meta-item {
-  margin: 0;
+  margin-top: -13px;
+  margin-bottom: 0;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .project-intro__meta-item strong {
@@ -2423,6 +2426,13 @@ html:has(body.page-fanta) {
   line-height: 140%;
 }
 
+.page-hello-fresh .project-intro--hellofresh .project-intro__meta-item,
+.page-fanta .project-intro--hellofresh .project-intro__meta-item,
+.page-capn-crunch .project-intro--hellofresh .project-intro__meta-item,
+.page-fortnite .project-intro--hellofresh .project-intro__meta-item {
+  font-size: 15px;
+}
+
 .page-hello-fresh .project-intro--hellofresh .project-intro__meta,
 .page-fanta .project-intro--hellofresh .project-intro__meta,
 .page-capn-crunch .project-intro--hellofresh .project-intro__meta,
@@ -3004,6 +3014,10 @@ html:has(body.page-dark) {
   font-style: normal;
   font-weight: 350;
   line-height: 140%;
+}
+
+.page-dark .project-intro--hellofresh .project-intro__meta-item {
+  font-size: 15px;
 }
 
 .page-dark .project-intro--hellofresh .project-intro__meta {
