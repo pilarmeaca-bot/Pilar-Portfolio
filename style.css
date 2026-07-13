@@ -3087,7 +3087,7 @@ html:has(body.page-dark) {
   color: #FFF0D7;
   font-family: 'Raleway', sans-serif;
   font-size: calc(25 / 1920 * var(--viewport-1920));
-  line-height: 120%;
+  line-height: 140%;
   letter-spacing: normal;
 }
 
