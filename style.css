@@ -1269,6 +1269,7 @@ button.nav__link {
   display: flex;
   flex-direction: column;
   gap: 1.25em;
+  font-size: 16px;
 }
 
 .project-intro__desc {
@@ -2457,7 +2458,7 @@ html:has(body.page-fanta) {
 .page-fortnite .project-intro--hellofresh .project-intro__subheadline {
   color: #1E1E1E;
   font-family: "TikTok Sans", sans-serif;
-  font-size: calc(25 / 1920 * var(--viewport-1920));
+  font-size: 23px;
   font-style: normal;
   font-weight: 500;
   line-height: 135%;
@@ -2473,7 +2474,7 @@ html:has(body.page-fanta) {
 .page-capn-crunch .project-intro--hellofresh .project-intro__desc,
 .page-fortnite .project-intro--hellofresh .project-intro__desc {
   color: #1E1E1E;
-  font-size: calc(25 / 1920 * var(--viewport-1920));
+  font-size: 23px;
   font-weight: 400;
   line-height: 135%;
   text-wrap: pretty;
@@ -3038,7 +3039,7 @@ html:has(body.page-dark) {
 .page-dark .project-intro--hellofresh .project-intro__subheadline {
   color: #E1E1E1;
   font-family: "TikTok Sans", sans-serif;
-  font-size: calc(25 / 1920 * var(--viewport-1920));
+  font-size: 23px;
   font-style: normal;
   font-weight: 400;
   line-height: 135%;
@@ -3051,7 +3052,7 @@ html:has(body.page-dark) {
 
 .page-dark .project-intro--hellofresh .project-intro__desc {
   color: #E1E1E1;
-  font-size: calc(25 / 1920 * var(--viewport-1920));
+  font-size: 23px;
   font-weight: 400;
   line-height: 135%;
   text-wrap: pretty;
