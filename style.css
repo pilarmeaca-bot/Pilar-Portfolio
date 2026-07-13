@@ -876,6 +876,10 @@ button.nav__link {
   letter-spacing: -2px;
 }
 
+.about__title-text {
+  width: 200px;
+}
+
 .about__wave {
   display: block;
   width: calc(126 / 1920 * var(--viewport-1920));
