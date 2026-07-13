@@ -902,6 +902,7 @@ button.nav__link {
   flex-shrink: 0;
   object-fit: contain;
   margin-top: -30px;
+  margin-left: -10px;
 }
 
 .about__body {
