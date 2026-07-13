@@ -2368,7 +2368,7 @@ html:has(body.page-fanta) {
 }
 
 .page-fortnite .project-intro--hellofresh {
-  padding-top: calc(127 / 1920 * var(--viewport-1920));
+  padding-top: 80px;
 }
 
 .page-hello-fresh .project-intro--hellofresh .project-intro__grid,
