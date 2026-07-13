@@ -3512,6 +3512,7 @@ html:has(body.page-dark) {
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-takeover__stack + .capn-takeover__header {
   margin-top: 0;
   padding-bottom: 0;
+  height: 240px;
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-takeover__stack + .capn-takeover__header + .capn-scenes__stack {
@@ -3529,6 +3530,10 @@ html:has(body.page-dark) {
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-takeover__stack + .capn-takeover__header .capn-takeover__text:last-child {
   margin-bottom: 0;
+}
+
+.page-fortnite .capn-takeover ~ .capn-takeover .capn-takeover__stack + .capn-takeover__header .capn-takeover__copy {
+  height: 220px;
 }
 
 .page-fortnite .capn-takeover__header {
@@ -3561,13 +3566,13 @@ html:has(body.page-dark) {
 }
 
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-scenes__stack + .capn-takeover__header .capn-takeover__copy {
-  height: fit-content;
+  height: 217px;
   margin-top: -51px;
   margin-bottom: 0;
 }
 
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-scenes__stack + .capn-takeover__header .capn-takeover__alert-video {
-  margin-top: 0;
+  margin-top: 113px;
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-scenes__stack {
