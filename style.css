@@ -901,6 +901,7 @@ button.nav__link {
   height: calc(126 / 1920 * var(--viewport-1920));
   flex-shrink: 0;
   object-fit: contain;
+  margin-top: -30px;
 }
 
 .about__body {
