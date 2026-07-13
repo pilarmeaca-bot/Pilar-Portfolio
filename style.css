@@ -739,7 +739,7 @@ button.nav__link {
 .work-item__role {
   color: #505050;
   font-family: "TikTok Sans", sans-serif;
-  font-size: calc(16.301 / 1920 * var(--viewport-1920));
+  font-size: 1.1em;
   font-style: normal;
   font-weight: 350;
   line-height: 140%;
@@ -2805,12 +2805,12 @@ html:has(body.page-fanta) {
 .project-container .other-projects__label {
   font-family: var(--font-display);
   font-size: 23px;
-  font-weight: 400;
+  font-weight: 450;
   text-transform: none;
   text-align: left;
   color: #111111;
   background-color: transparent;
-  padding: 64px 0 20px;
+  padding: 64px 0 15px;
   margin: 0;
 }
 
@@ -3816,7 +3816,7 @@ video.capn-scenes__image {
   width: var(--browser-92);
   max-width: var(--browser-92);
   margin-inline: auto;
-  padding: clamp(64px, 8vw, 96px) clamp(20px, 4vw, 48px) clamp(32px, 4vw, 56px);
+  padding: clamp(64px, 8vw, 96px) clamp(20px, 4vw, 48px) 91px;
   box-sizing: border-box;
 }
 
