@@ -18,8 +18,8 @@
   --color-accent-o: #e84b00;
   --color-overlay: rgba(0, 0, 0, 0.30);
 
-  --nav-height: 55px;
-  --nav-logo-size: 36px;
+  --nav-height: 48px;
+  --nav-logo-size: 32px;
   --nav-top-offset: 20px;
   --nav-bottom-offset: 20px;
   --hero-max-h: 80vh;
@@ -326,7 +326,7 @@ ul {
   align-items: center;
   justify-content: center;
   min-width: 68px;
-  height: 55px;
+  height: 48px;
   padding: 0;
   border: 0;
   border-radius: 0;
@@ -657,12 +657,14 @@ button.nav__link {
 .work-grid__title {
   width: var(--browser-92);
   max-width: var(--browser-92);
+  height: 50px;
   color: #000;
   font-family: "TikTok Sans", sans-serif;
   font-size: calc(52 / 1920 * var(--viewport-1920));
   font-style: normal;
   font-weight: 350;
   line-height: 100%;
+  letter-spacing: -1.5px;
 }
 
 .work-item {
@@ -714,6 +716,7 @@ button.nav__link {
   font-style: normal;
   font-weight: 450;
   line-height: 100%;
+  letter-spacing: -1px;
   margin-top: 0;
   margin-bottom: 4px;
 }
@@ -870,14 +873,15 @@ button.nav__link {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  letter-spacing: calc(-0.857 / 1920 * var(--viewport-1920));
+  letter-spacing: -2px;
 }
 
 .about__wave {
   display: block;
-  width: auto;
-  height: 1em;
+  width: calc(126 / 1920 * var(--viewport-1920));
+  height: calc(126 / 1920 * var(--viewport-1920));
   flex-shrink: 0;
+  object-fit: contain;
 }
 
 .about__body {
@@ -899,8 +903,9 @@ button.nav__link {
   font-family: "TikTok Sans", sans-serif;
   font-size: calc(29.11 / 1920 * var(--viewport-1920));
   font-style: normal;
-  font-weight: 450;
-  line-height: 150%;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: -0.2px;
 }
 
 .about__list li {
@@ -908,8 +913,9 @@ button.nav__link {
   font-family: "TikTok Sans", sans-serif;
   font-size: calc(29.11 / 1920 * var(--viewport-1920));
   font-style: normal;
-  font-weight: 450;
-  line-height: 160%;
+  font-weight: 400;
+  line-height: 145%;
+  letter-spacing: -0.2px;
 }
 
 .about__experience li {
@@ -917,8 +923,9 @@ button.nav__link {
   font-family: "TikTok Sans", sans-serif;
   font-size: calc(29.11 / 1920 * var(--viewport-1920));
   font-style: normal;
-  font-weight: 450;
+  font-weight: 400;
   line-height: 145%;
+  letter-spacing: -0.1px;
 }
 
 .about__email {
@@ -938,7 +945,7 @@ button.nav__link {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  letter-spacing: calc(-0.573 / 1920 * var(--viewport-1920));
+  letter-spacing: -1px;
   margin-bottom: calc(20 / 1920 * var(--viewport-1920));
 }
 
@@ -957,7 +964,7 @@ button.nav__link {
   font-family: "TikTok Sans", sans-serif;
   font-size: calc(33.52 / 1920 * var(--viewport-1920));
   font-style: normal;
-  font-weight: 450;
+  font-weight: 400;
   line-height: 145%;
 }
 
@@ -1210,7 +1217,7 @@ button.nav__link {
   font-size: calc(36 / 1920 * var(--viewport-1920));
   font-weight: 600;
   font-variation-settings: "wdth" 95;
-  letter-spacing: -0.04em;
+  letter-spacing: -2px;
   line-height: 1.1;
   color: var(--color-text);
 }
@@ -1245,7 +1252,7 @@ button.nav__link {
   font-family: "TikTok Sans", sans-serif;
   font-size: calc(25 / 1920 * var(--viewport-1920));
   font-style: normal;
-  font-weight: 550;
+  font-weight: 400;
   line-height: 135%;
   margin: 0;
 }
@@ -2169,7 +2176,7 @@ button.nav__link {
   font-weight: 400;
   text-align: left;
   color: rgba(255, 255, 255, 0.55);
-  padding: 64px var(--content-margin) 28px;
+  padding: 64px var(--content-margin) 20px;
   margin: 0;
 }
 
@@ -2421,7 +2428,7 @@ html:has(body.page-fanta) {
   font-family: "TikTok Sans", sans-serif;
   font-size: calc(25 / 1920 * var(--viewport-1920));
   font-style: normal;
-  font-weight: 550;
+  font-weight: 500;
   line-height: 135%;
   letter-spacing: normal;
   text-transform: none;
@@ -2436,7 +2443,7 @@ html:has(body.page-fanta) {
 .page-fortnite .project-intro--hellofresh .project-intro__desc {
   color: #1E1E1E;
   font-size: calc(25 / 1920 * var(--viewport-1920));
-  font-weight: 550;
+  font-weight: 400;
   line-height: 135%;
   text-wrap: pretty;
 }
@@ -2765,13 +2772,13 @@ html:has(body.page-fanta) {
 
 .project-container .other-projects__label {
   font-family: var(--font-display);
-  font-size: calc(16 / 1920 * var(--viewport-1920));
+  font-size: 23px;
   font-weight: 400;
   text-transform: none;
   text-align: left;
   color: #111111;
   background-color: transparent;
-  padding: 64px 0 28px;
+  padding: 64px 0 20px;
   margin: 0;
 }
 
@@ -2998,7 +3005,7 @@ html:has(body.page-dark) {
   font-family: "TikTok Sans", sans-serif;
   font-size: calc(25 / 1920 * var(--viewport-1920));
   font-style: normal;
-  font-weight: 550;
+  font-weight: 400;
   line-height: 135%;
   letter-spacing: normal;
   text-transform: none;
@@ -3010,7 +3017,7 @@ html:has(body.page-dark) {
 .page-dark .project-intro--hellofresh .project-intro__desc {
   color: #E1E1E1;
   font-size: calc(25 / 1920 * var(--viewport-1920));
-  font-weight: 550;
+  font-weight: 400;
   line-height: 135%;
   text-wrap: pretty;
 }
@@ -3937,7 +3944,7 @@ html:has(body.page-dark) {
   font-family: 'Nunito Sans', sans-serif;
   font-size: 1.6cqw;
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1.4;
   color: #ffffff;
   max-width: none;
   margin: 0;
@@ -4066,7 +4073,7 @@ html:has(body.page-dark) {
   font-family: 'Nunito Sans', sans-serif;
   font-size: 1.6cqw;
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1.4;
   color: #16206F;
   max-width: none;
   margin: 0;
@@ -4231,7 +4238,7 @@ html:has(body.page-dark) {
   font-family: 'Nunito Sans', sans-serif;
   font-size: 1.6cqw;
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1.4;
   color: #16206F;
   max-width: none;
   margin: 0;
