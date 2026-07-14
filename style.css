@@ -739,7 +739,7 @@ button.nav__link {
 .work-item__role {
   color: #505050;
   font-family: "TikTok Sans", sans-serif;
-  font-size: 1.1em;
+  font-size: 1.5em;
   font-style: normal;
   font-weight: 350;
   line-height: 140%;
@@ -2552,7 +2552,7 @@ html:has(body.page-fanta) {
 .hellofresh-stack {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 7px;
 }
 
 .hellofresh-stack.browser-shell,
@@ -2608,6 +2608,59 @@ html:has(body.page-fanta) {
   object-fit: contain;
   object-position: center;
   border-radius: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.hellofresh-media video source {
+  margin-top: 0;
+}
+
+.page-hello-fresh .theme-section--hellofresh {
+  padding: 0;
+}
+
+.page-hello-fresh .theme-section--hellofresh .hellofresh-stack.layout--narrow,
+.page-hello-fresh .theme-section--hellofresh .hellofresh-stack.layout--narrow .hellofresh-media,
+.page-hello-fresh .theme-section--hellofresh .hellofresh-stack.layout--narrow .hellofresh-media video.hellofresh-media__image {
+  padding: 0;
+}
+
+.page-hello-fresh .theme-section--hellofresh .hellofresh-stack.layout--narrow .hellofresh-media:has(video),
+.page-hello-fresh .theme-section--hellofresh .hellofresh-stack.layout--narrow .hellofresh-media:nth-child(1):has(video),
+.page-hello-fresh .theme-section--hellofresh .hellofresh-stack.layout--narrow .hellofresh-media:nth-child(2):has(video),
+.page-hello-fresh .theme-section--hellofresh .hellofresh-stack.layout--narrow .hellofresh-media:nth-child(3):has(video) {
+  width: 100%;
+  aspect-ratio: auto;
+  height: auto;
+}
+
+.page-hello-fresh .theme-section--hellofresh .hellofresh-stack.layout--narrow .hellofresh-media video.hellofresh-media__image {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: unset;
+  object-position: center;
+  display: block;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.page-hello-fresh .theme-section--hellofresh .hellofresh-stack.layout--narrow .hellofresh-media:nth-child(1):has(video) {
+  aspect-ratio: 1400 / 933;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.page-hello-fresh .theme-section--hellofresh .hellofresh-stack.layout--narrow .hellofresh-media:nth-child(1) video.hellofresh-media__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left bottom;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .hellofresh-stack--fill .hellofresh-media:has(video) {
@@ -2679,6 +2732,7 @@ html:has(body.page-fanta) {
   width: 100%;
   height: auto;
   display: block;
+  padding-top: 90px;
 }
 
 .cookunity-banner {
@@ -3242,23 +3296,23 @@ html:has(body.page-dark) {
 /* ==========================================================
    CAP'N CRUNCH PAGE
    ========================================================== */
-.capn-header {
+.page-capn-crunch .capn-header{
   position: relative;
   width: 100%;
 }
 
-.capn-hero {
+.page-capn-crunch .capn-hero{
   width: 100%;
   line-height: 0;
 }
 
-.capn-hero__logo {
+.page-capn-crunch .capn-hero__logo{
   width: 100%;
   height: auto;
   display: block;
 }
 
-.capn-section {
+.page-capn-crunch .capn-section{
   width: var(--browser-92);
   max-width: var(--browser-92);
   margin-inline: auto;
@@ -3266,23 +3320,23 @@ html:has(body.page-dark) {
   box-sizing: border-box;
 }
 
-.capn-section__media {
+.page-capn-crunch .capn-section__media{
   position: relative;
   width: 100%;
   line-height: 0;
 }
 
-.capn-section__image {
+.page-capn-crunch .capn-section__image{
   width: 100%;
   height: auto;
   display: block;
 }
 
-.capn-section video.capn-section__image {
+.page-capn-crunch .capn-section video.capn-section__image{
   border-radius: 0;
 }
 
-.capn-section__play {
+.page-capn-crunch .capn-section__play{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -3295,18 +3349,18 @@ html:has(body.page-dark) {
   transition: transform 0.25s var(--ease-out), opacity 0.2s;
 }
 
-.capn-section__play:hover {
+.page-capn-crunch .capn-section__play:hover{
   transform: translate(-50%, -50%) scale(1.06);
   opacity: 0.92;
 }
 
-.capn-section__play img {
+.page-capn-crunch .capn-section__play img{
   width: clamp(56px, 9vw, 100px);
   height: auto;
   display: block;
 }
 
-.capn-takeover {
+.page-capn-crunch .capn-takeover{
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -3318,7 +3372,7 @@ html:has(body.page-dark) {
   box-sizing: border-box;
 }
 
-.capn-takeover__bkg {
+.page-capn-crunch .capn-takeover__bkg{
   position: absolute;
   top: 0;
   bottom: 0;
@@ -3332,20 +3386,21 @@ html:has(body.page-dark) {
   pointer-events: none;
 }
 
-.capn-takeover__header,
-.capn-takeover__stack,
-.capn-takeover__media,
-.capn-takeover .capn-scenes__stack {
+.page-capn-crunch .capn-takeover__header,
+.page-capn-crunch .capn-takeover__stack,
+.page-capn-crunch .capn-takeover__media,
+.page-capn-crunch .capn-takeover .capn-scenes__stack {
   position: relative;
   z-index: 1;
 }
 
-.capn-takeover__header {
+.page-capn-crunch .capn-takeover__header{
   padding: clamp(48px, 6vw, 80px) var(--content-margin) clamp(40px, 5vw, 64px);
   box-sizing: border-box;
+  margin-bottom: 30px;
 }
 
-.capn-takeover__copy {
+.page-capn-crunch .capn-takeover__copy{
   position: relative;
   z-index: 1;
   display: flex;
@@ -3360,7 +3415,7 @@ html:has(body.page-dark) {
   gap: 0;
 }
 
-.capn-takeover__logo {
+.page-capn-crunch .capn-takeover__logo{
   width: calc(278 / 1920 * var(--viewport-1920));
   max-width: 100%;
   height: auto;
@@ -3368,7 +3423,7 @@ html:has(body.page-dark) {
   margin-bottom: clamp(20px, 3vw, 32px);
 }
 
-.capn-takeover__text {
+.page-capn-crunch .capn-takeover__text{
   width: 100%;
   color: #FFF;
   text-align: center;
@@ -3383,8 +3438,507 @@ html:has(body.page-dark) {
   margin: 0 0 calc(36.4 / 1920 * var(--viewport-1920));
 }
 
-.capn-takeover__text:last-child {
+.page-capn-crunch .capn-takeover__text:last-child{
   margin-bottom: 0;
+}
+
+
+.page-capn-crunch .capn-takeover__stack,
+.page-capn-crunch .capn-takeover .capn-scenes__stack {
+  display: flex;
+  flex-direction: column;
+  width: min(100%, var(--layout-narrow-max), 80%);
+  max-width: min(var(--layout-narrow-max), 80%);
+  margin-inline: auto;
+  box-sizing: border-box;
+}
+
+.page-capn-crunch .capn-takeover__stack{
+  gap: 0;
+  align-items: center;
+}
+
+.page-capn-crunch .capn-takeover .capn-scenes__stack{
+  gap: 10px;
+  margin-bottom: 3rem;
+  padding: 6px 0;
+}
+
+.page-capn-crunch .capn-takeover__image{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.page-capn-crunch .capn-scenes__stack{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.page-capn-crunch .capn-scenes__item{
+  position: relative;
+  width: 100%;
+  line-height: 0;
+}
+
+.page-capn-crunch .capn-scenes__image{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.page-capn-crunch video.capn-scenes__image{
+  border-radius: 0;
+}
+
+.page-capn-crunch video.capn-scenes__image {
+  height: fit-content;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+}
+
+.page-capn-crunch .capn-scenes__play{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1;
+  transition: transform 0.25s var(--ease-out), opacity 0.2s;
+}
+
+.page-capn-crunch .capn-scenes__play:hover{
+  transform: translate(-50%, -50%) scale(1.06);
+  opacity: 0.92;
+}
+
+.page-capn-crunch .capn-scenes__play img{
+  width: clamp(56px, 9vw, 100px);
+  height: auto;
+  display: block;
+}
+
+.page-capn-crunch .capn-alerts{
+  width: 100%;
+  background-color: transparent;
+  padding: clamp(64px, 8vw, 96px) var(--content-margin) 0;
+  box-sizing: border-box;
+}
+
+.page-capn-crunch .capn-alerts__layout{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(24px, 4vw, 56px);
+  width: 100%;
+  max-width: 1100px;
+  margin-inline: auto;
+}
+
+.page-capn-crunch .capn-alerts__content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0;
+  flex: 0 0 auto;
+  min-width: 0;
+}
+
+.page-capn-crunch .capn-alerts__title{
+  width: calc(188 / 1920 * var(--viewport-1920));
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: clamp(20px, 2.5vw, 28px);
+}
+
+.page-capn-crunch .capn-alerts__text{
+  width: 100%;
+  color: #184C84;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: calc(26 / 1920 * var(--viewport-1920));
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: calc(0.26 / 1920 * var(--viewport-1920));
+  text-transform: none;
+  max-width: 100%;
+  margin: 0 0 calc(36.4 / 1920 * var(--viewport-1920));
+}
+
+.page-capn-crunch .capn-alerts__text:last-child{
+  margin-bottom: 3rem;
+}
+
+.page-capn-crunch .capn-alerts__icon{
+  height: auto;
+  display: block;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.page-capn-crunch .capn-alerts__icon--star{
+  width: calc(130 / 1920 * var(--viewport-1920));
+  max-width: 100%;
+  transform: translateY(-3rem);
+}
+
+.page-capn-crunch .capn-alerts__icon--money{
+  width: calc(83 / 1920 * var(--viewport-1920));
+  max-width: 100%;
+}
+
+.page-capn-crunch .capn-alerts-media{
+  width: var(--browser-92);
+  max-width: var(--browser-92);
+  margin-inline: auto;
+  line-height: 0;
+  margin-top: 0;
+  margin-bottom: 1.7%;
+  box-sizing: border-box;
+}
+
+.page-capn-crunch .capn-alerts-media__image{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.page-capn-crunch .capn-alerts-media video.capn-alerts-media__image{
+  border-radius: 0;
+}
+
+
+.page-capn-crunch .capn-branded-scenes{
+  position: relative;
+  isolation: isolate;
+  width: var(--browser-92);
+  max-width: var(--browser-92);
+  margin-inline: auto;
+  overflow: hidden;
+  margin-bottom: 1.7%;
+  box-sizing: border-box;
+}
+
+.page-capn-crunch .capn-branded-scenes__bkg{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: var(--browser-92);
+  max-width: var(--browser-92);
+  height: 100%;
+  transform: translateX(-50%);
+  object-fit: cover;
+  object-position: center top;
+  z-index: 0;
+  pointer-events: none;
+  margin-top: 3px;
+}
+
+.page-capn-crunch .capn-branded-scenes__panel{
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+  width: var(--browser-92);
+  max-width: var(--browser-92);
+  margin-inline: auto;
+  padding: clamp(64px, 8vw, 66px) clamp(20px, 4vw, 48px) 91px;
+  box-sizing: border-box;
+}
+
+.page-capn-crunch .capn-branded-scenes__intro{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: calc(1000 / 1920 * var(--viewport-1920));
+  margin-inline: auto;
+  margin-bottom: clamp(32px, 4vw, 48px);
+}
+
+.page-capn-crunch .capn-branded-scenes__title{
+  width: calc(500 / 1920 * var(--viewport-1920));
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: clamp(20px, 2.5vw, 28px);
+}
+
+.page-capn-crunch .capn-branded-scenes__text{
+  width: 100%;
+  color: #FFF;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: calc(26 / 1920 * var(--viewport-1920));
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: calc(0.26 / 1920 * var(--viewport-1920));
+  text-transform: none;
+  max-width: 100%;
+  margin: 0 0 calc(36.4 / 1920 * var(--viewport-1920));
+}
+
+.page-capn-crunch .capn-branded-scenes__text:last-child{
+  margin-bottom: 0;
+}
+
+.page-capn-crunch .capn-branded-scenes__stack{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: min(100%, var(--layout-narrow-max), 80%);
+  max-width: min(var(--layout-narrow-max), 80%);
+  margin-inline: auto;
+}
+
+.page-capn-crunch .capn-branded-scenes__item{
+  position: relative;
+  width: 100%;
+  line-height: 0;
+}
+
+.page-capn-crunch .capn-branded-scenes__image{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.page-capn-crunch .capn-branded-scenes video.capn-branded-scenes__image{
+  border-radius: 0;
+}
+
+.page-capn-crunch .capn-branded-scenes__play{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1;
+  transition: transform 0.25s var(--ease-out), opacity 0.2s;
+}
+
+.page-capn-crunch .capn-branded-scenes__play:hover{
+  transform: translate(-50%, -50%) scale(1.06);
+  opacity: 0.92;
+}
+
+.page-capn-crunch .capn-branded-scenes__play img{
+  width: clamp(56px, 9vw, 100px);
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 600px) {
+.page-capn-crunch .capn-section__play img{
+    width: clamp(48px, 12vw, 72px);
+  }
+
+.page-capn-crunch .capn-scenes__play img{
+    width: clamp(48px, 12vw, 72px);
+  }
+
+.page-capn-crunch .capn-alerts__layout{
+    flex-direction: column;
+    gap: 32px;
+  }
+
+.page-capn-crunch .capn-alerts__text{
+    width: auto;
+    max-width: 100%;
+  }
+
+.page-capn-crunch .capn-alerts__icon--star{
+    order: 1;
+  }
+
+.page-capn-crunch .capn-alerts__content{
+    order: 2;
+  }
+
+.page-capn-crunch .capn-alerts__icon--money{
+    order: 3;
+  }
+
+.page-capn-crunch .capn-branded-scenes__play img{
+    width: clamp(48px, 12vw, 72px);
+  }
+}
+
+
+/* ==========================================================
+   FORTNITE PAGE
+   Styles scoped to .page-fortnite only — edits here do not
+   affect Cap'n Crunch or other project pages.
+   ========================================================== */
+
+.page-fortnite .capn-header {
+  position: relative;
+  width: 100%;
+}
+
+.page-fortnite .capn-hero {
+  width: 100%;
+  line-height: 0;
+}
+
+.page-fortnite .capn-hero__logo {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.page-fortnite .capn-takeover {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: #1a4a8c;
+  width: var(--browser-92);
+  max-width: var(--browser-92);
+  margin-inline: auto;
+  box-sizing: border-box;
+}
+
+.page-fortnite .capn-takeover__bkg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: var(--browser-92);
+  height: 100%;
+  transform: translateX(-50%);
+  object-fit: cover;
+  object-position: center top;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.page-fortnite .capn-takeover__header,
+.page-fortnite .capn-takeover__stack,
+.page-fortnite .capn-takeover__media,
+.page-fortnite .capn-takeover .capn-scenes__stack {
+  position: relative;
+  z-index: 1;
+}
+
+.page-fortnite .capn-takeover__header {
+  padding: clamp(48px, 6vw, 80px) var(--content-margin) clamp(40px, 5vw, 64px);
+  box-sizing: border-box;
+}
+
+.page-fortnite .capn-takeover__copy {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: normal;
+  width: 100%;
+  height: 100%;
+  max-width: calc(1000 / 1920 * var(--viewport-1920));
+  margin-inline: auto;
+  gap: 0;
+}
+
+.page-fortnite .capn-takeover__logo {
+  width: calc(278 / 1920 * var(--viewport-1920));
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: clamp(20px, 3vw, 32px);
+}
+
+.page-fortnite .capn-takeover__text {
+  width: 100%;
+  color: #FFF;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: calc(26 / 1920 * var(--viewport-1920));
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: calc(0.26 / 1920 * var(--viewport-1920));
+  text-transform: none;
+  max-width: 100%;
+  margin: 0 0 calc(36.4 / 1920 * var(--viewport-1920));
+}
+
+.page-fortnite .capn-takeover__text:last-child {
+  margin-bottom: 0;
+}
+
+.page-fortnite .capn-takeover__stack,
+.page-fortnite .capn-takeover .capn-scenes__stack {
+  display: flex;
+  flex-direction: column;
+  width: min(100%, var(--layout-narrow-max), 80%);
+  max-width: min(var(--layout-narrow-max), 80%);
+  margin-inline: auto;
+  box-sizing: border-box;
+}
+
+.page-fortnite .capn-takeover__stack {
+  gap: 0;
+  align-items: center;
+}
+
+.page-fortnite .capn-takeover .capn-scenes__stack {
+  gap: 10px;
+  margin-bottom: 3rem;
+  padding: 6px 0;
+}
+
+.page-fortnite .capn-takeover__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.page-fortnite .capn-scenes__stack {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.page-fortnite .capn-scenes__item {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+}
+
+.page-fortnite .capn-scenes__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.page-fortnite video.capn-scenes__image {
+  border-radius: 0;
+}
+
+.page-fortnite .capn-alerts-media__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.page-fortnite .capn-alerts-media video.capn-alerts-media__image {
+  border-radius: 0;
 }
 
 .page-fortnite .capn-takeover__text {
@@ -3458,7 +4012,7 @@ html:has(body.page-dark) {
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-takeover__media + .capn-takeover__header .capn-takeover__copy {
-  margin-bottom: calc(64 / 1920 * var(--viewport-1920));
+  margin-bottom: 122px;
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-takeover__media + .capn-takeover__header .capn-takeover__alert-video {
@@ -3489,11 +4043,13 @@ html:has(body.page-dark) {
 
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-takeover__stack + .capn-takeover__header {
   margin-top: 0;
+  margin-bottom: 0;
   padding-bottom: 0;
+  height: 263px;
 }
 
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-takeover__stack + .capn-takeover__header + .capn-scenes__stack {
-  margin-top: calc(79 / 1920 * var(--viewport-1920));
+  margin-top: 30px;
   padding-top: 0;
 }
 
@@ -3503,6 +4059,14 @@ html:has(body.page-dark) {
 
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-takeover__stack + .capn-takeover__header .capn-takeover__text {
   margin-bottom: calc(18.2 / 1920 * var(--viewport-1920));
+}
+
+.page-fortnite .project-intro--hellofresh + .capn-takeover .capn-takeover__stack + .capn-takeover__header .capn-takeover__text:last-child {
+  margin-bottom: 0;
+}
+
+.page-fortnite .project-intro--hellofresh + .capn-takeover .capn-takeover__stack + .capn-takeover__header .capn-takeover__copy {
+  height: 236px;
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-takeover__stack {
@@ -3540,7 +4104,7 @@ html:has(body.page-dark) {
 .page-fortnite .capn-takeover__header {
   margin-top: 1rem;
   padding-top: 0;
-  margin-bottom: -20px;
+  margin-bottom: -105px;
 }
 
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-scenes__stack {
@@ -3551,7 +4115,7 @@ html:has(body.page-dark) {
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-scenes__stack + .capn-takeover__header {
   margin-top: calc(134 / 1920 * var(--viewport-1920));
   padding-top: 0;
-  padding-bottom: 111px;
+  padding-bottom: 197px;
 }
 
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-scenes__stack + .capn-takeover__header .capn-takeover__logo {
@@ -3569,20 +4133,34 @@ html:has(body.page-dark) {
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-scenes__stack + .capn-takeover__header .capn-takeover__copy {
   height: 217px;
   margin-top: -51px;
-  margin-bottom: 0;
+  margin-bottom: 63px;
 }
 
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-scenes__stack + .capn-takeover__header .capn-takeover__alert-video {
-  margin-top: 113px;
+  margin-top: 10px;
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-scenes__stack {
   margin-bottom: 0;
 }
 
+.page-fortnite .capn-takeover .capn-scenes__stack {
+  gap: 10px;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.page-fortnite video.capn-scenes__image {
+  width: 100%;
+  height: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-scenes__stack + .capn-takeover__header {
-  margin-top: calc(103 / 1920 * var(--viewport-1920));
-  margin-bottom: calc(89 / 1920 * var(--viewport-1920));
+  margin-top: 60px;
+  margin-bottom: 60px;
   padding-bottom: 0;
 }
 
@@ -3594,6 +4172,11 @@ html:has(body.page-dark) {
   margin-bottom: 0;
 }
 
+.page-fortnite .capn-takeover ~ .capn-takeover .capn-scenes__stack + .capn-takeover__header .capn-takeover__copy {
+  margin-top: 0;
+  margin-bottom: 113px;
+}
+
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-takeover__media {
   display: flex;
   flex-direction: column;
@@ -3602,346 +4185,17 @@ html:has(body.page-dark) {
   line-height: 0;
 }
 
-.capn-takeover__stack,
-.capn-takeover .capn-scenes__stack {
-  display: flex;
-  flex-direction: column;
-  width: min(100%, var(--layout-narrow-max), 80%);
-  max-width: min(var(--layout-narrow-max), 80%);
-  margin-inline: auto;
-  box-sizing: border-box;
-}
-
-.capn-takeover__stack {
-  gap: 0;
-  align-items: center;
-}
-
-.capn-takeover .capn-scenes__stack {
-  gap: 10px;
-  margin-bottom: 3rem;
-  padding: 6px 0;
-}
-
-.capn-takeover__image {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.capn-scenes__stack {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  width: 100%;
-}
-
-.capn-scenes__item {
-  position: relative;
-  width: 100%;
-  line-height: 0;
-}
-
-.capn-scenes__image {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-video.capn-scenes__image {
-  height: fit-content;
-  border-radius: 0;
-  margin-top: -60px;
-  margin-bottom: 20px;
-  padding-top: 40px;
-}
-
-.capn-scenes__play {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 1;
-  transition: transform 0.25s var(--ease-out), opacity 0.2s;
-}
-
-.capn-scenes__play:hover {
-  transform: translate(-50%, -50%) scale(1.06);
-  opacity: 0.92;
-}
-
-.capn-scenes__play img {
-  width: clamp(56px, 9vw, 100px);
-  height: auto;
-  display: block;
-}
-
-.capn-alerts {
-  width: 100%;
-  background-color: transparent;
-  padding: clamp(64px, 8vw, 96px) var(--content-margin) 0;
-  box-sizing: border-box;
-}
-
-.capn-alerts__layout {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(24px, 4vw, 56px);
-  width: 100%;
-  max-width: 1100px;
-  margin-inline: auto;
-}
-
-.capn-alerts__content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 0;
-  flex: 0 0 auto;
-  min-width: 0;
-}
-
-.capn-alerts__title {
-  width: calc(188 / 1920 * var(--viewport-1920));
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin-bottom: clamp(20px, 2.5vw, 28px);
-}
-
-.capn-alerts__text {
-  width: 100%;
-  color: #184C84;
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-  font-size: calc(26 / 1920 * var(--viewport-1920));
-  font-style: normal;
-  font-weight: 600;
-  line-height: 140%;
-  letter-spacing: calc(0.26 / 1920 * var(--viewport-1920));
-  text-transform: none;
-  max-width: 100%;
-  margin: 0 0 calc(36.4 / 1920 * var(--viewport-1920));
-}
-
-.capn-alerts__text:last-child {
-  margin-bottom: 3rem;
-}
-
-.capn-alerts__icon {
-  height: auto;
-  display: block;
-  flex-shrink: 0;
-  align-self: center;
-}
-
-.capn-alerts__icon--star {
-  width: calc(130 / 1920 * var(--viewport-1920));
-  max-width: 100%;
-  transform: translateY(-3rem);
-}
-
-.capn-alerts__icon--money {
-  width: calc(83 / 1920 * var(--viewport-1920));
-  max-width: 100%;
-}
-
-.capn-alerts-media {
-  width: var(--browser-92);
-  max-width: var(--browser-92);
-  margin-inline: auto;
-  line-height: 0;
-  margin-top: 0;
-  margin-bottom: 1.7%;
-  box-sizing: border-box;
-}
-
-.capn-alerts-media__image {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.capn-alerts-media video.capn-alerts-media__image {
-  border-radius: 0;
-}
-
 .page-fortnite .capn-takeover__alert-video {
   width: calc(min(100%, var(--layout-narrow-max), 80%) * 0.65);
   max-width: calc(min(100%, var(--layout-narrow-max), 80%) * 0.65);
   height: auto;
   display: block;
   margin-top: 2rem;
-  margin-bottom: -21px;
+  margin-bottom: 0px;
   margin-inline: auto;
   line-height: 0;
 }
 
-.capn-branded-scenes {
-  position: relative;
-  isolation: isolate;
-  width: var(--browser-92);
-  max-width: var(--browser-92);
-  margin-inline: auto;
-  overflow: hidden;
-  margin-bottom: 1.7%;
-  box-sizing: border-box;
-}
-
-.capn-branded-scenes__bkg {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: var(--browser-92);
-  max-width: var(--browser-92);
-  height: 100%;
-  transform: translateX(-50%);
-  object-fit: cover;
-  object-position: center top;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.capn-branded-scenes__panel {
-  position: relative;
-  z-index: 1;
-  isolation: isolate;
-  width: var(--browser-92);
-  max-width: var(--browser-92);
-  margin-inline: auto;
-  padding: clamp(64px, 8vw, 96px) clamp(20px, 4vw, 48px) 91px;
-  box-sizing: border-box;
-}
-
-.capn-branded-scenes__intro {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  max-width: calc(1000 / 1920 * var(--viewport-1920));
-  margin-inline: auto;
-  margin-bottom: clamp(32px, 4vw, 48px);
-}
-
-.capn-branded-scenes__title {
-  width: calc(500 / 1920 * var(--viewport-1920));
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin-bottom: clamp(20px, 2.5vw, 28px);
-}
-
-.capn-branded-scenes__text {
-  width: 100%;
-  color: #FFF;
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-  font-size: calc(26 / 1920 * var(--viewport-1920));
-  font-style: normal;
-  font-weight: 600;
-  line-height: 140%;
-  letter-spacing: calc(0.26 / 1920 * var(--viewport-1920));
-  text-transform: none;
-  max-width: 100%;
-  margin: 0 0 calc(36.4 / 1920 * var(--viewport-1920));
-}
-
-.capn-branded-scenes__text:last-child {
-  margin-bottom: 0;
-}
-
-.capn-branded-scenes__stack {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: min(100%, var(--layout-narrow-max), 80%);
-  max-width: min(var(--layout-narrow-max), 80%);
-  margin-inline: auto;
-}
-
-.capn-branded-scenes__item {
-  position: relative;
-  width: 100%;
-  line-height: 0;
-}
-
-.capn-branded-scenes__image {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.capn-branded-scenes video.capn-branded-scenes__image {
-  border-radius: 0;
-}
-
-.capn-branded-scenes__play {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 1;
-  transition: transform 0.25s var(--ease-out), opacity 0.2s;
-}
-
-.capn-branded-scenes__play:hover {
-  transform: translate(-50%, -50%) scale(1.06);
-  opacity: 0.92;
-}
-
-.capn-branded-scenes__play img {
-  width: clamp(56px, 9vw, 100px);
-  height: auto;
-  display: block;
-}
-
-@media (max-width: 600px) {
-  .capn-section__play img {
-    width: clamp(48px, 12vw, 72px);
-  }
-
-  .capn-scenes__play img {
-    width: clamp(48px, 12vw, 72px);
-  }
-
-  .capn-alerts__layout {
-    flex-direction: column;
-    gap: 32px;
-  }
-
-  .capn-alerts__text {
-    width: auto;
-    max-width: 100%;
-  }
-
-  .capn-alerts__icon--star {
-    order: 1;
-  }
-
-  .capn-alerts__content {
-    order: 2;
-  }
-
-  .capn-alerts__icon--money {
-    order: 3;
-  }
-
-  .capn-branded-scenes__play img {
-    width: clamp(48px, 12vw, 72px);
-  }
-}
 
 /* ==========================================================
    FANTA PAGE
