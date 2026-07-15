@@ -4017,7 +4017,7 @@ html:has(body.page-dark) {
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-takeover__media + .capn-takeover__header .capn-takeover__alert-video {
-  margin-top: 0;
+  margin-top: -30px;
 }
 
 .page-fortnite .capn-takeover__image {
@@ -4139,7 +4139,7 @@ html:has(body.page-dark) {
 }
 
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-scenes__stack + .capn-takeover__header .capn-takeover__alert-video {
-  margin-top: 0;
+  margin-top: -30px;
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-scenes__stack {
