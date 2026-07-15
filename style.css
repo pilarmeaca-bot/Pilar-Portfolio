@@ -3835,7 +3835,7 @@ html:has(body.page-dark) {
 }
 
 .page-fortnite .capn-takeover__header {
-  padding: clamp(48px, 6vw, 80px) var(--content-margin) clamp(40px, 5vw, 64px);
+  padding: clamp(48px, 6vw, 80px) var(--content-margin) 64px;
   box-sizing: border-box;
 }
 
@@ -4012,7 +4012,8 @@ html:has(body.page-dark) {
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-takeover__media + .capn-takeover__header .capn-takeover__copy {
-  margin-bottom: 122px;
+  margin-bottom: 0;
+  padding-bottom: 64px;
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-takeover__media + .capn-takeover__header .capn-takeover__alert-video {
@@ -4043,8 +4044,8 @@ html:has(body.page-dark) {
 
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-takeover__stack + .capn-takeover__header {
   margin-top: 0;
-  margin-bottom: 0;
-  padding-bottom: 0;
+  margin-bottom: 60px;
+  padding-bottom: 64px;
   height: 263px;
 }
 
@@ -4076,7 +4077,8 @@ html:has(body.page-dark) {
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-takeover__stack + .capn-takeover__header {
   margin-top: 0;
-  padding-bottom: 0;
+  margin-bottom: -50px;
+  padding-bottom: 64px;
   height: 240px;
 }
 
@@ -4104,7 +4106,7 @@ html:has(body.page-dark) {
 .page-fortnite .capn-takeover__header {
   margin-top: 1rem;
   padding-top: 0;
-  margin-bottom: -105px;
+  margin-bottom: 0;
 }
 
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-scenes__stack {
@@ -4133,11 +4135,11 @@ html:has(body.page-dark) {
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-scenes__stack + .capn-takeover__header .capn-takeover__copy {
   height: 217px;
   margin-top: -51px;
-  margin-bottom: 63px;
+  margin-bottom: 100px;
 }
 
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-scenes__stack + .capn-takeover__header .capn-takeover__alert-video {
-  margin-top: 10px;
+  margin-top: 0;
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-scenes__stack {
@@ -4160,7 +4162,7 @@ html:has(body.page-dark) {
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-scenes__stack + .capn-takeover__header {
   margin-top: 60px;
-  margin-bottom: 60px;
+  margin-bottom: -40px;
   padding-bottom: 0;
 }
 
