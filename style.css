@@ -3990,34 +3990,57 @@ html:has(body.page-dark) {
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-takeover__media + .capn-takeover__header {
-  margin-top: calc(103 / 1920 * var(--viewport-1920));
-  padding-bottom: calc(293 / 1920 * var(--viewport-1920));
-  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: calc(1000 / 1920 * var(--viewport-1920));
+  margin-top: 69px;
+  margin-inline: auto;
+  margin-bottom: 77px;
+  padding: 0;
+  height: auto;
+  box-sizing: border-box;
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-takeover__media + .capn-takeover__header .capn-takeover__logo {
-  width: calc(234 / 1920 * var(--viewport-1920));
-  height: calc(53 / 1920 * var(--viewport-1920));
+  width: calc(188 / 1920 * var(--viewport-1920));
   max-width: 100%;
+  height: auto;
+  display: block;
   object-fit: contain;
-  margin-bottom: calc(32 / 1920 * var(--viewport-1920));
+  margin-bottom: clamp(20px, 2.5vw, 28px);
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-takeover__media + .capn-takeover__header .capn-takeover__text {
-  margin-bottom: calc(18.2 / 1920 * var(--viewport-1920));
+  margin: 0 0 calc(36.4 / 1920 * var(--viewport-1920));
+}
+
+.page-fortnite .capn-takeover ~ .capn-takeover .capn-takeover__media + .capn-takeover__header .capn-takeover__text:first-of-type {
+  margin-bottom: 20px;
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-takeover__media + .capn-takeover__header .capn-takeover__text:last-child {
-  margin-bottom: 0;
+  margin-bottom: 3rem;
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-takeover__media + .capn-takeover__header .capn-takeover__copy {
-  margin-bottom: 0;
-  padding-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0;
+  flex: 0 0 auto;
+  min-width: 0;
+  height: auto;
+  width: 100%;
+  margin: 0;
+  padding-bottom: 0;
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-takeover__media + .capn-takeover__header .capn-takeover__alert-video {
-  margin-top: -30px;
+  margin-top: 0;
 }
 
 .page-fortnite .capn-takeover__image {
@@ -4075,7 +4098,7 @@ html:has(body.page-dark) {
 }
 
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-takeover__stack + .capn-takeover__header .capn-takeover__text:first-of-type {
-  margin-top: -12px;
+  margin-top: -8px;
 }
 
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-takeover__stack + .capn-takeover__header .capn-takeover__text:last-child {
@@ -4134,31 +4157,58 @@ html:has(body.page-dark) {
 }
 
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-scenes__stack + .capn-takeover__header {
-  margin-top: calc(134 / 1920 * var(--viewport-1920));
-  padding-top: 0;
-  padding-bottom: 197px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: calc(1000 / 1920 * var(--viewport-1920));
+  margin-top: 57px;
+  margin-inline: auto;
+  margin-bottom: 77px;
+  padding: 0;
+  height: auto;
+  box-sizing: border-box;
 }
 
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-scenes__stack + .capn-takeover__header .capn-takeover__logo {
-  margin-bottom: calc(32 / 1920 * var(--viewport-1920));
+  width: calc(188 / 1920 * var(--viewport-1920));
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 23px;
 }
 
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-scenes__stack + .capn-takeover__header .capn-takeover__text {
-  margin-bottom: calc(18.2 / 1920 * var(--viewport-1920));
+  margin: 0 0 calc(36.4 / 1920 * var(--viewport-1920));
+}
+
+.page-fortnite .project-intro--hellofresh + .capn-takeover .capn-scenes__stack + .capn-takeover__header .capn-takeover__text:first-of-type {
+  margin-top: -8px;
 }
 
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-scenes__stack + .capn-takeover__header .capn-takeover__text:last-child {
-  margin-bottom: 30px;
+  margin-top: -20px;
+  margin-bottom: 28px;
 }
 
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-scenes__stack + .capn-takeover__header .capn-takeover__copy {
-  height: 217px;
-  margin-top: -51px;
-  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0;
+  flex: 0 0 auto;
+  min-width: 0;
+  height: auto;
+  width: 100%;
+  margin: 0;
+  margin-top: 22px;
+  padding-top: 16px;
 }
 
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-scenes__stack + .capn-takeover__header .capn-takeover__alert-video {
-  margin-top: -30px;
+  margin-top: 0;
 }
 
 .page-fortnite .capn-takeover ~ .capn-takeover .capn-scenes__stack {
