@@ -4044,7 +4044,7 @@ html:has(body.page-dark) {
 
 .page-fortnite .project-intro--hellofresh + .capn-takeover .capn-takeover__stack + .capn-takeover__header {
   margin-top: 0;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   padding-bottom: 64px;
   height: 263px;
 }
