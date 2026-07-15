@@ -3395,9 +3395,9 @@ html:has(body.page-dark) {
 }
 
 .page-capn-crunch .capn-takeover__header{
-  padding: clamp(48px, 6vw, 80px) var(--content-margin) clamp(40px, 5vw, 64px);
+  padding: clamp(48px, 6vw, 80px) var(--content-margin) clamp(40px, 5vw, 50px);
   box-sizing: border-box;
-  margin-bottom: 30px;
+  margin-bottom: -5px;
 }
 
 .page-capn-crunch .capn-takeover__copy{
@@ -3527,7 +3527,7 @@ html:has(body.page-dark) {
 .page-capn-crunch .capn-alerts{
   width: 100%;
   background-color: transparent;
-  padding: clamp(64px, 8vw, 96px) var(--content-margin) 0;
+  padding: clamp(64px, 8vw, 72px) var(--content-margin) 0;
   box-sizing: border-box;
 }
 
