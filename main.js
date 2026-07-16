@@ -24,22 +24,105 @@
   window.addEventListener('resize', syncSpacer, { passive: true });
 })();
 
-(function initWorkFilterNav() {
-  const filterButtons = document.querySelectorAll('[data-work-filter]');
-  if (!filterButtons.length || document.querySelector('.work-item')) return;
+(function initMobileNav() {
+  const navWrapper = document.getElementById('nav-wrapper');
+  const nav = document.getElementById('main-nav');
+  if (!navWrapper || !nav) return;
 
-  filterButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      window.location.href = `work.html?filter=${button.dataset.workFilter}`;
-    });
+  let toggle = nav.querySelector('.nav__toggle');
+  if (!toggle) {
+    toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'nav__toggle';
+    toggle.setAttribute('aria-label', 'Open menu');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-controls', 'nav-mobile-menu');
+    toggle.innerHTML = `
+      <span class="nav__toggle-bar" aria-hidden="true"></span>
+      <span class="nav__toggle-bar" aria-hidden="true"></span>
+      <span class="nav__toggle-bar" aria-hidden="true"></span>
+    `;
+    nav.appendChild(toggle);
+  }
+
+  let menu = document.getElementById('nav-mobile-menu');
+  if (!menu) {
+    menu = document.createElement('div');
+    menu.id = 'nav-mobile-menu';
+    menu.className = 'nav__mobile-menu';
+    menu.hidden = true;
+
+    const menuInner = document.createElement('div');
+    menuInner.className = 'nav__mobile-menu-inner';
+
+    const primaryLinks = nav.querySelector('.nav__links--primary');
+    const filterLinks = nav.querySelector('.nav__filters');
+
+    if (primaryLinks) {
+      const primaryClone = primaryLinks.cloneNode(true);
+      primaryClone.classList.add('nav__links--mobile');
+      primaryClone.removeAttribute('role');
+      menuInner.appendChild(primaryClone);
+    }
+
+    if (filterLinks) {
+      const filtersClone = filterLinks.cloneNode(true);
+      filtersClone.classList.add('nav__links--mobile', 'nav__filters--mobile');
+      filtersClone.removeAttribute('role');
+      menuInner.appendChild(filtersClone);
+    }
+
+    menu.appendChild(menuInner);
+    navWrapper.appendChild(menu);
+  }
+
+  const desktopQuery = window.matchMedia('(min-width: 769px)');
+
+  function setMenuOpen(open) {
+    navWrapper.classList.toggle('nav-wrapper--menu-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    menu.hidden = !open;
+    document.body.classList.toggle('nav-menu-open', open);
+  }
+
+  toggle.addEventListener('click', () => {
+    setMenuOpen(!navWrapper.classList.contains('nav-wrapper--menu-open'));
+  });
+
+  menu.addEventListener('click', (event) => {
+    if (event.target.closest('a.nav__link, [data-work-filter]')) {
+      setMenuOpen(false);
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && navWrapper.classList.contains('nav-wrapper--menu-open')) {
+      setMenuOpen(false);
+    }
+  });
+
+  desktopQuery.addEventListener('change', (event) => {
+    if (event.matches) setMenuOpen(false);
+  });
+
+  document.dispatchEvent(new CustomEvent('mobile-nav-ready'));
+})();
+
+(function initWorkFilterNav() {
+  if (!document.querySelector('[data-work-filter]') || document.querySelector('.work-item')) return;
+
+  document.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-work-filter]');
+    if (!button) return;
+    window.location.href = `work.html?filter=${button.dataset.workFilter}`;
   });
 })();
 
 (function initReelModal() {
   const REEL_SRC = 'images/video/Reel.webm';
   const REEL_POSTER = 'images/thumbnail_reel.jpg';
-  const reelTriggers = document.querySelectorAll('a.nav__link[href="/reel"]');
-  if (!reelTriggers.length) return;
+  if (!document.querySelector('a.nav__link[href="/reel"]')) return;
 
   const modal = document.createElement('div');
   modal.className = 'reel-modal';
@@ -103,11 +186,11 @@
 
   video.addEventListener('ended', resetReel);
 
-  reelTriggers.forEach((link) => {
-    link.addEventListener('click', (event) => {
-      event.preventDefault();
-      openReel();
-    });
+  document.addEventListener('click', (event) => {
+    const link = event.target.closest('a.nav__link[href="/reel"]');
+    if (!link) return;
+    event.preventDefault();
+    openReel();
   });
 
   modal.addEventListener('click', (event) => {

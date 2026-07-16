@@ -1,5 +1,4 @@
 (function () {
-  const filterButtons = document.querySelectorAll('[data-work-filter]');
   const workItems = document.querySelectorAll('.work-item, .work-pair');
   const workGrid = document.querySelector('.work-grid');
   const comingSoon = document.getElementById('work-coming-soon');
@@ -21,7 +20,7 @@
       });
     }
 
-    filterButtons.forEach((button) => {
+    document.querySelectorAll('[data-work-filter]').forEach((button) => {
       const isActive = button.dataset.workFilter === filter;
       button.classList.toggle('nav__link--active', isActive);
       button.setAttribute('aria-pressed', String(isActive));
@@ -33,12 +32,16 @@
     window.history.replaceState({}, '', url);
   }
 
-  filterButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      applyFilter(button.dataset.workFilter);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+  document.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-work-filter]');
+    if (!button || !document.querySelector('.work-item')) return;
+    applyFilter(button.dataset.workFilter);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
   applyFilter(new URLSearchParams(window.location.search).get('filter') === 'all' ? 'all' : 'featured');
+
+  document.addEventListener('mobile-nav-ready', () => {
+    applyFilter(new URLSearchParams(window.location.search).get('filter') === 'all' ? 'all' : 'featured');
+  });
 })();
