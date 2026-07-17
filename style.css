@@ -771,6 +771,7 @@ body.nav-menu-open {
 
   .bio__copy--mobile {
     display: block;
+    line-height: 125%;
   }
 
   .page-home .site-footer {
