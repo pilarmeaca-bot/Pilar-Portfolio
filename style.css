@@ -772,6 +772,10 @@ body.nav-menu-open {
   .bio__copy--mobile {
     display: block;
   }
+
+  .page-home .site-footer {
+    display: none;
+  }
 }
 
 @keyframes fade-up {
