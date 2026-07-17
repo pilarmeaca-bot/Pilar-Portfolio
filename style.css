@@ -751,17 +751,15 @@ body.nav-menu-open {
 
   .page-home .hero__media {
     width: 100%;
+    aspect-ratio: 16 / 10.8;
     overflow: hidden;
   }
 
   .page-home .hero__image {
     width: 100%;
-    transform: scale(1.2);
-    transform-origin: center center;
-  }
-
-  .page-home .hero:hover .hero__image {
-    transform: scale(1.2);
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
   }
 
   .page-home .bio {
