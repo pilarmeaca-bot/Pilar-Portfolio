@@ -503,6 +503,10 @@ body.nav-menu-open {
     padding-top: 8px;
     border-top: 1px solid rgba(0, 0, 0, 0.08);
   }
+
+  .nav__logo-img.nav__logo-img--mobile-asset {
+    filter: none !important;
+  }
 }
 
 @media (min-width: 769px) {
