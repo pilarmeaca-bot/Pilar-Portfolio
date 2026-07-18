@@ -944,7 +944,7 @@ body.nav-menu-open {
     font-weight: 350;
     letter-spacing: -0.5px;
     margin-top: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
   }
 
   .work-item__role {
@@ -4056,6 +4056,23 @@ html:has(body.page-dark) {
   width: clamp(56px, 9vw, 100px);
   height: auto;
   display: block;
+}
+
+@media (max-width: 800px) {
+  .page-capn-crunch .capn-takeover__stack,
+  .page-capn-crunch .capn-takeover .capn-scenes__stack {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .page-capn-crunch .capn-branded-scenes__panel {
+    padding-inline: 0;
+  }
+
+  .page-capn-crunch .capn-branded-scenes__stack {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 600px) {
