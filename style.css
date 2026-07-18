@@ -3598,7 +3598,7 @@ html:has(body.page-dark) {
   }
 
   .site-footer__back-icon {
-    width: 72px;
+    width: calc(72px * 1.2);
     height: auto;
     filter: none;
   }
@@ -4974,6 +4974,17 @@ html:has(body.page-dark) {
   width: clamp(56px, 9vw, 100px);
   height: auto;
   display: block;
+}
+
+@media (max-width: 800px) {
+  .fanta-branded__videos {
+    padding-inline: 0;
+  }
+
+  .fanta-branded__stack {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 600px) {
