@@ -304,6 +304,8 @@ ul {
 
 .nav__logo--uses-safari-gif .nav__logo-img--safari-gif {
   display: block !important;
+  width: 37px;
+  height: 37px;
 }
 
 .nav__logo--uses-safari-gif video.nav__logo-img {

@@ -133,8 +133,8 @@
   safariImg.className = 'nav__logo-img nav__logo-img--safari-gif';
   safariImg.src = SAFARI_GIF;
   safariImg.alt = '';
-  safariImg.width = 36;
-  safariImg.height = 36;
+  safariImg.width = 37;
+  safariImg.height = 37;
   safariImg.setAttribute('aria-hidden', 'true');
   logoLink.appendChild(safariImg);
 
