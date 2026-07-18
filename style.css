@@ -961,6 +961,11 @@ body.nav-menu-open {
 @media (max-width: 450px) {
   .work-grid {
     align-items: center;
+    gap: 20px;
+  }
+
+  .work-grid__title {
+    padding-bottom: 67px;
   }
 
   .work-grid__title,
@@ -984,7 +989,7 @@ body.nav-menu-open {
   .work-pair--reversed {
     display: flex;
     flex-direction: column;
-    gap: var(--work-grid-gap);
+    gap: 20px;
   }
 
   .work-pair .work-item {
