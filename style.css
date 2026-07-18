@@ -297,6 +297,19 @@ ul {
   transition: filter 0.25s ease-in-out;
 }
 
+/* Safari GIF logo: hidden by default; only shown when JS adds --uses-safari-gif */
+.nav__logo-img--safari-gif {
+  display: none !important;
+}
+
+.nav__logo--uses-safari-gif .nav__logo-img--safari-gif {
+  display: block !important;
+}
+
+.nav__logo--uses-safari-gif video.nav__logo-img {
+  display: none !important;
+}
+
 .nav__logo--active .nav__logo-img {
   filter: invert(1);
 }
@@ -502,10 +515,6 @@ body.nav-menu-open {
     margin-top: 8px;
     padding-top: 8px;
     border-top: 1px solid rgba(0, 0, 0, 0.08);
-  }
-
-  .nav__logo-img.nav__logo-img--mobile-asset {
-    filter: none !important;
   }
 }
 
@@ -933,11 +942,12 @@ body.nav-menu-open {
     font-weight: 350;
     letter-spacing: -0.5px;
     margin-top: 10px;
+    margin-bottom: 5px;
   }
 
   .work-item__role {
     font-size: 14px;
-    margin-top: -3px;
+    margin-top: 0;
   }
 
   .work-item__info {

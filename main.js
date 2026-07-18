@@ -109,44 +109,37 @@
   document.dispatchEvent(new CustomEvent('mobile-nav-ready'));
 })();
 
-(function initMobileNavLogo() {
-  const MOBILE_MQ = window.matchMedia('(max-width: 768px)');
-  const SRC = {
-    default: 'images/logo.webm',
-    black: 'images/logo_black.webm',
-    white: 'images/logo_white.webm',
-  };
-
+(function initSafariNavLogo() {
+  const SAFARI_GIF = 'images/logo only_safari.gif';
   const logoLink = document.querySelector('.nav__logo');
   const video = logoLink?.querySelector('video.nav__logo-img');
-  const source = video?.querySelector('source');
-  if (!logoLink || !video || !source) return;
+  if (!logoLink || !video) return;
 
-  function isDarkBackground() {
-    const pageDark = document.body.classList.contains('page-dark');
-    const activeOrHovered =
-      logoLink.classList.contains('nav__logo--active') || logoLink.matches(':hover');
-    return pageDark ? !activeOrHovered : activeOrHovered;
+  // Safari only (excludes Chrome, Firefox, Edge, Opera, Android browsers)
+  const ua = navigator.userAgent;
+  const isSafari = /Safari/.test(ua)
+    && !/Chrome|CriOS|Chromium|Edg|OPR|FxiOS|Firefox|Android/.test(ua);
+
+  const existing = logoLink.querySelector('img.nav__logo-img--safari-gif');
+  if (existing) existing.remove();
+
+  if (!isSafari) {
+    logoLink.classList.remove('nav__logo--uses-safari-gif');
+    video.hidden = false;
+    return;
   }
 
-  function applyLogo() {
-    const mobile = MOBILE_MQ.matches;
-    video.classList.toggle('nav__logo-img--mobile-asset', mobile);
+  const safariImg = document.createElement('img');
+  safariImg.className = 'nav__logo-img nav__logo-img--safari-gif';
+  safariImg.src = SAFARI_GIF;
+  safariImg.alt = '';
+  safariImg.width = 36;
+  safariImg.height = 36;
+  safariImg.setAttribute('aria-hidden', 'true');
+  logoLink.appendChild(safariImg);
 
-    const nextSrc = mobile ? (isDarkBackground() ? SRC.white : SRC.black) : SRC.default;
-    const resolvedNext = new URL(nextSrc, window.location.href).href;
-
-    if (source.src !== resolvedNext) {
-      source.setAttribute('src', nextSrc);
-      video.load();
-      video.play().catch(() => {});
-    }
-  }
-
-  logoLink.addEventListener('mouseenter', applyLogo);
-  logoLink.addEventListener('mouseleave', applyLogo);
-  MOBILE_MQ.addEventListener('change', applyLogo);
-  applyLogo();
+  logoLink.classList.add('nav__logo--uses-safari-gif');
+  video.hidden = true;
 })();
 
 (function initWorkFilterNav() {
