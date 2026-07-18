@@ -468,6 +468,11 @@ body.nav-menu-open {
     display: inline-flex;
   }
 
+  /* Pin logo video left edge at 52px from viewport */
+  .nav__logo {
+    margin-left: calc(52px - (100vw - var(--nav-width)) / 2 - 15px);
+  }
+
   .nav__island--left .nav__links--primary,
   .nav__island--right {
     display: none;
