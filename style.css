@@ -923,7 +923,7 @@ body.nav-menu-open {
 
 @media (max-width: 800px) {
   .work-grid__title {
-    font-size: 22px;
+    font-size: 24px;
     padding-bottom: 8px;
     letter-spacing: -0.5px;
   }
