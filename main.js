@@ -142,6 +142,25 @@
   video.hidden = true;
 })();
 
+(function initSafariAboutWave() {
+  const SAFARI_SRC = 'images/video/hand_whitebkg.mp4';
+  const wave = document.querySelector('video.about__wave');
+  const source = wave?.querySelector('source');
+  if (!wave || !source) return;
+
+  // Safari only (excludes Chrome, Firefox, Edge, Opera, Android browsers)
+  const ua = navigator.userAgent;
+  const isSafari = /Safari/.test(ua)
+    && !/Chrome|CriOS|Chromium|Edg|OPR|FxiOS|Firefox|Android/.test(ua);
+
+  if (!isSafari) return;
+
+  source.setAttribute('src', SAFARI_SRC);
+  source.setAttribute('type', 'video/mp4');
+  wave.load();
+  wave.play().catch(() => {});
+})();
+
 (function initWorkFilterNav() {
   if (!document.querySelector('[data-work-filter]') || document.querySelector('.work-item')) return;
 
