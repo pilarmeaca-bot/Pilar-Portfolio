@@ -3826,6 +3826,18 @@ html:has(body.page-dark) {
   margin-bottom: 0;
 }
 
+.page-capn-crunch .capn-takeover__text-variant--mobile {
+  display: none;
+}
+
+.page-capn-crunch .capn-alerts__text-variant--mobile {
+  display: none;
+}
+
+.page-capn-crunch .capn-branded-scenes__text-variant--mobile {
+  display: none;
+}
+
 .page-capn-crunch .project-intro--hellofresh .project-intro__title-variant--mobile {
   display: none;
 }
@@ -4234,6 +4246,42 @@ html:has(body.page-dark) {
   .page-capn-crunch .capn-branded-scenes__text {
     font-size: 18px;
     width: 100%;
+  }
+
+  .page-capn-crunch .capn-takeover__text-variant--desktop {
+    display: none;
+  }
+
+  .page-capn-crunch .capn-takeover__text-variant--mobile {
+    display: block;
+  }
+
+  .page-capn-crunch .capn-takeover__line {
+    display: block;
+  }
+
+  .page-capn-crunch .capn-alerts__text-variant--desktop {
+    display: none;
+  }
+
+  .page-capn-crunch .capn-alerts__text-variant--mobile {
+    display: block;
+  }
+
+  .page-capn-crunch .capn-alerts__line {
+    display: block;
+  }
+
+  .page-capn-crunch .capn-branded-scenes__text-variant--desktop {
+    display: none;
+  }
+
+  .page-capn-crunch .capn-branded-scenes__text-variant--mobile {
+    display: block;
+  }
+
+  .page-capn-crunch .capn-branded-scenes__line {
+    display: block;
   }
 
   .page-capn-crunch .capn-takeover__logo {
