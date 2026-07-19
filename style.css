@@ -4167,6 +4167,18 @@ html:has(body.page-dark) {
 }
 
 @media (max-width: 450px) {
+  .page-capn-crunch .project-intro--hellofresh .project-intro__grid {
+    grid-template-columns: none;
+  }
+
+  .page-capn-crunch .project-intro--hellofresh .project-intro__desc-block {
+    font-size: 15px;
+  }
+
+  .page-capn-crunch .project-intro--hellofresh .project-intro__desc-block .project-intro__desc {
+    font-size: 15px;
+  }
+
   .page-capn-crunch .capn-takeover__copy {
     width: 85vw;
     max-width: none;
