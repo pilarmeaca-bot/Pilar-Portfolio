@@ -4219,12 +4219,33 @@ html:has(body.page-dark) {
     max-width: none;
   }
 
-  .page-capn-crunch .capn-takeover__text {
+  .page-capn-crunch .capn-alerts__content {
+    width: 85vw;
+    max-width: none;
+  }
+
+  .page-capn-crunch .capn-branded-scenes__intro {
+    width: 85vw;
+    max-width: none;
+  }
+
+  .page-capn-crunch .capn-takeover__text,
+  .page-capn-crunch .capn-alerts__text,
+  .page-capn-crunch .capn-branded-scenes__text {
     font-size: 18px;
+    width: 100%;
   }
 
   .page-capn-crunch .capn-takeover__logo {
     width: calc(834 / 1920 * var(--viewport-1920));
+  }
+
+  .page-capn-crunch .capn-alerts__title {
+    width: calc(564 / 1920 * var(--viewport-1920));
+  }
+
+  .page-capn-crunch .capn-branded-scenes__title {
+    width: calc(1500 / 1920 * var(--viewport-1920));
   }
 }
 
@@ -4242,11 +4263,6 @@ html:has(body.page-dark) {
     gap: 32px;
   }
 
-.page-capn-crunch .capn-alerts__text{
-    width: auto;
-    max-width: 100%;
-  }
-
 .page-capn-crunch .capn-alerts__icon--star{
     order: 1;
   }
@@ -4261,6 +4277,13 @@ html:has(body.page-dark) {
 
 .page-capn-crunch .capn-branded-scenes__play img{
     width: clamp(48px, 12vw, 72px);
+  }
+}
+
+@media (max-width: 600px) and (min-width: 451px) {
+  .page-capn-crunch .capn-alerts__text {
+    width: auto;
+    max-width: 100%;
   }
 }
 
