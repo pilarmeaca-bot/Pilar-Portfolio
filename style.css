@@ -4168,7 +4168,7 @@ html:has(body.page-dark) {
 
 @media (max-width: 450px) {
   .page-capn-crunch .capn-takeover__copy {
-    width: 280px;
+    width: 300px;
     max-width: none;
   }
 
