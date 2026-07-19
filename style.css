@@ -3826,6 +3826,10 @@ html:has(body.page-dark) {
   margin-bottom: 0;
 }
 
+.page-capn-crunch .project-intro--hellofresh .project-intro__title-variant--mobile {
+  display: none;
+}
+
 
 .page-capn-crunch .capn-takeover__stack,
 .page-capn-crunch .capn-takeover .capn-scenes__stack {
@@ -4167,16 +4171,47 @@ html:has(body.page-dark) {
 }
 
 @media (max-width: 450px) {
+  .page-capn-crunch .project-intro--hellofresh {
+    padding-bottom: 43px;
+  }
+
   .page-capn-crunch .project-intro--hellofresh .project-intro__grid {
     grid-template-columns: none;
   }
 
   .page-capn-crunch .project-intro--hellofresh .project-intro__desc-block {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .page-capn-crunch .project-intro--hellofresh .project-intro__desc-block .project-intro__desc {
-    font-size: 15px;
+    font-size: 16px;
+  }
+
+  .page-capn-crunch .project-intro--hellofresh .project-intro__title-variant--desktop {
+    display: none;
+  }
+
+  .page-capn-crunch .project-intro--hellofresh .project-intro__title-variant--mobile {
+    display: inline;
+  }
+
+  .page-capn-crunch .project-intro--hellofresh .project-intro__title {
+    font-size: 22px;
+  }
+
+  .page-capn-crunch .project-intro--hellofresh .project-intro__subheadline {
+    font-size: 18px;
+  }
+
+  .page-capn-crunch .project-intro--hellofresh .project-intro__meta-item {
+    font-size: 17px;
+    margin-top: -6px;
+    margin-bottom: 0;
+  }
+
+  .page-capn-crunch .project-intro--hellofresh .project-intro__meta-item:first-child {
+    margin-top: -25px;
+    margin-bottom: 0;
   }
 
   .page-capn-crunch .capn-takeover__copy {
