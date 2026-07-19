@@ -4166,6 +4166,21 @@ html:has(body.page-dark) {
   }
 }
 
+@media (max-width: 450px) {
+  .page-capn-crunch .capn-takeover__copy {
+    width: 280px;
+    max-width: none;
+  }
+
+  .page-capn-crunch .capn-takeover__text {
+    font-size: 18px;
+  }
+
+  .page-capn-crunch .capn-takeover__logo {
+    width: calc(834 / 1920 * var(--viewport-1920));
+  }
+}
+
 @media (max-width: 600px) {
 .page-capn-crunch .capn-section__play img{
     width: clamp(48px, 12vw, 72px);
