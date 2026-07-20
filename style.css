@@ -3688,6 +3688,12 @@ html:has(body.page-dark) {
   line-height: 0;
 }
 
+.page-capn-crunch .capn-hero picture{
+  display: block;
+  width: 100%;
+  line-height: 0;
+}
+
 .page-capn-crunch .capn-hero__logo{
   width: 100%;
   height: auto;
