@@ -3894,7 +3894,7 @@ html:has(body.page-dark) {
 }
 
 .page-capn-crunch video.capn-scenes__image {
-  height: fit-content;
+  height: auto;
   margin-top: 0;
   margin-bottom: 0;
   padding-top: 0;
@@ -4231,10 +4231,6 @@ html:has(body.page-dark) {
     max-width: none;
   }
 
-  .page-capn-crunch .capn-takeover {
-    height: 1238px;
-  }
-
   .page-capn-crunch .capn-alerts__content {
     width: 90vw;
     max-width: none;
@@ -4255,7 +4251,13 @@ html:has(body.page-dark) {
   }
 
   .page-capn-crunch .capn-takeover .capn-scenes__stack {
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;
+    margin-inline: auto;
     margin-bottom: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
 
   .page-capn-crunch .capn-takeover__text,
