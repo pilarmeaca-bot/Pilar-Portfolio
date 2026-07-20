@@ -4254,6 +4254,10 @@ html:has(body.page-dark) {
     height: 1079px;
   }
 
+  .page-capn-crunch .capn-takeover .capn-scenes__stack {
+    margin-bottom: 0;
+  }
+
   .page-capn-crunch .capn-takeover__text,
   .page-capn-crunch .capn-alerts__text,
   .page-capn-crunch .capn-branded-scenes__text {
