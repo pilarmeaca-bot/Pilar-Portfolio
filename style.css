@@ -3846,6 +3846,10 @@ html:has(body.page-dark) {
   display: none;
 }
 
+.page-capn-crunch .project-intro--hellofresh .project-intro__desc-variant--mobile {
+  display: none;
+}
+
 
 .page-capn-crunch .capn-takeover__stack,
 .page-capn-crunch .capn-takeover .capn-scenes__stack {
@@ -4227,6 +4231,14 @@ html:has(body.page-dark) {
 
   .page-capn-crunch .project-intro--hellofresh .project-intro__title-variant--mobile {
     display: inline;
+  }
+
+  .page-capn-crunch .project-intro--hellofresh .project-intro__desc-variant--desktop {
+    display: none;
+  }
+
+  .page-capn-crunch .project-intro--hellofresh .project-intro__desc-variant--mobile {
+    display: block;
   }
 
   .page-capn-crunch .project-intro--hellofresh .project-intro__title {
