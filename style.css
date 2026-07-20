@@ -3846,6 +3846,10 @@ html:has(body.page-dark) {
   display: none;
 }
 
+.page-fanta .project-intro--hellofresh .project-intro__title-variant--mobile {
+  display: none;
+}
+
 
 .page-capn-crunch .capn-takeover__stack,
 .page-capn-crunch .capn-takeover .capn-scenes__stack {
@@ -4246,6 +4250,85 @@ html:has(body.page-dark) {
   .page-capn-crunch .project-intro--hellofresh .project-intro__meta-item:first-child {
     margin-top: -25px;
     margin-bottom: 0;
+  }
+
+  .page-fanta .project-intro--hellofresh {
+    padding-bottom: 43px;
+  }
+
+  .page-fanta .project-intro--hellofresh .project-intro__grid {
+    grid-template-columns: none;
+  }
+
+  .page-fanta .project-intro--hellofresh .project-intro__sidebar {
+    width: 100%;
+  }
+
+  .page-fanta .project-intro--hellofresh .project-intro__title-variant--desktop {
+    display: none;
+  }
+
+  .page-fanta .project-intro--hellofresh .project-intro__title-variant--mobile {
+    display: inline;
+  }
+
+  .page-fanta .project-intro--hellofresh .project-intro__title {
+    font-size: 22px;
+  }
+
+  .page-fanta .project-intro--hellofresh .project-intro__meta-item {
+    font-size: 17px;
+    margin-top: -6px;
+    margin-bottom: 0;
+  }
+
+  .page-fanta .project-intro--hellofresh .project-intro__meta-item:first-child {
+    margin-top: -25px;
+    margin-bottom: 0;
+  }
+
+  .page-fanta .project-intro--hellofresh .project-intro__subheadline {
+    font-size: 18px;
+  }
+
+  .page-fanta .project-intro--hellofresh .project-intro__desc-block {
+    font-size: 16px;
+  }
+
+  .page-fanta .project-intro--hellofresh .project-intro__desc-block .project-intro__desc {
+    font-size: 16px;
+  }
+
+  .page-fanta .fanta-takeover__text {
+    font-size: 18px;
+  }
+
+  .page-fanta .fanta-takeover__title {
+    width: 41.25cqw;
+  }
+
+  .page-fanta .fanta-takeover__header-bg {
+    height: 311px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .page-fanta .fanta-branded__header-bg {
+    height: 348px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .page-fanta .fanta-branded__title {
+    width: 79.75cqw;
+  }
+
+  .page-fanta .fanta-branded__text {
+    font-size: 18px;
+  }
+
+  .page-fanta .fanta-branded__header-content {
+    padding-top: 30px;
   }
 
   .page-capn-crunch .capn-takeover__copy {
