@@ -3688,16 +3688,14 @@ html:has(body.page-dark) {
   line-height: 0;
 }
 
-.page-capn-crunch .capn-hero picture{
-  display: block;
-  width: 100%;
-  line-height: 0;
-}
-
 .page-capn-crunch .capn-hero__logo{
   width: 100%;
   height: auto;
   display: block;
+}
+
+.page-capn-crunch .capn-hero__logo--mobile {
+  display: none;
 }
 
 .page-capn-crunch .capn-section{
@@ -4189,6 +4187,15 @@ html:has(body.page-dark) {
 }
 
 @media (max-width: 450px) {
+  .page-capn-crunch .capn-hero__logo--desktop {
+    display: none;
+  }
+
+  .page-capn-crunch .capn-hero__logo--mobile {
+    display: block;
+    height: 135px;
+  }
+
   .page-capn-crunch .project-intro--hellofresh {
     padding-bottom: 43px;
   }
