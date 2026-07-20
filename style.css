@@ -4187,13 +4187,22 @@ html:has(body.page-dark) {
 }
 
 @media (max-width: 450px) {
+  .page-capn-crunch .capn-hero {
+    height: 160px;
+    width: 100%;
+    overflow: hidden;
+  }
+
   .page-capn-crunch .capn-hero__logo--desktop {
     display: none;
   }
 
   .page-capn-crunch .capn-hero__logo--mobile {
     display: block;
-    height: 160px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 
   .page-capn-crunch .project-intro--hellofresh {
