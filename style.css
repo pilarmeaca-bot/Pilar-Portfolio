@@ -4231,14 +4231,27 @@ html:has(body.page-dark) {
     max-width: none;
   }
 
+  .page-capn-crunch .capn-takeover {
+    height: 1238px;
+  }
+
   .page-capn-crunch .capn-alerts__content {
     width: 90vw;
     max-width: none;
   }
 
+  .page-capn-crunch .capn-alerts__icon--star,
+  .page-capn-crunch .capn-alerts__icon--money {
+    display: none;
+  }
+
   .page-capn-crunch .capn-branded-scenes__intro {
     width: 90vw;
     max-width: none;
+  }
+
+  .page-capn-crunch .capn-branded-scenes__panel {
+    height: 1079px;
   }
 
   .page-capn-crunch .capn-takeover__text,
