@@ -2692,7 +2692,7 @@ html:has(body.page-fanta) {
 }
 
 .page-fortnite .project-intro--hellofresh {
-  padding-top: 80px;
+  padding-top: 48px;
 }
 
 .page-hello-fresh .project-intro--hellofresh .project-intro__grid,
@@ -3893,6 +3893,10 @@ html:has(body.page-dark) {
   display: none;
 }
 
+.page-fortnite .project-intro--hellofresh .project-intro__title-variant--mobile {
+  display: none;
+}
+
 .fanta-alerts__text-variant--mobile {
   display: none;
 }
@@ -4299,6 +4303,53 @@ html:has(body.page-dark) {
     margin-bottom: 0;
   }
 
+  .page-fortnite .project-intro--hellofresh {
+    padding-bottom: 43px;
+  }
+
+  .page-fortnite .project-intro--hellofresh .project-intro__grid {
+    grid-template-columns: none;
+  }
+
+  .page-fortnite .project-intro--hellofresh .project-intro__sidebar {
+    width: 100%;
+  }
+
+  .page-fortnite .project-intro--hellofresh .project-intro__title-variant--desktop {
+    display: none;
+  }
+
+  .page-fortnite .project-intro--hellofresh .project-intro__title-variant--mobile {
+    display: inline;
+  }
+
+  .page-fortnite .project-intro--hellofresh .project-intro__title {
+    font-size: 22px;
+  }
+
+  .page-fortnite .project-intro--hellofresh .project-intro__subheadline {
+    font-size: 18px;
+  }
+
+  .page-fortnite .project-intro--hellofresh .project-intro__meta-item {
+    font-size: 17px;
+    margin-top: -6px;
+    margin-bottom: 0;
+  }
+
+  .page-fortnite .project-intro--hellofresh .project-intro__meta-item:first-child {
+    margin-top: -25px;
+    margin-bottom: 0;
+  }
+
+  .page-fortnite .project-intro--hellofresh .project-intro__desc-block {
+    font-size: 16px;
+  }
+
+  .page-fortnite .project-intro--hellofresh .project-intro__desc-block .project-intro__desc {
+    font-size: 16px;
+  }
+
   .page-fanta .project-intro--hellofresh {
     padding-bottom: 43px;
   }
@@ -4551,6 +4602,30 @@ html:has(body.page-dark) {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.page-fortnite .capn-hero__logo--mobile {
+  display: none;
+}
+
+@media (max-width: 450px) {
+  .page-fortnite .capn-hero {
+    height: 160px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .page-fortnite .capn-hero__logo--desktop {
+    display: none;
+  }
+
+  .page-fortnite .capn-hero__logo--mobile {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
 }
 
 .page-fortnite .capn-takeover {
