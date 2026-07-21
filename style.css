@@ -3242,6 +3242,61 @@ html:has(body.page-fanta) {
     height: auto;
     flex: unset;
   }
+
+  .page-dark .theme-section--dark .scenes-stack.layout--narrow {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding-inline: 0;
+  }
+
+  .page-dark .theme-section--dark .scenes-stack .scenes-stack__image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border: none;
+  }
+
+  .page-dark .scene-fullwidth.browser-shell video.browser-92,
+  .page-dark .astro-talk.browser-shell .astro-scene__image.browser-92,
+  .page-dark .hitman-talk.browser-shell .hitman-scene__image.browser-92 {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    flex: unset;
+  }
+
+  .page-dark .astro-talk.browser-shell .astro-scene,
+  .page-dark .hitman-talk.browser-shell .hitman-scene {
+    width: 100%;
+    max-width: 100%;
+    flex: unset;
+  }
+
+  .page-dark .astro-scenes-stack.layout--narrow,
+  .page-dark .astro-alerts__grid-wrap,
+  .page-dark .bond-alerts__grid-wrap.layout--narrow,
+  .page-dark .hitman-alerts__grid-wrap.layout--narrow,
+  .page-dark .holiday-pack__grid-wrap.layout--narrow,
+  .page-dark .hitman-scenes-stack {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding-inline: 0;
+  }
+
+  .page-dark .astro-scenes-stack .astro-scene__image,
+  .page-dark .hitman-scenes-stack .hitman-scene__image,
+  .page-dark .bond-alerts__grid-image,
+  .page-dark .hitman-alerts__grid-image,
+  .page-dark .astro-alerts__grid-image,
+  .page-dark .holiday-pack__grid-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 /* ==========================================================
@@ -3979,6 +4034,14 @@ html:has(body.page-dark) {
   display: none;
 }
 
+.page-hello-fresh .project-intro--hellofresh .project-intro__title-variant--mobile {
+  display: none;
+}
+
+.page-dark .project-intro--hellofresh .project-intro__title-variant--mobile {
+  display: none;
+}
+
 .fanta-alerts__text-variant--mobile {
   display: none;
 }
@@ -4405,6 +4468,14 @@ html:has(body.page-dark) {
     font-size: 22px;
   }
 
+  .page-hello-fresh .project-intro--hellofresh .project-intro__title-variant--desktop {
+    display: none;
+  }
+
+  .page-hello-fresh .project-intro--hellofresh .project-intro__title-variant--mobile {
+    display: inline;
+  }
+
   .page-hello-fresh .project-intro--hellofresh .project-intro__subheadline {
     font-size: 18px;
   }
@@ -4416,6 +4487,49 @@ html:has(body.page-dark) {
   }
 
   .page-hello-fresh .project-intro--hellofresh .project-intro__meta-item:first-child {
+    margin-top: -25px;
+    margin-bottom: 0;
+  }
+
+  .page-dark .project-intro--hellofresh {
+    padding-bottom: 43px;
+  }
+
+  .page-dark .project-intro--hellofresh .project-intro__grid {
+    grid-template-columns: none;
+  }
+
+  .page-dark .project-intro--hellofresh .project-intro__desc-block {
+    font-size: 16px;
+  }
+
+  .page-dark .project-intro--hellofresh .project-intro__desc-block .project-intro__desc {
+    font-size: 16px;
+  }
+
+  .page-dark .project-intro--hellofresh .project-intro__title {
+    font-size: 22px;
+  }
+
+  .page-dark .project-intro--hellofresh .project-intro__title-variant--desktop {
+    display: none;
+  }
+
+  .page-dark .project-intro--hellofresh .project-intro__title-variant--mobile {
+    display: inline;
+  }
+
+  .page-dark .project-intro--hellofresh .project-intro__subheadline {
+    font-size: 18px;
+  }
+
+  .page-dark .project-intro--hellofresh .project-intro__meta-item {
+    font-size: 17px;
+    margin-top: -6px;
+    margin-bottom: 0;
+  }
+
+  .page-dark .project-intro--hellofresh .project-intro__meta-item:first-child {
     margin-top: -25px;
     margin-bottom: 0;
   }
