@@ -4046,6 +4046,14 @@ html:has(body.page-dark) {
   display: none;
 }
 
+.fanta-takeover__text-variant--mobile {
+  display: none;
+}
+
+.fanta-branded__text-variant--mobile {
+  display: none;
+}
+
 
 .page-capn-crunch .capn-takeover__stack,
 .page-capn-crunch .capn-takeover .capn-scenes__stack {
@@ -4632,6 +4640,18 @@ html:has(body.page-dark) {
     font-size: 18px;
   }
 
+  .page-fanta .fanta-takeover__text-variant--desktop {
+    display: none;
+  }
+
+  .page-fanta .fanta-takeover__text-variant--mobile {
+    display: block;
+  }
+
+  .page-fanta .fanta-takeover__text-variant--mobile .fanta-takeover__line {
+    display: block;
+  }
+
   .page-fanta .fanta-takeover__title {
     width: 41.25cqw;
   }
@@ -4654,6 +4674,18 @@ html:has(body.page-dark) {
 
   .page-fanta .fanta-branded__text {
     font-size: 18px;
+  }
+
+  .page-fanta .fanta-branded__text-variant--desktop {
+    display: none;
+  }
+
+  .page-fanta .fanta-branded__text-variant--mobile {
+    display: block;
+  }
+
+  .page-fanta .fanta-branded__text-variant--mobile .fanta-branded__line {
+    display: block;
   }
 
   .page-fanta .fanta-branded__header-content {
