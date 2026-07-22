@@ -161,6 +161,39 @@
   wave.play().catch(() => {});
 })();
 
+(function initSafariHelloFreshWidget() {
+  const MP4_SRC = 'images/hello-fresh/videos/Alerts%2Bwidget.mp4';
+  const video = document.querySelector(
+    '.page-hello-fresh .hellofresh-stack .hellofresh-media:first-child video.hellofresh-media__image'
+  );
+  if (!video) return;
+
+  const probe = document.createElement('video');
+  const supportsWebm = Boolean(
+    probe.canPlayType('video/webm; codecs="vp9"')
+    || probe.canPlayType('video/webm; codecs="vp8"')
+    || probe.canPlayType('video/webm')
+  );
+
+  if (supportsWebm) return;
+
+  const source = video.querySelector('source');
+  if (source) {
+    source.setAttribute('src', MP4_SRC);
+    source.setAttribute('type', 'video/mp4');
+  } else {
+    video.src = MP4_SRC;
+  }
+
+  video.setAttribute('playsinline', '');
+  video.setAttribute('webkit-playsinline', '');
+  video.load();
+
+  const tryPlay = () => video.play().catch(() => {});
+  tryPlay();
+  video.addEventListener('loadeddata', tryPlay, { once: true });
+})();
+
 (function initWorkFilterNav() {
   if (!document.querySelector('[data-work-filter]') || document.querySelector('.work-item')) return;
 
