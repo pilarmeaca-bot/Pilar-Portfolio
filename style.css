@@ -1391,6 +1391,16 @@ body.nav-menu-open {
   .about__experience-dates {
     font-size: 18px;
     letter-spacing: -0.2px;
+    margin-right: 10px;
+  }
+
+  .about__experience li:nth-child(3) .about__experience-dates {
+    margin-right: 9px;
+  }
+
+  .about__experience li:nth-child(4) .about__experience-dates,
+  .about__experience li:nth-child(5) .about__experience-dates {
+    margin-right: 12px;
   }
 }
 
