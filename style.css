@@ -3883,7 +3883,10 @@ html:has(body.page-dark) {
 .page-dark .theme-content-block__desc-variant--mobile,
 .page-dark .bond-alerts__desc-variant--mobile,
 .page-dark .astro-branded__desc-variant--mobile,
-.page-dark .hitman-branded__desc-variant--mobile {
+.page-dark .hitman-branded__desc-variant--mobile,
+.page-dark .astro-alerts__desc-variant--mobile,
+.page-dark .hitman-alerts__desc-variant--mobile,
+.page-dark .holiday-pack__desc-variant--mobile {
   display: none;
 }
 
@@ -3912,8 +3915,15 @@ html:has(body.page-dark) {
     font-size: 30px;
   }
 
-  .page-dark .astro-alerts__header {
-    margin-bottom: 30px;
+  .page-dark .astro-branded__copy {
+    margin-bottom: 40px;
+  }
+
+  .page-dark .astro-alerts__header,
+  .page-dark .hitman-branded__header,
+  .page-dark .hitman-alerts__header {
+    margin-top: 40px;
+    margin-bottom: 40px;
   }
 
   .page-dark .astro-alerts {
@@ -3959,13 +3969,27 @@ html:has(body.page-dark) {
     display: block;
   }
 
+  .page-dark .astro-alerts__desc-variant--desktop,
+  .page-dark .hitman-alerts__desc-variant--desktop,
+  .page-dark .holiday-pack__desc-variant--desktop {
+    display: none;
+  }
+
+  .page-dark .astro-alerts__desc-variant--mobile,
+  .page-dark .hitman-alerts__desc-variant--mobile,
+  .page-dark .holiday-pack__desc-variant--mobile {
+    display: block;
+  }
+
+  .page-dark .astro-alerts__desc-line,
+  .page-dark .hitman-alerts__desc-line,
+  .page-dark .holiday-pack__desc-line {
+    display: block;
+  }
+
   .page-dark .hitman-branded__label-img,
   .page-dark .hitman-alerts__title {
     height: clamp(27.5px, 3.125vw, 40px);
-  }
-
-  .page-dark .hitman-branded__header {
-    margin-top: 23px;
   }
 
   .theme-section--dark .theme-content-block {
