@@ -1295,12 +1295,14 @@ body.nav-menu-open {
 
   .about__title-text {
     font-size: 30px;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.7px;
   }
 
   .about__wave {
     width: calc(252 / 1920 * var(--viewport-1920));
     height: calc(252 / 1920 * var(--viewport-1920));
+    margin-top: -18px;
+    margin-left: -4px;
   }
 
   .about__intro {
