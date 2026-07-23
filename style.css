@@ -1291,6 +1291,7 @@ body.nav-menu-open {
     display: flex;
     justify-content: center;
     width: 100%;
+    padding-bottom: 12px;
   }
 
   .about__title-text {
