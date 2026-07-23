@@ -1712,6 +1712,10 @@ body.nav-menu-open {
   object-position: center;
 }
 
+.theme-section--astro .theme-headline-wrapper .project-hero__image--mobile {
+  display: none;
+}
+
 /* -- Astrology branded scenes -- */
 .astro-branded.layout--full {
   width: 100%;
@@ -1943,6 +1947,10 @@ body.nav-menu-open {
 
 .theme-section--hitman .theme-headline-wrapper {
   margin-bottom: calc(117 / 1920 * var(--viewport-1920));
+}
+
+.theme-section--hitman .theme-headline-wrapper .project-hero__image--mobile {
+  display: none;
 }
 
 /* -- Hitman branded scenes -- */
@@ -2431,6 +2439,10 @@ body.nav-menu-open {
   display: block;
 }
 
+.page-dark .bond-alerts__grid-image--mobile {
+  display: none;
+}
+
 .bond-alerts__play {
   position: absolute;
   top: 50%;
@@ -2761,6 +2773,44 @@ html:has(body.page-fanta) {
   }
 
   .theme-section--dark .theme-headline-wrapper .project-hero__image--mobile {
+    display: block;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .theme-section--astro .theme-headline-wrapper {
+    height: 160px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .theme-section--astro .theme-headline-wrapper .project-hero__image--desktop {
+    display: none;
+  }
+
+  .theme-section--astro .theme-headline-wrapper .project-hero__image--mobile {
+    display: block;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .theme-section--hitman .theme-headline-wrapper {
+    height: 160px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .theme-section--hitman .theme-headline-wrapper .project-hero__image--desktop {
+    display: none;
+  }
+
+  .theme-section--hitman .theme-headline-wrapper .project-hero__image--mobile {
     display: block;
     width: 100%;
     height: 100%;
@@ -3523,6 +3573,19 @@ html:has(body.page-fanta) {
     margin-bottom: 39px;
   }
 
+  .page-dark .bond-alerts__grid-image--desktop {
+    display: none;
+  }
+
+  .page-dark .bond-alerts__grid-image--mobile {
+    display: block;
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    height: auto;
+  }
+
   .page-dark .hitman-alerts__grid-image--desktop {
     display: none;
   }
@@ -3933,6 +3996,7 @@ html:has(body.page-dark) {
   }
 
   .page-dark .astro-branded__copy {
+    margin-top: 33px;
     margin-bottom: 40px;
   }
 
@@ -4023,6 +4087,10 @@ html:has(body.page-dark) {
     width: calc(229 / 1920 * var(--viewport-1920) * 2.25);
     max-width: none;
     margin-bottom: 13px;
+  }
+
+  .page-dark .bond-alerts__header {
+    margin-top: 50px;
   }
 
   .page-dark .holiday-pack__title {
