@@ -2109,6 +2109,10 @@ body.nav-menu-open {
   display: block;
 }
 
+.page-dark .hitman-alerts__grid-image--mobile {
+  display: none;
+}
+
 .hitman-alerts__play {
   position: absolute;
   top: 50%;
@@ -3517,6 +3521,19 @@ html:has(body.page-fanta) {
 
   .page-dark .bond-alerts__grid-image {
     margin-bottom: 39px;
+  }
+
+  .page-dark .hitman-alerts__grid-image--desktop {
+    display: none;
+  }
+
+  .page-dark .hitman-alerts__grid-image--mobile {
+    display: block;
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    height: auto;
   }
 }
 
