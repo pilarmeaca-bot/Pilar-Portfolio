@@ -972,13 +972,26 @@ body.nav-menu-open {
   .work-item,
   .work-pair,
   .work-pair--reversed,
-  .work-coming-soon,
   body:has(.work-grid) .site-footer {
     width: var(--browser-92);
     max-width: var(--browser-92);
     margin-left: auto;
     margin-right: auto;
     box-sizing: border-box;
+  }
+
+  .work-coming-soon {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding: 0;
+  }
+
+  .work-coming-soon picture,
+  .work-coming-soon__tile {
+    width: 100%;
+    max-width: 100%;
   }
 
   body:has(.work-grid) .site-footer {
@@ -1105,6 +1118,11 @@ body.nav-menu-open {
 
 .work-coming-soon[hidden] {
   display: none;
+}
+
+.work-coming-soon picture {
+  display: block;
+  width: 100%;
 }
 
 .work-coming-soon__tile {
@@ -1391,16 +1409,26 @@ body.nav-menu-open {
   .about__experience-dates {
     font-size: 18px;
     letter-spacing: -0.2px;
-    margin-right: 10px;
+  }
+
+  .about__experience li:nth-child(1) .about__experience-dates {
+    margin-right: 14px;
+  }
+
+  .about__experience li:nth-child(2) .about__experience-dates {
+    margin-right: 15px;
   }
 
   .about__experience li:nth-child(3) .about__experience-dates {
-    margin-right: 9px;
+    margin-right: 14px;
   }
 
-  .about__experience li:nth-child(4) .about__experience-dates,
+  .about__experience li:nth-child(4) .about__experience-dates {
+    margin-right: 11px;
+  }
+
   .about__experience li:nth-child(5) .about__experience-dates {
-    margin-right: 12px;
+    margin-right: 15px;
   }
 }
 
@@ -4470,7 +4498,7 @@ html:has(body.page-dark) {
 
 @media (max-width: 450px) {
   .site-footer__back-icon {
-    width: calc(72px * 1.2 * 1.1);
+    width: calc(72px * 1.2 * 1.15 * 1.1 * 0.95);
   }
 }
 
