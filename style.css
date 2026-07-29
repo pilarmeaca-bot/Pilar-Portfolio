@@ -883,7 +883,7 @@ body.nav-menu-open {
   grid-template-columns: 1195fr 531fr;
   gap: var(--pair-gap);
   box-sizing: border-box;
-  margin-bottom: -33px;
+  margin-bottom: 0px;
 }
 
 .work-pair--reversed {
@@ -1493,6 +1493,11 @@ body.nav-menu-open {
 
 .nav__filters .nav__link[data-work-filter="all"] {
   min-width: 60px;
+}
+
+/* Filtering only applies to the work listing, so hide the island elsewhere */
+body:not(:has(.work-grid)) .nav__filters {
+  display: none;
 }
 
 
