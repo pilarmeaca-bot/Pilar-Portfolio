@@ -4,6 +4,21 @@
   const comingSoon = document.getElementById('work-coming-soon');
 
   const workTitle = workGrid?.querySelector('.work-grid__title');
+  const pixarFest = workGrid?.querySelector('.work-item--pixar-fest');
+  const capnCrunch = workGrid?.querySelector('.work-item--capn-crunch');
+  const streamFantaPair = workGrid?.querySelector('.work-pair--stream-fanta');
+
+  function reorderWorkGrid(isAll) {
+    if (!workTitle || !capnCrunch || !streamFantaPair) return;
+
+    if (isAll) {
+      if (pixarFest) pixarFest.insertAdjacentElement('afterend', streamFantaPair);
+      streamFantaPair.insertAdjacentElement('afterend', capnCrunch);
+      return;
+    }
+
+    workTitle.insertAdjacentElement('afterend', capnCrunch);
+  }
 
   function applyFilter(filter) {
     const isAll = filter === 'all';
@@ -22,6 +37,8 @@
     }
 
     document.title = isAll ? 'Pilar Meaca | Work All' : 'Pilar Meaca | Work Featured';
+
+    reorderWorkGrid(isAll);
 
     document.querySelectorAll('[data-work-filter]').forEach((button) => {
       const isActive = button.dataset.workFilter === filter;
