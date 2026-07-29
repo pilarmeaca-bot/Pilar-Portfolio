@@ -21,6 +21,8 @@
       workTitle.textContent = isAll ? 'All projects' : 'Featured projects';
     }
 
+    document.title = isAll ? 'Pilar Meaca | Work All' : 'Pilar Meaca | Work Featured';
+
     document.querySelectorAll('[data-work-filter]').forEach((button) => {
       const isActive = button.dataset.workFilter === filter;
       button.classList.toggle('nav__link--active', isActive);
