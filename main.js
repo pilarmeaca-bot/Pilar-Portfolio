@@ -204,6 +204,30 @@
   });
 })();
 
+(function initProjectVideo() {
+  document.querySelectorAll('[data-project-video]').forEach((wrap) => {
+    const video = wrap.querySelector('video');
+    const playButton = wrap.querySelector('.project-video__play');
+    if (!video || !playButton) return;
+
+    function resetVideo() {
+      video.pause();
+      video.currentTime = 0;
+      video.removeAttribute('controls');
+      wrap.classList.remove('is-playing');
+    }
+
+    playButton.addEventListener('click', (event) => {
+      event.stopPropagation();
+      video.setAttribute('controls', '');
+      wrap.classList.add('is-playing');
+      video.play();
+    });
+
+    video.addEventListener('ended', resetVideo);
+  });
+})();
+
 (function initReelModal() {
   const REEL_SRC = 'images/video/Reel.webm';
   const REEL_POSTER = 'images/thumbnail_reel.jpg';

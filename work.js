@@ -3,21 +3,22 @@
   const workGrid = document.querySelector('.work-grid');
   const comingSoon = document.getElementById('work-coming-soon');
 
+  const workTitle = workGrid?.querySelector('.work-grid__title');
+
   function applyFilter(filter) {
     const isAll = filter === 'all';
 
     document.body.classList.toggle('work-filter-all', isAll);
 
-    if (isAll) {
-      if (workGrid) workGrid.hidden = true;
-      if (comingSoon) comingSoon.hidden = false;
-    } else {
-      if (workGrid) workGrid.hidden = false;
-      if (comingSoon) comingSoon.hidden = true;
+    if (workGrid) workGrid.hidden = false;
+    if (comingSoon) comingSoon.hidden = true;
 
-      workItems.forEach((item) => {
-        item.hidden = item.dataset.featured !== 'true';
-      });
+    workItems.forEach((item) => {
+      item.hidden = isAll ? false : item.dataset.featured !== 'true';
+    });
+
+    if (workTitle) {
+      workTitle.textContent = isAll ? 'All projects' : 'Featured projects';
     }
 
     document.querySelectorAll('[data-work-filter]').forEach((button) => {

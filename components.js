@@ -35,6 +35,26 @@
       image: 'images/other-projects/Alerts_color.jpg',
       title: 'In stream Alerts Sponsorship',
     },
+    {
+      href: 'detras_de_la_gloria.html',
+      image: 'images/other-projects/Detrasdelagloria.jpg',
+      title: 'Detrás de la Gloria',
+    },
+    {
+      href: 'endtags.html',
+      image: 'images/other-projects/endtags.jpg',
+      title: 'End tags',
+    },
+    {
+      href: 'onair_promo.html',
+      image: 'images/other-projects/onairpromo.jpg',
+      title: 'On-air promos',
+    },
+    {
+      href: 'radiodisney.html',
+      image: 'images/other-projects/RadioDisney.jpg',
+      title: 'Radio Disney',
+    },
   ];
 
   const FALLBACK_TEMPLATES = {
