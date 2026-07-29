@@ -1503,7 +1503,7 @@ body.nav-menu-open {
 }
 
 /* Filtering only applies to the work listing, so hide the island elsewhere */
-body:not(:has(.work-grid)) .nav__filters {
+body:not(:has(.work-grid)):not(:has(.project-container)) .nav__filters {
   display: none;
 }
 
