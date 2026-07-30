@@ -1389,19 +1389,18 @@ body.nav-menu-open {
 
   .about__experience-variant--mobile {
     display: inline;
+    margin-left: 0;
+    margin-right: 0;
   }
 
-  .about__experience li:nth-child(1) .about__experience-variant--mobile {
-    margin-left: -5px;
+  .about__experience li:nth-child(3) .about__experience-variant--mobile {
+    margin-left: 6px;
+    margin-right: 0;
   }
 
   .about__experience li:nth-child(4) .about__experience-variant--mobile {
-    margin-left: -6px;
-  }
-
-  .about__experience li:nth-child(5) .about__experience-variant--mobile {
-    margin-left: 3px;
-    margin-right: -17px;
+    margin-left: 7px;
+    margin-right: 0;
   }
 
   .about__section-title {
@@ -1445,6 +1444,10 @@ body.nav-menu-open {
     letter-spacing: -0.2px;
     line-height: 140%;
     margin-bottom: 10px;
+  }
+
+  .about__experience li {
+    white-space: nowrap;
   }
 
   .about__list li:last-child,
