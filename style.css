@@ -1223,6 +1223,19 @@ body.nav-menu-open {
   margin-left: -10px;
 }
 
+/* Safari GIF wave: hidden by default; only shown when JS adds --uses-safari-gif */
+.about__wave--safari-gif {
+  display: none !important;
+}
+
+.about__title--uses-safari-gif .about__wave--safari-gif {
+  display: block !important;
+}
+
+.about__title--uses-safari-gif video.about__wave {
+  display: none !important;
+}
+
 .about__body {
   display: flex;
   flex-direction: column;
@@ -1709,6 +1722,10 @@ body:not(:has(.work-grid)):not(:has(.project-container)) .nav__filters {
   letter-spacing: -2px;
   line-height: 1.1;
   color: var(--color-text);
+}
+
+.project-intro__title-variant {
+  line-height: 35px;
 }
 
 .project-intro__meta {

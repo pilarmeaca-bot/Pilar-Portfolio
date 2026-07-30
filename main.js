@@ -143,22 +143,34 @@
 })();
 
 (function initSafariAboutWave() {
-  const SAFARI_SRC = 'images/video/hand_whitebkg.mp4';
+  const SAFARI_GIF = 'images/video/hand_whitebkg.gif';
+  const title = document.querySelector('h1.about__title');
   const wave = document.querySelector('video.about__wave');
-  const source = wave?.querySelector('source');
-  if (!wave || !source) return;
+  if (!title || !wave) return;
 
   // Safari only (excludes Chrome, Firefox, Edge, Opera, Android browsers)
   const ua = navigator.userAgent;
   const isSafari = /Safari/.test(ua)
     && !/Chrome|CriOS|Chromium|Edg|OPR|FxiOS|Firefox|Android/.test(ua);
 
-  if (!isSafari) return;
+  const existing = title.querySelector('img.about__wave--safari-gif');
+  if (existing) existing.remove();
 
-  source.setAttribute('src', SAFARI_SRC);
-  source.setAttribute('type', 'video/mp4');
-  wave.load();
-  wave.play().catch(() => {});
+  if (!isSafari) {
+    title.classList.remove('about__title--uses-safari-gif');
+    wave.hidden = false;
+    return;
+  }
+
+  const safariImg = document.createElement('img');
+  safariImg.className = 'about__wave about__wave--safari-gif';
+  safariImg.src = SAFARI_GIF;
+  safariImg.alt = '';
+  safariImg.setAttribute('aria-hidden', 'true');
+  title.appendChild(safariImg);
+
+  title.classList.add('about__title--uses-safari-gif');
+  wave.hidden = true;
 })();
 
 (function initSafariHelloFreshWidget() {
