@@ -109,21 +109,23 @@
   document.dispatchEvent(new CustomEvent('mobile-nav-ready'));
 })();
 
+function shouldUseAnimatedGifFallback() {
+  const ua = navigator.userAgent;
+  if (/LinkedInApp/i.test(ua)) return true;
+  return /Safari/.test(ua)
+    && !/Chrome|CriOS|Chromium|Edg|OPR|FxiOS|Firefox|Android/.test(ua);
+}
+
 (function initSafariNavLogo() {
   const SAFARI_GIF = 'images/logo only_safari.gif';
   const logoLink = document.querySelector('.nav__logo');
   const video = logoLink?.querySelector('video.nav__logo-img');
   if (!logoLink || !video) return;
 
-  // Safari only (excludes Chrome, Firefox, Edge, Opera, Android browsers)
-  const ua = navigator.userAgent;
-  const isSafari = /Safari/.test(ua)
-    && !/Chrome|CriOS|Chromium|Edg|OPR|FxiOS|Firefox|Android/.test(ua);
-
   const existing = logoLink.querySelector('img.nav__logo-img--safari-gif');
   if (existing) existing.remove();
 
-  if (!isSafari) {
+  if (!shouldUseAnimatedGifFallback()) {
     logoLink.classList.remove('nav__logo--uses-safari-gif');
     video.hidden = false;
     return;
@@ -148,15 +150,10 @@
   const wave = document.querySelector('video.about__wave');
   if (!title || !wave) return;
 
-  // Safari only (excludes Chrome, Firefox, Edge, Opera, Android browsers)
-  const ua = navigator.userAgent;
-  const isSafari = /Safari/.test(ua)
-    && !/Chrome|CriOS|Chromium|Edg|OPR|FxiOS|Firefox|Android/.test(ua);
-
   const existing = title.querySelector('img.about__wave--safari-gif');
   if (existing) existing.remove();
 
-  if (!isSafari) {
+  if (!shouldUseAnimatedGifFallback()) {
     title.classList.remove('about__title--uses-safari-gif');
     wave.hidden = false;
     return;
