@@ -1725,7 +1725,7 @@ body:not(:has(.work-grid)):not(:has(.project-container)) .nav__filters {
 }
 
 .project-intro__title-variant {
-  line-height: 35px;
+  line-height: 31px;
 }
 
 .project-intro__meta {
