@@ -1736,12 +1736,13 @@ body:not(:has(.work-grid)):not(:has(.project-container)) .nav__filters {
   font-weight: 600;
   font-variation-settings: "wdth" 95;
   letter-spacing: -2px;
-  line-height: 1.1;
+  line-height: 120%;
   color: var(--color-text);
 }
 
+.project-intro--hellofresh .project-intro__title,
 .project-intro__title-variant {
-  line-height: 115%;
+  line-height: 120%;
 }
 
 .project-intro__meta {
@@ -3194,7 +3195,7 @@ html:has(body.page-fanta) {
   font-weight: 450;
   font-variation-settings: normal;
   letter-spacing: normal;
-  line-height: 115%;
+  line-height: 120%;
 }
 
 .page-hello-fresh .project-intro--hellofresh .project-intro__meta,
@@ -4126,7 +4127,7 @@ html:has(body.page-dark) {
   font-weight: 450;
   font-variation-settings: normal;
   letter-spacing: normal;
-  line-height: 115%;
+  line-height: 120%;
 }
 
 .page-dark .project-intro--hellofresh .project-intro__meta,
@@ -5246,6 +5247,11 @@ html:has(body.page-dark) {
     max-width: 100%;
   }
 
+  .project-intro--hellofresh .project-intro__title,
+  .project-intro--hellofresh .project-intro__title-variant {
+    line-height: 120%;
+  }
+
   .page-capn-crunch .project-intro--hellofresh {
     padding-bottom: 43px;
   }
@@ -5307,7 +5313,6 @@ html:has(body.page-dark) {
 
   .page-hello-fresh .project-intro--hellofresh .project-intro__title {
     font-size: 22px;
-    line-height: 115%;
   }
 
   .page-hello-fresh .project-intro--hellofresh .project-intro__title-variant--desktop {
