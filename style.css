@@ -1741,7 +1741,7 @@ body:not(:has(.work-grid)):not(:has(.project-container)) .nav__filters {
 }
 
 .project-intro__title-variant {
-  line-height: 31px;
+  line-height: 115%;
 }
 
 .project-intro__meta {
@@ -3194,10 +3194,6 @@ html:has(body.page-fanta) {
   font-weight: 450;
   font-variation-settings: normal;
   letter-spacing: normal;
-  line-height: 105%;
-}
-
-.page-hello-fresh .project-intro--hellofresh .project-intro__title {
   line-height: 115%;
 }
 
@@ -4130,7 +4126,7 @@ html:has(body.page-dark) {
   font-weight: 450;
   font-variation-settings: normal;
   letter-spacing: normal;
-  line-height: 100%;
+  line-height: 115%;
 }
 
 .page-dark .project-intro--hellofresh .project-intro__meta,
